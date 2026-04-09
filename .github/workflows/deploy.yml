@@ -22,12 +22,18 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_NATEBUTLERTALKS }}
+      - name: Set up Firebase credentials
+        env:
+          FIREBASE_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_NATEBUTLERTALKS }}
+        run: |
+          mkdir -p ~/.config/gcloud
+          echo "$FIREBASE_KEY" > ~/.config/gcloud/firebase-key.json
+          echo "::add-mask::$FIREBASE_KEY"
 
-      - name: Deploy to Firebase Hosting
+      - name: Deploy to Firebase
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ~/.config/gcloud/firebase-key.json
         run: |
           npm install -g firebase-tools
-          firebase deploy --project natebutlertalks
+          firebase --version
+          firebase deploy --project natebutlertalks --debug
