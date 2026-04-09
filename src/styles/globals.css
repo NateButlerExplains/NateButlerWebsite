@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-space-grotesk: 'Space Grotesk', sans-serif;
+  --font-manrope: 'Manrope', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-surface text-on-surface;
+  font-family: var(--font-manrope);
+}
+
+/* Cyber Command Center aesthetic */
+* {
+  @apply border-outline-variant;
+}
+
+/* Neon glow effects */
+.neon-glow {
+  @apply shadow-neon-glow;
+}
+
+.neon-glow-secondary {
+  @apply shadow-neon-glow-secondary;
+}
+
+.neon-glow-tertiary {
+  @apply shadow-neon-glow-tertiary;
+}
+
+/* Glassmorphism */
+.glass {
+  @apply backdrop-blur-md bg-opacity-60 border border-outline-variant;
+}
+
+.glass-nav {
+  @apply backdrop-blur-sm bg-surface/70 border-b border-outline-variant;
+}
+
+/* Display typography (Space Grotesk) */
+.display-lg {
+  font-family: var(--font-space-grotesk);
+  @apply text-5xl font-bold tracking-tighter;
+}
+
+.display-md {
+  font-family: var(--font-space-grotesk);
+  @apply text-4xl font-bold tracking-tight;
+}
+
+.display-sm {
+  font-family: var(--font-space-grotesk);
+  @apply text-3xl font-bold tracking-tight;
+}
+
+.headline-lg {
+  font-family: var(--font-space-grotesk);
+  @apply text-2xl font-semibold tracking-tight;
+}
+
+.headline-md {
+  font-family: var(--font-space-grotesk);
+  @apply text-xl font-semibold tracking-tight;
+}
+
+.headline-sm {
+  font-family: var(--font-space-grotesk);
+  @apply text-lg font-semibold tracking-tight;
+}
+
+.label-md {
+  font-family: var(--font-space-grotesk);
+  @apply text-sm font-semibold uppercase tracking-widest;
+}
+
+/* Body typography (Manrope) */
+.body-lg {
+  @apply text-lg font-medium leading-relaxed;
+}
+
+.body-md {
+  @apply text-base font-medium leading-relaxed;
+}
+
+.body-sm {
+  @apply text-sm font-medium leading-relaxed;
+}
+
+/* Button styles */
+.btn {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2;
+}
+
+.btn-primary {
+  @apply btn bg-primary text-on-primary hover:shadow-neon-glow active:scale-95;
+}
+
+.btn-secondary {
+  @apply btn bg-secondary text-on-secondary hover:shadow-neon-glow-secondary active:scale-95;
+}
+
+.btn-tertiary {
+  @apply btn bg-tertiary text-on-tertiary hover:shadow-neon-glow-tertiary active:scale-95;
+}
+
+.btn-ghost {
+  @apply btn bg-transparent border border-outline-variant text-on-surface hover:border-primary hover:text-primary hover:shadow-neon-glow;
+}
+
+/* Input styles */
+.input {
+  @apply w-full bg-surface-container-low border-b-2 border-outline-variant px-0 py-3 focus:outline-none focus:border-primary transition-colors;
+}
+
+.input::placeholder {
+  @apply text-on-surface/50;
+}
+
+/* Card styles */
+.card {
+  @apply rounded-xl bg-surface-container-high border border-outline-variant p-6;
+}
+
+.card-glass {
+  @apply card glass;
+}
+
+/* Scanlines effect */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanlines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(255, 255, 255, 0.03) 1px,
+    rgba(255, 255, 255, 0.03) 2px
+  );
+  pointer-events: none;
+}
+
+/* Data stream effect */
+.data-stream {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 229, 255, 0.1) 0%,
+    transparent 50%,
+    rgba(112, 0, 255, 0.1) 100%
+  );
+}
+
+/* Selection color */
+::selection {
+  @apply bg-primary text-on-primary;
+}
+
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-surface;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-surface-container-high rounded hover:bg-primary;
+}

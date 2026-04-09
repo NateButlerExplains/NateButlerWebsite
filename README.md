@@ -1,247 +1,225 @@
 # Nate Butler — Premium Speaker Website
 
-**Project Type:** Client  
-**Skill Loadout:** PAUL, Vercel CLI, Framer Motion, MDX + Next.js, Umami/Vercel Analytics  
-**Status:** Graduated — Ready for Build  
+**Project Type:** Client Website  
+**Status:** Phase 1 - Under Development  
 **Created:** 2026-04-09
 
 ---
 
-## Executive Brief
+## Quick Start
 
-A premium personal speaker website positioning **Nate Butler** as a top-tier Global Command Authority in GRC, AI, and Cybersecurity. 
+### Prerequisites
+- Node.js 18+ (LTS)
+- npm or yarn
 
-**Visual North Star:** "Cyber Command Center War Room" — a high-fidelity command center where Nate briefs elite operators from a live operations center aesthetic (dark, luminous neon cyan/purple/magenta, glassmorphism, asymmetry, holographic effects, commanding animations).
+### Setup
 
-**Primary Objectives:**
-1. 🎯 Drive speaker bookings ("Book Me Now" CTA) — **#1 conversion priority**
-2. 🎮 Grow Discord community — **#2 conversion priority**
-3. 📊 Establish premium personal brand as authority in cyber/AI/GRC
-4. ⚡ Achieve exceptional Core Web Vitals (LCP <2.5s, CLS <0.1, INP <100ms)
+```bash
+# Install dependencies
+npm install
 
-**Target Audience:** Fortune 1000 event organizers, L&D decision-makers, cybersecurity conferences, tech summits.
+# Set up environment variables
+cp .env.example .env.local
+# Edit .env.local with your values (Resend API key, etc.)
 
----
+# Run development server
+npm run dev
 
-## Business Context
+# Open http://localhost:3000
+```
 
-### Conversion Strategy
-- **Primary Path:** Hero → "Book Me Now" CTA → Booking inquiry form → Resend confirmation + 24-hour response guarantee
-- **Secondary Path:** Hero → "Join Discord Community" CTA → Discord invite → Community engagement
-- **Success Metrics:** 2-4% booking inquiries, 5-10% Discord joins (7-14% overall conversion rate)
+### Build & Deploy
 
-### Trust Signals & Social Proof
-- Client logos (Fortune 1000 companies, speaking venues)
-- Speaking highlight metrics (e.g., "Briefed 500+ executives")
-- Testimonials from past event organizers
-- "24-Hour Response Guarantee" near booking form
-- Authority signals: podcast episodes, books, media mentions
+```bash
+# Build for production
+npm run build
 
-### Book Me Now Form Fields (Essential for Lead Qualification)
-- Full Name *
-- Email *
-- Event Date / Date Range *
-- Event Type * (Keynote | Workshop | Panel | Private Briefing | Other)
-- Audience Size / Company *
-- Brief Event Details or Topic Requested *
-- Budget Range (optional)
-- Location (optional: In-person | Virtual | Hybrid)
+# Start production server
+npm start
+
+# Deploy to Vercel (recommended)
+# See https://vercel.com/docs/frameworks/nextjs for deployment steps
+```
 
 ---
 
-## Technical Architecture
+## Project Structure
 
-### Tech Stack
-- **Framework:** Next.js 15 (App Router) with TypeScript (strict, no `any` types)
-- **Styling:** Tailwind CSS
-- **UI Components:** shadcn/ui (heavily customized for cyber-aesthetic)
-- **Animations:** Framer Motion (GPU-accelerated, commanding hero animations)
-- **Content:** MDX for books, podcast episodes, events, blog (version-control friendly)
-- **Forms:** Server Actions + Resend (email notifications)
-- **Analytics:** Vercel Analytics + Umami (privacy-respecting, not Google Analytics)
-- **Deployment:** Vercel (primary), optional Firebase Hosting for .web.app domain
-
-### Performance Targets
-- **LCP:** <2.5s (hero animation must not delay primary paint)
-- **CLS:** <0.1 (no unexpected layout shifts)
-- **INP:** <100ms (smooth interactions)
-- **TTFB:** <600ms on Vercel cold starts
-- **Bundle Size:** Stay under 200KB gzipped (JS)
-- **Mobile LCP:** <2.8s (accounting for network variance)
-
-### Code Organization
-- **Structure:** Feature-based folder organization (`/features/*`, `/components/*`, `/lib/*`, `/app/*`)
-- **File Naming:** kebab-case
-- **Components:** Server components by default; client components only for interactions/animations
-- **State Management:** React hooks + Server Actions; no external state library needed initially
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── layout.tsx         # Root layout with metadata
+│   └── page.tsx           # Home page (placeholder)
+├── components/            # Reusable React components
+│   ├── navigation/        # Navigation components
+│   ├── hero/              # Hero section components
+│   ├── sections/          # Page section components
+│   └── ui/                # Base UI components (buttons, cards, inputs)
+├── features/              # Feature-specific logic
+│   ├── booking/           # Booking form and logic
+│   ├── newsletter/        # Newsletter signup
+│   └── analytics/         # Analytics integration
+├── lib/                   # Utility functions and helpers
+│   ├── api/              # API client utilities
+│   ├── types/            # TypeScript types and interfaces
+│   └── utils/            # Helper functions
+└── styles/
+    └── globals.css       # Global styles and design tokens
+```
 
 ---
 
-## Design System: Cyber Intelligence HUD
+## Tech Stack
 
-### Visual Identity
-The entire site must feel like a **high-fidelity command center** — not a template. Every interaction should reinforce "Global Command Authority" positioning.
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript (strict mode)
+- **Styling:** Tailwind CSS + custom design tokens
+- **Animation:** Framer Motion
+- **UI Components:** shadcn/ui (customized)
+- **Forms:** React + Server Actions
+- **Email:** Resend (transactional email)
+- **Analytics:** Vercel Analytics + Umami
+- **Deployment:** Vercel
 
-### Core Aesthetic Pillars
-1. **Intentional Asymmetry & Overlapping Elements** — Reject symmetric grids; vary card widths (60/40 splits), overlap images, position portrait off-center with "digital artifacts" bleeding into negative space
-2. **Heavy Glassmorphism & Backdrop-Blur** — Navigation at 70% opacity + 12px blur; floating cards at 60% opacity + 24px blur; visible and deliberate, reinforcing digital HUD feel
-3. **Neon Underglow & Holographic Gradients** — Ambient shadows using primary (#00e5ff) or secondary (#7000ff) at 5-10% opacity + 40px blur (never black); holographic light-streaks crossing content
-4. **No Hard Borders** — Only glows, background shifts, and ghost lines (outline_variant at 15% opacity); no 1px solid borders
-5. **Subtle Scanlines & Data Overlays** — Thin horizontal scanlines (1-2px, 2-5% opacity) and "data streams" (corner brackets, pixel artifacts) to evoke active HUD
-6. **Hero Animation: Commanding & High-Energy** — Framer Motion animation that feels professional and authoritative, completes within 2 seconds, achieves LCP <2.5s; ideas: animated gradient washes, floating data particles, neon glow pulses, corner bracket animations
+---
+
+## Design System
+
+### Visual North Star
+**Cyber Command Center War Room** — A high-fidelity command center where Nate briefs elite operators on critical strategic challenges.
 
 ### Color Palette
-| Role | Hex | Purpose |
-|------|-----|---------|
-| Surface | #131318 | Deep space black base |
-| Primary | #00e5ff / #c3f5ff | System data, core actions, navigation |
-| Secondary | #7000ff / #d1bcff | Energy pulse, AI/cyber highlights |
-| Tertiary | #ff00e5 / #fface8 | Premium CTAs, signature accents |
-| Neutral | #0a0a0f | Darkest accent layer |
+- **Surface:** `#131318` (deep space black)
+- **Primary:** `#00e5ff` (cyan – system data, core actions)
+- **Secondary:** `#7000ff` (purple – energy pulse, AI/cyber highlights)
+- **Tertiary:** `#ff00e5` (magenta – premium CTAs)
 
 ### Typography
-| Use | Font | Weight | Context |
-|-----|------|--------|---------|
-| Display | Space Grotesk | 700 | Hero statements, high-impact h1/h2 |
-| Headlines/Labels | Space Grotesk | 600 | Technical data, section titles, uppercase labels |
-| Body/Readability | Manrope | 400-500 | Approachable, trustworthy, scannable copy |
+- **Display/Headlines:** Space Grotesk (700 weight)
+- **Body/Copy:** Manrope (400-500 weight)
 
-**Note:** Both fonts available via Google Fonts (variable weights 400–700); load performantly.
-
-### Component Patterns
-- **Buttons:** Pill-shaped (rounded-full) with primary_container + subtle outer glow
-- **Ghost Buttons:** Transparent bg + outline at 40%, jumps to 100% on hover
-- **Input Fields:** No box—bottom border only (outline_variant), transforms to primary glow on active
-- **Cards:** No dividers, surface_container_high with xl (0.75rem) rounding; allow image overlap across boundaries
-- **Navigation:** Floating glassmorphic bar (70% opacity + 12px blur), sticky on scroll
-- **Status Chips:** secondary_container for AI/cyber tags (active system indicators)
+### Core Aesthetic Rules
+1. **Intentional Asymmetry** — No symmetric grids; 60/40 splits, overlapping elements
+2. **Heavy Glassmorphism** — 70% opacity nav + 12px blur, 60% cards + 24px blur
+3. **Neon Underglow** — Primary/secondary at 5-10% opacity + 40px blur (never black shadows)
+4. **No Hard Borders** — Only glows, background shifts, ghost lines
+5. **Subtle Scanlines** — 1-2px horizontal lines at 2-5% opacity
+6. **Commanding Hero Animation** — Framer Motion, professional/authoritative, LCP <2.5s
 
 ---
 
-## Phase & Feature Breakdown
+## Key Pages
 
-### Phase 1: MVP — Launch Ready (Core Deliverables)
-**Focus:** Immediate presence, core conversion, premium first impression
+### Phase 1 (MVP — Launch Ready)
+- **Hero / Home** — Commanding animation, asymmetric layout, primary CTAs
+- **Navigation** — Floating glassmorphic header, sticky on scroll
+- **About Nate** — Bio, expertise pillars, trust signals
+- **Book Me Now** — Booking inquiry form, response guarantee, trust signals
+- **Footer** — Social links, repeated CTAs, legal links, glassmorphic styling
 
-**Essential Pages:**
-1. **Hero / Home** — Commanding Framer Motion animation, asymmetric layout, neon accents, holographic overlays, primary "Book Me Now" CTA + secondary "Join Discord" CTA
-2. **Floating Glassmorphic Navigation** — Header at 70% opacity + 12px blur, nav items (Home | About | Book Me Now | Join Discord), responsive mobile hamburger
-3. **About Nate** — Bio, expertise pillars (GRC, AI, Cybersecurity), career highlights, trust signals, call-to-action to Book Me Now
-4. **Book Me Now Page** — Value proposition, booking inquiry form (see Business Context above), response guarantee, trust signals (logos, testimonials), clear next steps
-5. **Footer** — Social links (LinkedIn, Twitter/X, Discord), repeated CTAs, legal links, contact email, glassmorphic styling
-6. **Mobile Responsiveness** — All asymmetric layouts preserved on mobile; CTAs thumb-accessible; no loss of premium feel
+### Phase 2 (Content & Community Authority)
+- **Podcast: CyberTalks Live** — MDX-driven episodes, searchable
+- **Books** — Featured books with overlapping card design
+- **Companies / Past Speaking Events** — Client logos, testimonials, trust signals
 
-**Quality Gates:**
-- [ ] Hero animation impressive, LCP <2.5s
-- [ ] Book Me Now form functional, email delivery confirmed (Resend)
-- [ ] All CTAs visible, clickable, above fold
-- [ ] Core Web Vitals all green (LCP <2.5s, CLS <0.1, INP <100ms)
-- [ ] Mobile experience maintains asymmetry and command-center feel
-- [ ] Deployed to Vercel with <3s cold start
-
-### Phase 2: Content & Community Authority
-**Focus:** Build credibility, showcase expertise, drive engagement
-
-**Pages:**
-- **Podcast: CyberTalks Live** — Episode list (MDX-driven), featured episodes, listen buttons, asymmetric card grid, search/filter
-- **Books** — Featured books with covers, descriptions, purchase links, overlapping card design
-- **Companies / Past Speaking Events** — Client logos, event names/dates, audience sizes, testimonials, timeline/carousel visual, trust messaging
-
-### Phase 3: Engagement & Expansion
-**Focus:** Deeper engagement, coaching opportunities, content polish
-
-**Pages:**
-- **Coaching / Workshops** — Training offerings, format options, inquiry form
-- **Calendar / Availability** — Public speaking calendar (optional), booking integration (optional)
-- **Content Polish & MDX Setup** — Blog/insights, search/filtering, social sharing, related articles
+### Phase 3 (Engagement & Expansion)
+- **Coaching / Workshops** — Training offerings, inquiry form
+- **Calendar / Availability** — Public speaking calendar (optional)
+- **Blog / Insights** — MDX articles on GRC, AI, cybersecurity
 
 ---
 
-## Key Design Decisions
+## Performance Targets
 
-| Decision | Rationale |
-|----------|-----------|
-| Next.js 15 App Router | Modern, performant, RSC support; aligns with Vercel deployment |
-| shadcn/ui (customized) | Component flexibility, design system control, dark mode built-in |
-| Framer Motion | Smooth animations, GPU-accelerated, excellent timing controls |
-| MDX for content | Version-control friendly, component + content fusion, easy updates |
-| Server Actions | No separate API needed for forms; simpler, secure architecture |
-| Vercel Analytics + Umami | Privacy-first, integrated monitoring; no third-party tracking risk |
-| Strict TypeScript | Catches errors early, improves long-term maintainability |
-| Asymmetric Design System | Signals premium, custom, high-energy experience; not templated |
+- **LCP:** <2.5s (hero animation must not delay primary paint)
+- **CLS:** <0.1
+- **INP:** <100ms
+- **TTFB:** <600ms on Vercel
+- **Bundle Size:** <200KB gzipped (JS)
 
 ---
 
-## Content Assets & Dependencies
+## Conversion Goals
 
-### Required Assets (Provided by Nate)
-- Professional photography (headshots, action shots, portrait for hero)
-- Book covers (featured books for Phase 2)
-- Podcast artwork and episode metadata (Phase 2)
-- Company/client logos (past speaking events, trust signals)
-- Testimonials or event organizer quotes (if available)
-
-### External Services
-- **Resend** — Transactional email (booking form notifications, auto-replies)
-- **Vercel** — Hosting and deployment
-- **Discord** — Community platform (invite link)
-- **Umami** — Privacy-respecting analytics
-- **Google Fonts** — Space Grotesk and Manrope (variable weights)
+- **Primary:** 2-4% of visitors submit "Book Me Now" inquiries
+- **Secondary:** 5-10% of visitors join Discord community
+- **Overall:** 7-14% conversion rate (at least one desired action)
 
 ---
 
-## Open Questions / Placeholders
+## Available Scripts
 
-- [ ] **Professional Assets:** Exact paths/locations for Nate's photography, book covers, podcast metadata
-- [ ] **Speaking Events:** List of past companies, events, audience sizes, testimonials for trust signals
-- [ ] **Discord Server:** Existing server URL or need to create new invite link?
-- [ ] **Coaching Details:** Specific offerings, pricing, formats for Phase 3?
-- [ ] **Blog Content:** Articles/topics for Phase 3 blog/insights section?
-- [ ] **Analytics:** Existing Vercel or Umami accounts, or set up fresh?
-
----
-
-## Success Metrics (Post-Launch)
-
-**Conversion:**
-- 2-4% of visitors submit "Book Me Now" inquiries
-- 5-10% of visitors join Discord community
-- 7-14% overall conversion (at least one desired action)
-
-**Performance:**
-- All Core Web Vitals green (LCP <2.5s, CLS <0.1, INP <100ms)
-- Hero animation impressive and professional; 95%+ user approval
-- Mobile experience preserves asymmetry; 90%+ of mobile users satisfied
-
-**Engagement:**
-- 2.5+ pages per session average
-- 70%+ scroll depth (visitors reach footer)
-- 15%+ return visitor rate within first month
-- 20%+ month-over-month organic search growth
+```bash
+npm run dev         # Start development server (http://localhost:3000)
+npm run build       # Build production bundle
+npm run start       # Start production server
+npm run lint        # Run ESLint and type checking
+npm run type-check  # Run TypeScript type checking
+```
 
 ---
 
-## Next Steps
+## Environment Variables
 
-1. **Initialize with PAUL:** Run `/paul:init` in this directory to set up managed phases and planning
-2. **Phase 1 Build:** Implement hero, navigation, about, booking form, footer with design system
-3. **Quality Verification:** Test Core Web Vitals, mobile responsiveness, form delivery
-4. **Phase 2 Content:** Add podcast, books, past events sections
-5. **Launch & Monitor:** Deploy to Vercel, set up Umami/Vercel Analytics, monitor conversion metrics
-6. **Iterate:** A/B test CTA placement, content updates, engagement optimization
+See `.env.example` for required and optional environment variables:
+- `RESEND_API_KEY` — Email delivery service
+- `NEXT_PUBLIC_DISCORD_INVITE_URL` — Discord community link
+- `NEXT_PUBLIC_VERCEL_ANALYTICS_ID` — Analytics (optional)
+- `NEXT_PUBLIC_UMAMI_WEBSITE_ID` — Privacy-first analytics (optional)
+
+---
+
+## Development Workflow
+
+### PAUL-Managed Phases
+
+This project uses PAUL for structured phase planning and tracking.
+
+**Current Phase:** Phase 1 (MVP — Launch Ready)
+
+View phase details: See `.paul/ROADMAP.md`
+
+```bash
+# After making changes, commit and reference PAUL phase:
+git add .
+git commit -m "feat: Phase 1 implementation
+
+- Hero section with Framer Motion animation
+- Floating glassmorphic navigation
+- About Nate section
+
+Relates to: Phase 1 of PAUL roadmap"
+```
+
+---
+
+## Code Quality
+
+- **Strict TypeScript:** No `any` types allowed
+- **ESLint:** Enforces next/core-web-vitals
+- **Type Checking:** Run `npm run type-check` before committing
+- **File Naming:** kebab-case for files, PascalCase for React components
 
 ---
 
 ## References
 
-**Original Planning:** See `projects/nate-butler-website/PLANNING.md` in the seed directory for full ideation depth.
+- **Original Planning:** `/Users/nateb/Projects/NateButlerWebsite/PLANNING.md`
+- **Design Docs:** `/Users/nateb/Projects/NateButlerWebsite/DESIGN.md`
+- **PAUL Roadmap:** `.paul/ROADMAP.md`
+- **PAUL Project Brief:** `.paul/PROJECT.md`
 
-**Design Documentation:** See `DESIGN.md` (design system rules) and `claude.md` (project brief) in the original project.
+---
 
-**Frameworks & Tools:**
-- Next.js 15 Docs: https://nextjs.org/docs
-- shadcn/ui: https://ui.shadcn.com/
-- Framer Motion: https://www.framer.com/motion/
-- Tailwind CSS: https://tailwindcss.com/
-- Vercel: https://vercel.com/
-- Resend: https://resend.com/
+## Useful Links
+
+- [Next.js 15 Docs](https://nextjs.org/docs)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- [Framer Motion Docs](https://www.framer.com/motion/)
+- [shadcn/ui Components](https://ui.shadcn.com/)
+- [Vercel Deployment](https://vercel.com/docs/frameworks/nextjs)
+- [Resend Email API](https://resend.com/)
+
+---
+
+*Next step: Run `/paul:plan` to create detailed Phase 1 implementation plan*
