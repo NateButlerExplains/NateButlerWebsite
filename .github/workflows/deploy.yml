@@ -23,18 +23,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to Firebase
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: /tmp/firebase-key.json
         run: |
           echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT_NATEBUTLERTALKS }}" > /tmp/firebase-key.json
-          echo "Checking firebase key file..."
-          if [ -f /tmp/firebase-key.json ]; then
-            echo "✓ Firebase key file created"
-            echo "File size: $(wc -c < /tmp/firebase-key.json) bytes"
-            head -c 50 /tmp/firebase-key.json
-          else
-            echo "✗ Firebase key file NOT found"
-            exit 1
-          fi
           npm install -g firebase-tools
-          firebase deploy --project natebutlertalks
+          GOOGLE_APPLICATION_CREDENTIALS=/tmp/firebase-key.json firebase deploy --project natebutlertalks
