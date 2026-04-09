@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import '@/styles/globals.css'
+import { CyberBackground } from '@/components/ui/cyber-background'
+import { Navbar } from '@/components/nav/navbar'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -25,6 +27,13 @@ export default function RootLayout({
         <meta name="color-scheme" content="dark" />
       </head>
       <body className="bg-cyber-dark text-on-surface antialiased">
+        {/* Global cyber intelligence HUD background */}
+        <CyberBackground />
+
+        {/* Navigation bar */}
+        <Navbar />
+
+        {/* Page content with top padding for fixed navbar */}
         {children}
       </body>
     </html>

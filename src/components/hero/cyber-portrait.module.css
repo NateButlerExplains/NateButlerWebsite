@@ -1,0 +1,216 @@
+@keyframes scanLine {
+  0% {
+    top: -10%;
+    opacity: 0.3;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    top: 110%;
+    opacity: 0.3;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.8;
+    box-shadow: 0 0 6px #00e5ff;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 8px #00e5ff;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.portraitContainer {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.portraitBorder {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 1rem;
+  pointer-events: none;
+}
+
+.portraitGlow {
+  position: absolute;
+  inset: -4px;
+  border-radius: 1rem;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(0, 229, 255, 0.05) 0%,
+    transparent 75%
+  );
+  filter: blur(12px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.portraitImage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(0.75);
+  transition: all 700ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+.portraitContainer:hover .portraitImage {
+  filter: grayscale(0) brightness(1.05) saturate(1.15);
+  transform: scale(1.05);
+}
+
+.scanLine {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00e5ff, transparent);
+  box-shadow: 0 0 8px #00e5ff;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  transition: opacity 0.4s ease-out;
+}
+
+.portraitContainer:hover .scanLine {
+  opacity: 0.4;
+  animation: scanLine 4s linear infinite;
+}
+
+.holographicOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(0, 229, 255, 0.05) 0%,
+    rgba(209, 188, 255, 0.02) 100%
+  );
+  opacity: 0.3;
+  transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 3;
+  mix-blend-mode: screen;
+}
+
+.portraitContainer:hover .holographicOverlay {
+  opacity: 0.6;
+}
+
+.glassPanel {
+  position: absolute;
+  backdrop-filter: blur(12px);
+  background: rgba(19, 19, 24, 0.5);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 0.75rem;
+  z-index: 4;
+  font-family: 'Manrope', sans-serif;
+}
+
+.panelTopLeft {
+  top: 16px;
+  left: 16px;
+  padding: 12px 16px;
+  width: fit-content;
+}
+
+.panelBottomRight {
+  bottom: 16px;
+  right: 16px;
+  padding: 14px 16px;
+  width: fit-content;
+}
+
+.statusIndicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00e5ff;
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.statusText {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #00e5ff;
+}
+
+.progressBar {
+  width: 80px;
+  height: 3px;
+  background: rgba(0, 229, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #00e5ff, #d1bcff, #00e5ff);
+  background-size: 200% 100%;
+  animation: shimmer 5s linear infinite;
+  border-radius: 2px;
+}
+
+.securityIcon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.lockIcon {
+  width: 12px;
+  height: 12px;
+  stroke: #d1bcff;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.biometricText {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #d1bcff;
+  line-height: 1.2;
+}
+
+.encryptedBadge {
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #00e5ff;
+  margin-top: 6px;
+}
