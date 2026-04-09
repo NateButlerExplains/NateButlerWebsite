@@ -23,7 +23,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden flex items-center pt-28 pb-20">
+    <section className="relative w-full hero-section overflow-hidden flex items-center pt-28 pb-20">
       {/* Content Container — Aligned with navbar (max-w-screen-2xl, px-8) */}
       <motion.div
         className="relative z-10 w-full max-w-screen-2xl mx-auto px-6 lg:px-8"

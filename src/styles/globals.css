@@ -27,6 +27,17 @@ body {
   font-family: var(--font-manrope);
 }
 
+/* Hero section height - accounts for navbar */
+.hero-section {
+  min-height: calc(100vh - 60px);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: calc(100vh - 50px);
+  }
+}
+
 /* Cyber Command Center aesthetic */
 * {
   @apply border-outline-variant;
