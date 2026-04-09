@@ -22,6 +22,17 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Verify Firebase Token
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: |
+          if [ -z "$FIREBASE_TOKEN" ]; then
+            echo "❌ FIREBASE_TOKEN is empty"
+            exit 1
+          else
+            echo "✓ FIREBASE_TOKEN is set (${#FIREBASE_TOKEN} chars)"
+          fi
+
       - name: Deploy to Firebase
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
