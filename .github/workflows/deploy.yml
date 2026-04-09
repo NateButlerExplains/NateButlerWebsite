@@ -22,18 +22,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Set up Firebase credentials
-        env:
-          FIREBASE_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_NATEBUTLERTALKS }}
-        run: |
-          mkdir -p ~/.config/gcloud
-          echo "$FIREBASE_KEY" > ~/.config/gcloud/firebase-key.json
-          echo "::add-mask::$FIREBASE_KEY"
-
       - name: Deploy to Firebase
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: ~/.config/gcloud/firebase-key.json
+          GOOGLE_APPLICATION_CREDENTIALS: /tmp/firebase-key.json
         run: |
+          echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT_NATEBUTLERTALKS }}" > /tmp/firebase-key.json
           npm install -g firebase-tools
-          firebase --version
-          firebase deploy --project natebutlertalks --debug
+          firebase deploy --project natebutlertalks
