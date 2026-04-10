@@ -8,7 +8,7 @@ import Footer from '@/components/footer/footer'
 export default function Home() {
   return (
     <>
-      <main className="overflow-hidden bg-surface">
+      <main className="overflow-hidden bg-surface pb-16 md:pb-0">
         <HeroSection />
         <AboutSection />
         <AboutCinematicSection />

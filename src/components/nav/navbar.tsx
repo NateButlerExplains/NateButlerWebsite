@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
@@ -11,13 +10,11 @@ import { motion } from 'framer-motion'
  * - Semi-transparent dark background with backdrop blur
  * - Cyan glow shadow
  * - Logo on left (Nate Butler)
- * - Center menu links (HOME, ABOUT, PODCAST, BOOKS, COACHING)
- * - Right-side CTAs (Join Discord, Book Now)
- * - Mobile-responsive hamburger menu
+ * - Center menu links (HOME, ABOUT, PODCAST, BOOKS, COACHING) — desktop only
+ * - Right-side CTAs (Join Discord, Book Now) — desktop only
+ * - Mobile: bell icon only (navigation via bottom nav bar)
  */
 export function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
   const navLinks = [
     { label: 'HOME', href: '/', active: true },
     { label: 'ABOUT', href: '#about' },
@@ -77,14 +74,13 @@ export function Navbar() {
             ))}
           </motion.div>
 
-          {/* Right Side — CTAs */}
+          {/* Right Side CTAs — Desktop Only */}
           <motion.div
             className="hidden md:flex items-center gap-6"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {/* Join Discord Button */}
             <button
               onClick={() => {
                 const discordUrl = process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || '#'
@@ -95,7 +91,6 @@ export function Navbar() {
               Join Discord
             </button>
 
-            {/* Book Now Button */}
             <button
               onClick={() => {
                 window.location.href = '/book-me-now'
@@ -109,83 +104,29 @@ export function Navbar() {
             </button>
           </motion.div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile: Bell Icon Only */}
           <motion.button
             className="md:hidden p-2 text-[#00E5FF]"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             whileTap={{ scale: 0.95 }}
+            style={{
+              filter: 'drop-shadow(0 0 6px rgba(0, 229, 255, 0.4))',
+            }}
           >
             <svg
-              width="24"
-              height="24"
+              width="22"
+              height="22"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              {mobileMenuOpen ? (
-                <>
-                  <path d="M18 6L6 18M6 6l12 12" />
-                </>
-              ) : (
-                <>
-                  <path d="M3 6h18M3 12h18M3 18h18" />
-                </>
-              )}
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
             </svg>
           </motion.button>
         </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <motion.div
-            className="md:hidden mt-4 pb-4 border-t border-white/10"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="flex flex-col gap-4 mt-4">
-              {navLinks.map((link, idx) => (
-                <Link
-                  key={idx}
-                  href={link.href}
-                  className={`font-space-grotesk text-sm uppercase tracking-tight transition-all duration-200 ${
-                    link.active ? 'text-[#00E5FF]' : 'text-white/70 hover:text-white'
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-
-              <div className="border-t border-white/10 pt-4 flex flex-col gap-3">
-                <button
-                  onClick={() => {
-                    const discordUrl = process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || '#'
-                    window.open(discordUrl, '_blank')
-                    setMobileMenuOpen(false)
-                  }}
-                  className="font-space-grotesk text-xs uppercase tracking-widest text-white/70 transition-all duration-200 hover:text-[#fface8] text-left"
-                >
-                  Join Discord
-                </button>
-
-                <button
-                  onClick={() => {
-                    window.location.href = '/book-me-now'
-                    setMobileMenuOpen(false)
-                  }}
-                  className="font-space-grotesk text-sm font-bold uppercase tracking-wider px-6 py-2 rounded-full bg-[#00E5FF] text-slate-900 transition-all duration-200 w-full"
-                  style={{
-                    boxShadow: '0 0 20px rgba(0, 229, 255, 0.4)',
-                  }}
-                >
-                  Book Now
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        )}
       </div>
     </nav>
   )

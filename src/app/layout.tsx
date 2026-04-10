@@ -2,11 +2,13 @@ import type { Metadata, Viewport } from 'next'
 import '@/styles/globals.css'
 import { CyberBackground } from '@/components/ui/cyber-background'
 import { Navbar } from '@/components/nav/navbar'
+import { MobileBottomNav } from '@/components/nav/mobile-bottom-nav'
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
+  viewportFit: 'cover',
 }
 
 export const metadata: Metadata = {
@@ -35,6 +37,9 @@ export default function RootLayout({
 
         {/* Page content with top padding for fixed navbar */}
         {children}
+
+        {/* Mobile bottom navigation */}
+        <MobileBottomNav />
       </body>
     </html>
   )

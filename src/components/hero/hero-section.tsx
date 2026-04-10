@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, easeOut } from 'framer-motion'
 import { CyberPortrait } from './cyber-portrait'
 
 /**
@@ -19,7 +19,7 @@ export function HeroSection() {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8, ease: 'easeOut' },
+    transition: { duration: 0.8, ease: easeOut },
   }
 
   return (
@@ -34,8 +34,8 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
           {/* LEFT COLUMN: Content (7 columns) — Left-aligned */}
           <div className="w-full lg:col-span-7">
-            {/* Badge */}
-            <motion.div {...fadeInUp} className="mb-16">
+            {/* Badge — Hidden on mobile */}
+            <motion.div {...fadeInUp} className="mb-16 hidden md:block">
               <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full backdrop-blur-lg bg-purple-950/40 border border-purple-500/50">
                 <svg
                   width="14"
@@ -59,11 +59,11 @@ export function HeroSection() {
               className="mb-10"
             >
               <h1 className="font-black leading-none lg:leading-tight tracking-tighter space-y-0">
-                <span className="block text-8xl lg:text-9xl text-white font-space-grotesk">
+                <span className="block text-5xl sm:text-6xl lg:text-9xl text-white font-space-grotesk">
                   Unlock Your
                 </span>
                 <span
-                  className="block text-8xl lg:text-9xl font-space-grotesk"
+                  className="block text-5xl sm:text-6xl lg:text-9xl font-space-grotesk"
                   style={{
                     background: 'linear-gradient(to right, #00C9FF, #D1BCFF)',
                     WebkitBackgroundClip: 'text',
@@ -101,7 +101,7 @@ export function HeroSection() {
                 onClick={() => {
                   window.location.href = '/book-me-now'
                 }}
-                className="group inline-flex items-center justify-center px-8 py-4 rounded-full bg-cyan-400 text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-1 active:scale-95"
+                className="group w-full md:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-cyan-400 text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-1 active:scale-95"
                 style={{
                   boxShadow: '0 0 30px rgba(0, 229, 255, 0.5)',
                 }}
@@ -123,7 +123,7 @@ export function HeroSection() {
                   const discordUrl = process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || '#'
                   window.open(discordUrl, '_blank')
                 }}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-transparent border-2 border-slate-600 text-slate-100 font-space-grotesk font-bold uppercase tracking-widest text-base transition-all duration-200 hover:border-cyan-400 hover:text-cyan-400 active:scale-95"
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-transparent border-2 border-slate-600 text-slate-100 font-space-grotesk font-bold uppercase tracking-widest text-base transition-all duration-200 hover:border-cyan-400 hover:text-cyan-400 active:scale-95"
               >
                 <svg
                   width="18"
@@ -139,9 +139,9 @@ export function HeroSection() {
               </button>
             </motion.div>
 
-            {/* Stats Bar with border */}
+            {/* Stats Bar with border — Hidden on mobile */}
             <motion.div
-              className="flex flex-col md:flex-row gap-8 md:gap-12 pt-12 border-t border-white/10"
+              className="hidden md:flex flex-row gap-8 md:gap-12 pt-12 border-t border-white/10"
               {...fadeInUp}
               transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }}
             >
@@ -199,9 +199,9 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* RIGHT COLUMN: Cyber Portrait (5 columns) */}
+          {/* RIGHT COLUMN: Cyber Portrait (5 columns) — Hidden on mobile */}
           <motion.div
-            className="w-full lg:col-span-5 flex justify-center lg:justify-end items-center"
+            className="hidden md:flex w-full lg:col-span-5 justify-center lg:justify-end items-center"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
