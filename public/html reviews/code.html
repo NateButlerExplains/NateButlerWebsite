@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#3a0033",
+                        "outline": "#849396",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#fface8",
+                        "tertiary-fixed": "#ffd7f0",
+                        "on-secondary-fixed-variant": "#5700c9",
+                        "on-secondary": "#3c0090",
+                        "secondary-container": "#7000ff",
+                        "surface-container-low": "#1b1b20",
+                        "on-primary-fixed": "#001f24",
+                        "secondary-fixed": "#e9ddff",
+                        "on-primary-fixed-variant": "#004f58",
+                        "on-primary-container": "#00626e",
+                        "tertiary": "#ffe6f4",
+                        "surface-container-highest": "#35343a",
+                        "outline-variant": "#3b494c",
+                        "secondary": "#d1bcff",
+                        "on-tertiary": "#5e0053",
+                        "on-error": "#690005",
+                        "surface-tint": "#00daf3",
+                        "on-background": "#e4e1e9",
+                        "on-surface-variant": "#bac9cc",
+                        "inverse-surface": "#e4e1e9",
+                        "surface-container-high": "#2a292f",
+                        "primary": "#c3f5ff",
+                        "primary-fixed-dim": "#00daf3",
+                        "on-tertiary-container": "#a40092",
+                        "on-secondary-fixed": "#23005b",
+                        "surface-dim": "#131318",
+                        "tertiary-container": "#ffbceb",
+                        "inverse-on-surface": "#303036",
+                        "surface-bright": "#39383e",
+                        "on-surface": "#e4e1e9",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#ddcdff",
+                        "surface-variant": "#35343a",
+                        "on-primary": "#00363d",
+                        "secondary-fixed-dim": "#d1bcff",
+                        "error": "#ffb4ab",
+                        "primary-container": "#00e5ff",
+                        "surface-container": "#1f1f25",
+                        "surface": "#131318",
+                        "background": "#131318",
+                        "inverse-primary": "#006875",
+                        "on-tertiary-fixed-variant": "#840076",
+                        "surface-container-lowest": "#0e0e13",
+                        "primary-fixed": "#9cf0ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #131318;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.05) 0%, transparent 50%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+        }
+        .cyber-glow-primary {
+            text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+        }
+        .neon-button-glow {
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+        }
+        .glass-card {
+            backdrop-filter: blur(24px);
+        }
+        .hologram-line {
+            background: linear-gradient(90deg, transparent, #00e5ff, transparent);
+            height: 1px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl dark:bg-[#131318]/70 shadow-[0_4px_20px_rgba(0,229,255,0.1)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-[#00E5FF] drop-shadow-[0_0_8px_rgba(0,229,255,0.5)] font-headline">
+                CYBER INTEL
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-headline tracking-tight text-sm uppercase text-[#00E5FF] border-b-2 border-[#00E5FF] pb-1" href="#">Home</a>
+<a class="font-headline tracking-tight text-sm uppercase text-white/70 hover:text-white transition-colors" href="#">About</a>
+<a class="font-headline tracking-tight text-sm uppercase text-white/70 hover:text-white transition-colors" href="#">Podcast</a>
+<a class="font-headline tracking-tight text-sm uppercase text-white/70 hover:text-white transition-colors" href="#">Books</a>
+<a class="font-headline tracking-tight text-sm uppercase text-white/70 hover:text-white transition-colors" href="#">Companies</a>
+<a class="font-headline tracking-tight text-sm uppercase text-white/70 hover:text-white transition-colors" href="#">Coaching</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="hidden lg:block font-headline text-xs tracking-widest uppercase text-white/70 hover:text-[#fface8] transition-all duration-300">Join Discord</button>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-full font-headline text-sm font-bold uppercase tracking-wider neon-button-glow hover:scale-105 transition-all">Book Now</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 blur-[120px] rounded-full"></div>
+</div>
+<div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+<div class="lg:col-span-7 space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container/20 border border-secondary/30 rounded-full">
+<span class="material-symbols-outlined text-secondary text-sm" data-weight="fill">verified</span>
+<span class="text-xs font-headline tracking-widest uppercase text-secondary">Global Command Authority</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-headline font-bold leading-tight tracking-tighter text-on-surface">
+                    Unlock Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary cyber-glow-primary">Cyber Future</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-2xl font-body leading-relaxed">
+                    Book the GRC, AI, Cyber, IT, and Tech Mastery Speaker. Delivering high-frequency strategic intelligence for the next generation of digital defense.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 pt-4">
+<button class="bg-primary-container text-on-primary-fixed px-8 py-4 rounded-full font-headline font-black text-lg tracking-widest uppercase neon-button-glow hover:translate-y-[-2px] active:scale-95 transition-all">
+                        BOOK ME NOW
+                    </button>
+<button class="group flex items-center gap-3 border border-outline-variant hover:border-secondary px-8 py-4 rounded-full font-headline font-bold text-lg tracking-widest uppercase transition-all">
+<span class="material-symbols-outlined text-secondary group-hover:scale-110 transition-transform">forum</span>
+                        Join My Discord Community
+                    </button>
+</div>
+<div class="grid grid-cols-3 gap-8 pt-12 border-t border-outline-variant/30">
+<div>
+<div class="text-3xl font-headline font-bold text-primary">500+</div>
+<div class="text-xs uppercase tracking-widest text-on-surface-variant">Keynotes</div>
+</div>
+<div>
+<div class="text-3xl font-headline font-bold text-secondary">40+</div>
+<div class="text-xs uppercase tracking-widest text-on-surface-variant">Fortune 100s</div>
+</div>
+<div>
+<div class="text-3xl font-headline font-bold text-tertiary-fixed-dim">15M</div>
+<div class="text-xs uppercase tracking-widest text-on-surface-variant">Reach</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative w-full aspect-square rounded-2xl overflow-hidden group">
+<!-- Holographic UI Elements -->
+<div class="absolute top-4 left-4 z-20 p-4 glass-card bg-surface-container/60 border border-primary/20 rounded-xl">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-headline uppercase tracking-tighter text-primary">System Online</span>
+</div>
+<div class="w-24 h-1 bg-white/10 rounded-full overflow-hidden">
+<div class="w-2/3 h-full bg-primary"></div>
+</div>
+</div>
+<div class="absolute bottom-8 right-8 z-20 p-4 glass-card bg-surface-container/60 border border-secondary/20 rounded-xl">
+<span class="material-symbols-outlined text-secondary block mb-1">security</span>
+<div class="text-[10px] font-headline uppercase text-white/70">Bio-Metric Lock</div>
+<div class="text-xs font-bold text-secondary tracking-widest">ENCRYPTED</div>
+</div>
+<!-- Lightning Overlay effects (represented via css gradients) -->
+<div class="absolute inset-0 pointer-events-none z-10 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/20 mix-blend-overlay"></div>
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Professional portrait of a confident cybersecurity speaker in a high-tech environment with cyan and magenta holographic lighting and digital energy pulses." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChtmSRUSFa735TWVEeVJRL_fEXCWtOao9GVi6PBokEJF9UCYPFJHVEaTqtDQ4ibizGMNPiI_lFE30ZqMiJI7fZ6RAMDVqRwuPsN6LkQwJHFVLw-TvIeShsIKJJYpHK6GQ3GR5laYNySA6auaRwJNRxVGG5peJEIB-XcwidPj2b9GrWhob337kp9xlAQvK9pSlJC5uR12EtliSNwYFIOOTeQc6o9fz6gx-d3j5Co5RyUNhIW62gArNFWied_hnR-LROuFpzEgn6fuvn"/>
+</div>
+<!-- Electric lightning-like accent -->
+<div class="absolute -inset-4 border border-primary/20 rounded-2xl -z-10 blur-sm"></div>
+<div class="absolute -inset-2 border border-secondary/10 rounded-2xl -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Top Cybersecurity Books -->
+<section class="py-24 bg-surface-container-lowest overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-4xl font-headline font-bold text-white uppercase tracking-tight">Top Cybersecurity <span class="text-primary">Books</span></h2>
+<p class="text-on-surface-variant mt-2 font-body">Hard-hitting literature on GRC, AI, and digital warfare.</p>
+</div>
+<button class="flex items-center gap-2 text-primary font-headline text-sm uppercase tracking-widest hover:gap-4 transition-all">
+                    View Library <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="flex gap-8 overflow-x-auto pb-8 scrollbar-hide no-scrollbar">
+<!-- Book Card 1 -->
+<div class="min-w-[280px] group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 shadow-2xl transition-transform group-hover:scale-105 duration-500">
+<img class="w-full h-full object-cover" data-alt="Cover of a futuristic technology book with abstract digital motherboard patterns and glowing cyan text typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpYS0b768idKOqk-7YXdx9HEITJK-NV8qe6BUjTdE-eepyq-BDC-u2EDlkDD6kZx7PjLYrMUmOo_wMdBz-NbGKeneVTwgTtZbvIcxlMSZ3K7Nor5v4R0medMtZsnWMMwP4mh8cwiu79aEPTZ9f2z5QXv93JFdUzPxrskjjST1fjr82t5RJQpdwxt3b3ILaFS0bFoSZq7z3VbkAPlfy7Z2LN-7-CWDWjF5DP8ZRslwuCa5sIu0YpbDcu4Ydh5FV7eKGCdAf0lEVaWNS"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="px-2 py-1 bg-primary-container/20 text-primary text-[10px] font-headline uppercase rounded border border-primary/30">Bestseller</span>
+</div>
+</div>
+<h3 class="font-headline font-bold text-lg text-white">THE AI FRONTIER</h3>
+<p class="text-on-surface-variant text-sm font-body">Navigating the GRC paradox in 2024</p>
+</div>
+<!-- Book Card 2 -->
+<div class="min-w-[280px] group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 shadow-2xl transition-transform group-hover:scale-105 duration-500">
+<img class="w-full h-full object-cover" data-alt="Professional book cover design showing abstract 3D cubes and neon purple lighting accents with a high-tech corporate feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5wQKAk4x9hHcXePTbgco1-ysmGtL3mCEvBggIs9ST4ts5AkZjCwd7OJWGzTA0PmLe3cp7lGEBfGA5XbeaNwpy4XVKPyWomnIGPGdX9BLGylzES_LMbto35IYIUn3_HkJ9gZKnl0C2rVtXR89WP6MEvbamS1FXD_j6zJud4TKmaJBHe6O1TR0HoRebjqbYYA9HrMO1e6cWnZfHR5xZ76o3kWd6mFL8YjPxDMPwau2VOMYGnGnhL89S-1xvUKbmrt15f6ufANnyP-ca"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="px-2 py-1 bg-secondary-container/20 text-secondary text-[10px] font-headline uppercase rounded border border-secondary/30">Mastery Series</span>
+</div>
+</div>
+<h3 class="font-headline font-bold text-lg text-white">CYBER COMMAND</h3>
+<p class="text-on-surface-variant text-sm font-body">Architecture for high-speed resilience</p>
+</div>
+<!-- Book Card 3 -->
+<div class="min-w-[280px] group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 shadow-2xl transition-transform group-hover:scale-105 duration-500">
+<img class="w-full h-full object-cover" data-alt="Dark aesthetic book cover featuring a central digital eye or aperture with glowing light leaking from the center, futuristic cyber vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwul_xBM148g7vAWbD8zZQW9NLdA1fMW2zu_ubdVZhnOmCU9Lg-k51__mblv8QmVcVpVGmX4Q3ZhWsP5kx5MARMAWocpBlbIWjb_1zaOgPuciQQiJ41axs5wc1WmezKQUjamz1bI7gTXTHQ3LEdApw_Fm8Ld4vSh3ce_syavXUWmAV_WESkYxc1U8lwTVP8hF1vvpjfzpa7Hf7QlZ6uZcqa_IXM7tnNVbDDCwTXuJWC9VOjLdMSoglRWNh2xhc7qDFybo9XYB_elYp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="px-2 py-1 bg-tertiary-container/20 text-tertiary-fixed-dim text-[10px] font-headline uppercase rounded border border-tertiary/30">New Release</span>
+</div>
+</div>
+<h3 class="font-headline font-bold text-lg text-white">THE DIGITAL VAULT</h3>
+<p class="text-on-surface-variant text-sm font-body">Zero Trust in an infinite world</p>
+</div>
+<!-- Book Card 4 -->
+<div class="min-w-[280px] group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 shadow-2xl transition-transform group-hover:scale-105 duration-500">
+<img class="w-full h-full object-cover" data-alt="Abstract satellite view of a digital world map with interconnected network nodes and glowing energy currents in deep blue and teal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVPkBchvsBVOZaUjq7KioLdhnNllHevVP0o7kvjeA3nf54GsWFHxT-mih_sWU6hJpQhCAY0eZgcLzM4yCwfHc075mSFq4KKPPzQCTBaKleadtlIG5GqaD6teLko_Y4TKTBIYEpdRPEaHDmmOwoXltCo8tN0OGgtfELfnmSE_8dx6D_olSDGDOYZ7GOCYO0-d7Kp9LqlDZRjjZ3t8XFj86Y9Y_pstlsZboRZj2qTVu70pUxFsxadLqhVeJZCSyX30WUROHcj3T_OYiF"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent"></div>
+</div>
+<h3 class="font-headline font-bold text-lg text-white">GLOBAL INTEL</h3>
+<p class="text-on-surface-variant text-sm font-body">Geopolitics of the silicon curtain</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CyberTalks Podcast Section -->
+<section class="py-24 bg-surface relative">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative order-2 lg:order-1">
+<div class="aspect-video bg-surface-container-high rounded-2xl border border-outline-variant p-8 flex items-center justify-center relative overflow-hidden group">
+<!-- Waveform Visual -->
+<div class="flex items-center gap-1.5 h-32 relative z-10">
+<div class="w-1.5 bg-primary rounded-full animate-[pulse_1s_infinite] h-8"></div>
+<div class="w-1.5 bg-primary/80 rounded-full animate-[pulse_1.2s_infinite] h-16"></div>
+<div class="w-1.5 bg-primary rounded-full animate-[pulse_0.8s_infinite] h-24"></div>
+<div class="w-1.5 bg-primary/60 rounded-full animate-[pulse_1.5s_infinite] h-12"></div>
+<div class="w-1.5 bg-secondary rounded-full animate-[pulse_1.1s_infinite] h-20"></div>
+<div class="w-1.5 bg-secondary/80 rounded-full animate-[pulse_0.9s_infinite] h-28"></div>
+<div class="w-1.5 bg-secondary rounded-full animate-[pulse_1.3s_infinite] h-14"></div>
+<div class="w-1.5 bg-primary rounded-full animate-[pulse_1s_infinite] h-22"></div>
+<div class="w-1.5 bg-primary/80 rounded-full animate-[pulse_1.4s_infinite] h-10"></div>
+<div class="w-1.5 bg-primary rounded-full animate-[pulse_0.7s_infinite] h-26"></div>
+</div>
+<div class="absolute top-0 left-0 p-6 flex justify-between w-full">
+<span class="text-[10px] font-headline uppercase text-white/40 tracking-[0.2em]">00:42:18 / Live Feed</span>
+<span class="material-symbols-outlined text-secondary text-sm">settings_input_antenna</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-primary/5 opacity-50"></div>
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" data-alt="Retro high-quality microphone on a desk in a dark studio setting with soft atmospheric lighting and blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOpskRboo-vv2_NOnHrfuznLPW88Jcy5htPptXL48bkaY83HFwEWKin_OvrDnkIBIHz5V7iq0SmCfDpEoSqIzFYIrTA7F3EhV_HZPLBJ2dtaPGzkfuC7C-A_mRcmTw0wNI3Kf2bWldNnFNf87-jrJcyNcEdZ7L0XtVKGEUiSgO3k00hHYtVvk8GWpkT8DpyCZzGScX_cmyv3xUYM_xng0LmXxGIyWBrADH4lyLu27o5tvO0pIXzjFcK3yItW6DiHIN3D5EjPKdS1ut"/>
+</div>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary/20 blur-3xl rounded-full"></div>
+</div>
+<div class="order-1 lg:order-2 space-y-6">
+<div class="text-secondary font-headline text-sm font-bold tracking-widest uppercase">The Official Podcast</div>
+<h2 class="text-5xl font-headline font-bold text-white tracking-tight">CyberTalks <span class="text-primary italic">Live</span></h2>
+<p class="text-on-surface-variant text-lg font-body leading-relaxed">
+                        Join us weekly as we deconstruct the latest exploits, regulatory shifts, and AI advancements with global intelligence experts.
+                    </p>
+<div class="space-y-4 pt-4">
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<span class="material-symbols-outlined text-primary">play_circle</span>
+<div>
+<div class="text-sm font-bold">EP 142: The Quantum GRC Strategy</div>
+<div class="text-xs text-on-surface-variant">24 min • Jan 12, 2024</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-high/50 hover:bg-surface-container-high transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<span class="material-symbols-outlined text-primary">play_circle</span>
+<div>
+<div class="text-sm font-bold">EP 141: Post-Human Cybersecurity</div>
+<div class="text-xs text-on-surface-variant">38 min • Jan 05, 2024</div>
+</div>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-fixed px-10 py-4 rounded-full font-headline font-black text-sm tracking-[0.2em] uppercase neon-button-glow hover:scale-105 active:scale-95 transition-all">
+                        LISTEN NOW
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#131318] w-full py-12 px-8 border-t border-white/5">
+<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 w-full">
+<div class="text-lg font-black text-[#d1bcff] uppercase font-headline">
+                DIGITAL INTELLIGENCE COMMAND
+            </div>
+<div class="flex gap-8">
+<a class="font-['Manrope'] text-xs tracking-widest uppercase text-white/40 hover:text-[#fface8] transition-all duration-300" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-xs tracking-widest uppercase text-white/40 hover:text-[#fface8] transition-all duration-300" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-xs tracking-widest uppercase text-white/40 hover:text-[#fface8] transition-all duration-300" href="#">Press Kit</a>
+</div>
+<div class="text-white/40 font-['Manrope'] text-[10px] tracking-widest uppercase">
+                © 2024 DIGITAL INTELLIGENCE COMMAND. ALL RIGHTS RESERVED.
+            </div>
+</div>
+<div class="max-w-screen-2xl mx-auto mt-12 flex justify-center gap-6">
+<a class="text-white/40 hover:text-[#00E5FF] transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-white/40 hover:text-[#00E5FF] transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-white/40 hover:text-[#00E5FF] transition-colors" href="#"><span class="material-symbols-outlined">rss_feed</span></a>
+</div>
+</footer>
+</body></html>

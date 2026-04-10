@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 
 /**
  * Navigation Bar — Premium Cyber Command Authority
@@ -10,18 +11,50 @@ import { motion } from 'framer-motion'
  * - Semi-transparent dark background with backdrop blur
  * - Cyan glow shadow
  * - Logo on left (Nate Butler)
- * - Center menu links (HOME, ABOUT, PODCAST, BOOKS, COACHING) — desktop only
+ * - Center menu links (HOME, ABOUT, PODCAST, BOOKS, COACHING) — desktop only with scroll-spy active state
  * - Right-side CTAs (Join Discord, Book Now) — desktop only
  * - Mobile: bell icon only (navigation via bottom nav bar)
  */
 export function Navbar() {
+  const [activeSection, setActiveSection] = useState('home')
+
+  useEffect(() => {
+    const sections = [
+      { id: 'about', sectionId: 'about' },
+      { id: 'podcast', sectionId: 'podcast' },
+      { id: 'books', sectionId: 'books' },
+      { id: 'coaching', sectionId: 'coaching' },
+    ]
+
+    const observers = sections.map(({ id, sectionId }) => {
+      const el = document.getElementById(sectionId)
+      if (!el) return null
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id)
+        },
+        { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' }
+      )
+      observer.observe(el)
+      return observer
+    })
+
+    return () => observers.forEach((obs) => obs?.disconnect())
+  }, [])
+
   const navLinks = [
-    { label: 'HOME', href: '/', active: true },
-    { label: 'ABOUT', href: '#about' },
-    { label: 'PODCAST', href: '#podcast' },
-    { label: 'BOOKS', href: '#books' },
-    { label: 'COACHING', href: '#coaching' },
+    { label: 'HOME', href: '/', id: 'home' },
+    { label: 'ABOUT', href: '#about', id: 'about' },
+    { label: 'PODCAST', href: '#podcast', id: 'podcast' },
+    { label: 'BOOKS', href: '#books', id: 'books' },
+    { label: 'COACHING', href: '#coaching', id: 'coaching' },
   ]
+
+  const isLinkActive = (linkId: string) => {
+    if (linkId === 'home') return activeSection === 'home'
+    return activeSection === linkId
+  }
 
   return (
     <nav
@@ -64,7 +97,7 @@ export function Navbar() {
                 key={idx}
                 href={link.href}
                 className={`font-space-grotesk text-sm uppercase tracking-tight transition-all duration-200 ${
-                  link.active
+                  isLinkActive(link.id)
                     ? 'text-[#00E5FF] border-b-2 border-[#00E5FF] pb-1'
                     : 'text-white/70 hover:text-white'
                 }`}

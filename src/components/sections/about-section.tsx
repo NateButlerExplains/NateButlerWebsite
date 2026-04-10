@@ -1,10 +1,27 @@
 'use client'
 
+import { useRef, useEffect, useState } from 'react'
 import styles from './about-section.module.css'
 
 export default function AboutSection() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const [inView, setInView] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.15 }
+    )
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section className={styles.container} id="about">
+    <section
+      ref={sectionRef}
+      className={`${styles.container}${inView ? ` ${styles.inView}` : ''}`}
+      id="about"
+    >
       <div className={styles.content}>
         {/* Left column */}
         <div className={styles.leftColumn}>

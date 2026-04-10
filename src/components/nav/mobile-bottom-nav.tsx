@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useState, useEffect } from 'react'
 
 /**
  * Mobile Bottom Navigation Bar
@@ -13,9 +14,39 @@ import { usePathname } from 'next/navigation'
  * - Books
  *
  * Desktop (md:) hides this and uses top navbar instead.
+ * Uses scroll-spy to highlight active section.
  */
 export function MobileBottomNav() {
   const pathname = usePathname()
+  const [activeSection, setActiveSection] = useState('home')
+
+  useEffect(() => {
+    if (pathname !== '/') {
+      setActiveSection('home')
+      return
+    }
+
+    const sections = [
+      { id: 'about', sectionId: 'about' },
+      { id: 'books', sectionId: 'books' },
+    ]
+
+    const observers = sections.map(({ id, sectionId }) => {
+      const el = document.getElementById(sectionId)
+      if (!el) return null
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id)
+        },
+        { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' }
+      )
+      observer.observe(el)
+      return observer
+    })
+
+    return () => observers.forEach((obs) => obs?.disconnect())
+  }, [pathname])
 
   const navItems = [
     {
@@ -75,10 +106,12 @@ export function MobileBottomNav() {
   ]
 
   const isActive = (href: string) => {
-    if (href === '/') {
-      return pathname === '/'
-    }
-    return pathname === href || pathname.includes(href.replace('#', ''))
+    if (pathname !== '/') return false
+
+    if (href === '/') return activeSection === 'home'
+    if (href === '#about') return activeSection === 'about'
+    if (href === '#books') return activeSection === 'books'
+    return false
   }
 
   return (
