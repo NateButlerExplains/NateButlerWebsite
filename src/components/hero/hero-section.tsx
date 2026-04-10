@@ -31,9 +31,9 @@ export function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
+        <div className="flex flex-col md:grid md:grid-cols-12 gap-16 lg:gap-12 items-center">
           {/* LEFT COLUMN: Content (7 columns) — Left-aligned */}
-          <div className="w-full lg:col-span-7">
+          <div className="w-full order-2 md:order-1 md:col-span-7">
             {/* Badge — Hidden on mobile */}
             <motion.div {...fadeInUp} className="mb-16 hidden md:block">
               <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full backdrop-blur-lg bg-purple-950/40 border border-purple-500/50">
@@ -199,9 +199,9 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* RIGHT COLUMN: Cyber Portrait (5 columns) — Hidden on mobile */}
+          {/* RIGHT COLUMN: Cyber Portrait (5 columns) — Mobile first, then desktop right */}
           <motion.div
-            className="hidden md:flex w-full lg:col-span-5 justify-center lg:justify-end items-center"
+            className="w-full order-1 md:order-2 md:col-span-5 flex justify-center lg:justify-end items-center"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
