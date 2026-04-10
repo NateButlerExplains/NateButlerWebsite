@@ -17,7 +17,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative w-full hero-section overflow-hidden md:flex md:items-center md:pt-28 pb-0 md:pb-20 md:min-h-auto">
+    <section className="relative w-full hero-section overflow-x-hidden md:flex md:items-center md:pt-28 pb-0 md:pb-20 md:min-h-auto">
       {/* MOBILE: Full-height portrait with overlay layout */}
       <div className="md:hidden relative w-full h-screen">
         {/* Mobile headshot image fills screen */}
