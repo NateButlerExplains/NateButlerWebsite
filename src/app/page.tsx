@@ -7,7 +7,7 @@ import Footer from '@/components/footer/footer'
 export default function Home() {
   return (
     <>
-      <main className="overflow-x-hidden bg-surface pb-16 md:pb-0">
+      <main className="relative z-[1] overflow-x-hidden bg-surface pb-16 md:pb-0">
         <HeroSection />
         <AboutSection />
         <BookMeNow />
