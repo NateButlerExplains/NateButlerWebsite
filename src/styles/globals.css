@@ -27,11 +27,7 @@ body {
   font-family: var(--font-manrope);
 }
 
-/* Hero section height - accounts for navbar */
-.hero-section {
-  min-height: calc(100vh - 60px);
-}
-
+/* Hero section height - mobile only */
 @media (max-width: 768px) {
   .hero-section {
     min-height: calc(100vh - 50px);
