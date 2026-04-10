@@ -19,28 +19,40 @@ export function Navbar() {
   const [activeSection, setActiveSection] = useState('home')
 
   useEffect(() => {
-    const sections = [
-      { id: 'about', sectionId: 'about' },
-      { id: 'podcast', sectionId: 'podcast' },
-      { id: 'books', sectionId: 'books' },
-      { id: 'coaching', sectionId: 'coaching' },
-    ]
+    const handleScroll = () => {
+      const sections = [
+        { id: 'about', sectionId: 'about' },
+        { id: 'podcast', sectionId: 'podcast' },
+        { id: 'books', sectionId: 'books' },
+        { id: 'coaching', sectionId: 'coaching' },
+      ]
 
-    const observers = sections.map(({ id, sectionId }) => {
-      const el = document.getElementById(sectionId)
-      if (!el) return null
+      // Check which section is currently in viewport
+      let found = false
+      for (const { id, sectionId } of sections) {
+        const el = document.getElementById(sectionId)
+        if (el) {
+          const rect = el.getBoundingClientRect()
+          // If section is visible in viewport (top < window.innerHeight and bottom > 80px for navbar)
+          if (rect.top < window.innerHeight * 0.7 && rect.bottom > 80) {
+            setActiveSection(id)
+            found = true
+            break
+          }
+        }
+      }
 
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(id)
-        },
-        { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' }
-      )
-      observer.observe(el)
-      return observer
-    })
+      // If no section found in viewport, we're at home/hero
+      if (!found) {
+        setActiveSection('home')
+      }
+    }
 
-    return () => observers.forEach((obs) => obs?.disconnect())
+    window.addEventListener('scroll', handleScroll)
+    // Call once on mount to set initial state
+    handleScroll()
+
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const navLinks = [
