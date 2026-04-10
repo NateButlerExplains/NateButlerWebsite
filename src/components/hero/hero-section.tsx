@@ -48,14 +48,14 @@ export function HeroSection() {
           <motion.div
             {...fadeInUp}
             transition={{ delay: 0.15, duration: 0.8, ease: easeOut }}
-            className="mb-12"
+            className="mb-6"
           >
             <h1 className="font-black leading-tight tracking-tighter space-y-0">
-              <span className="block text-5xl text-white font-space-grotesk">
+              <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
                 Unlock Your
               </span>
               <span
-                className="block text-5xl font-space-grotesk"
+                className="block text-6xl sm:text-7xl font-space-grotesk"
                 style={{
                   background: 'linear-gradient(to right, #00C9FF, #D1BCFF)',
                   WebkitBackgroundClip: 'text',
@@ -72,7 +72,7 @@ export function HeroSection() {
 
           {/* Buttons below headline */}
           <motion.div
-            className="flex flex-col gap-3"
+            className="flex flex-col gap-2"
             {...fadeInUp}
             transition={{ delay: 0.45, duration: 0.8, ease: easeOut }}
           >
