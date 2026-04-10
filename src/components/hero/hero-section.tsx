@@ -23,7 +23,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative w-full hero-section overflow-hidden flex items-center pt-28 pb-20">
+    <section className="relative w-full hero-section overflow-hidden flex items-center pt-20 md:pt-28 pb-16 md:pb-20">
       {/* Content Container — Aligned with navbar (max-w-screen-2xl, px-8) */}
       <motion.div
         className="relative z-10 w-full max-w-screen-2xl mx-auto px-6 lg:px-8"
@@ -31,7 +31,7 @@ export function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="flex flex-col md:grid md:grid-cols-12 gap-16 lg:gap-12 items-center">
+        <div className="flex flex-col md:grid md:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* LEFT COLUMN: Content (7 columns) — Left-aligned */}
           <div className="w-full order-2 md:order-1 md:col-span-7">
             {/* Badge — Hidden on mobile */}
@@ -55,8 +55,8 @@ export function HeroSection() {
             {/* Headline */}
             <motion.div
               {...fadeInUp}
-              transition={{ delay: 0.15, duration: 0.8, ease: 'easeOut' }}
-              className="mb-10"
+              transition={{ delay: 0.15, duration: 0.8, ease: easeOut }}
+              className="mb-6 md:mb-10"
             >
               <h1 className="font-black leading-none lg:leading-tight tracking-tighter space-y-0">
                 <span className="block text-5xl sm:text-6xl lg:text-9xl text-white font-space-grotesk">
@@ -81,8 +81,8 @@ export function HeroSection() {
             {/* Subheadline */}
             <motion.div
               {...fadeInUp}
-              transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }}
-              className="mb-12"
+              transition={{ delay: 0.3, duration: 0.8, ease: easeOut }}
+              className="mb-8 md:mb-12"
             >
               <p className="text-lg leading-relaxed text-slate-300 max-w-xl font-manrope">
                 High-impact GRC, AI, Cyber & Tech speaker delivering elite strategic
@@ -92,9 +92,9 @@ export function HeroSection() {
 
             {/* Buttons */}
             <motion.div
-              className="flex flex-col md:flex-row gap-5 mb-16"
+              className="flex flex-col md:flex-row gap-5 mb-8 md:mb-16"
               {...fadeInUp}
-              transition={{ delay: 0.45, duration: 0.8, ease: 'easeOut' }}
+              transition={{ delay: 0.45, duration: 0.8, ease: easeOut }}
             >
               {/* Primary: BOOK ME NOW */}
               <button
@@ -143,7 +143,7 @@ export function HeroSection() {
             <motion.div
               className="hidden md:flex flex-row gap-8 md:gap-12 pt-12 border-t border-white/10"
               {...fadeInUp}
-              transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }}
+              transition={{ delay: 0.6, duration: 0.8, ease: easeOut }}
             >
               {/* Stat 1: Keynotes — Cyan */}
               <div className="flex flex-col">
@@ -204,9 +204,9 @@ export function HeroSection() {
             className="w-full order-1 md:order-2 md:col-span-5 flex justify-center lg:justify-end items-center"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+            transition={{ duration: 0.8, delay: 0.2, ease: easeOut }}
           >
-            <div className="w-full max-w-lg lg:max-w-2xl">
+            <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl">
               <CyberPortrait />
             </div>
           </motion.div>
