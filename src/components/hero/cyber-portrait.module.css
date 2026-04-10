@@ -50,6 +50,17 @@
   pointer-events: none;
 }
 
+/* Desktop-only: Double border outline (cyan outer + purple inner) */
+@media (min-width: 768px) {
+  .portraitBorder {
+    /* Inner border: purple/magenta */
+    border: 1px solid rgba(209, 188, 255, 0.15);
+    /* Outer border: cyan, offset 8px outward */
+    outline: 1px solid rgba(0, 229, 255, 0.2);
+    outline-offset: 8px;
+  }
+}
+
 .portraitGlow {
   position: absolute;
   inset: -4px;
