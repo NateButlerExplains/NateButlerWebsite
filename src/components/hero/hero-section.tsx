@@ -17,23 +17,33 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative w-full hero-section overflow-hidden md:flex md:items-center pt-16 md:pt-28 pb-0 md:pb-20 min-h-screen md:min-h-auto">
+    <section className="relative w-full hero-section overflow-hidden md:flex md:items-center md:pt-28 pb-0 md:pb-20 md:min-h-auto">
       {/* MOBILE: Full-height portrait with overlay layout */}
-      <div className="md:hidden relative w-full h-[calc(100vh-80px)]">
-        {/* Portrait fills mobile screen */}
+      <div className="md:hidden relative w-full h-screen">
+        {/* Mobile headshot image fills screen */}
         <motion.div
-          className="absolute inset-0 flex justify-center items-center"
+          className="absolute inset-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="w-full h-full flex justify-center items-center">
-            <CyberPortrait />
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/Nate - headshot - Mobile.png"
+            alt="Nate Butler"
+            className="w-full h-full object-cover object-top"
+          />
+          {/* Gradient overlay for text readability */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to top, rgba(13,13,18,0.95) 0%, rgba(13,13,18,0.6) 40%, transparent 70%)',
+            }}
+          />
         </motion.div>
 
         {/* Overlay: Headline + Buttons positioned on bottom of portrait */}
-        <div className="absolute inset-0 flex flex-col justify-end p-6 z-10">
+        <div className="absolute inset-0 flex flex-col justify-end px-6 pt-6 pb-24 z-10">
           {/* Headline overlaid on bottom portion */}
           <motion.div
             {...fadeInUp}
@@ -58,6 +68,18 @@ export function HeroSection() {
                 Cyber Future
               </span>
             </h1>
+          </motion.div>
+
+          {/* Subheadline */}
+          <motion.div
+            {...fadeInUp}
+            transition={{ delay: 0.3, duration: 0.8, ease: easeOut }}
+            className="mb-4"
+          >
+            <p className="text-sm leading-relaxed text-slate-300 font-manrope">
+              High-impact GRC, AI, Cyber & Tech speaker delivering elite strategic
+              intelligence for the next generation of digital defense and resilience.
+            </p>
           </motion.div>
 
           {/* Buttons below headline */}
