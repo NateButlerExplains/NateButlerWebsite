@@ -48,7 +48,7 @@ export function HeroSection() {
           <motion.div
             {...fadeInUp}
             transition={{ delay: 0.15, duration: 0.8, ease: easeOut }}
-            className="mb-6"
+            className="mb-12"
           >
             <h1 className="font-black leading-tight tracking-tighter space-y-0">
               <span className="block text-5xl text-white font-space-grotesk">
@@ -68,18 +68,6 @@ export function HeroSection() {
                 Cyber Future
               </span>
             </h1>
-          </motion.div>
-
-          {/* Subheadline */}
-          <motion.div
-            {...fadeInUp}
-            transition={{ delay: 0.3, duration: 0.8, ease: easeOut }}
-            className="mb-4"
-          >
-            <p className="text-sm leading-relaxed text-slate-300 font-manrope">
-              High-impact GRC, AI, Cyber & Tech speaker delivering elite strategic
-              intelligence for the next generation of digital defense and resilience.
-            </p>
           </motion.div>
 
           {/* Buttons below headline */}
