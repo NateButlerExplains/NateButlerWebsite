@@ -1,0 +1,10 @@
+[
+  {
+    "id": "welcome-001",
+    "type": "welcome",
+    "title": "Welcome 👋",
+    "message": "Thanks for visiting! I speak on GRC, AI, and Cybersecurity strategy for Fortune 1000 audiences. Tap Book Now to start the conversation.",
+    "cta": { "label": "Book Me Now", "href": "/book-me-now" },
+    "active": true
+  }
+]
