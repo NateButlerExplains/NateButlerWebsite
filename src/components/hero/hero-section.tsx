@@ -86,7 +86,10 @@ export function HeroSection() {
           >
             <button
               onClick={() => {
-                document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
+                const bookSection = document.getElementById('books')
+                if (bookSection) {
+                  bookSection.scrollIntoView({ behavior: 'smooth' })
+                }
               }}
               className="w-full inline-flex items-center justify-center px-8 py-3 rounded-xl text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-xs transition-all duration-300 hover:text-[#00e5ff] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
               style={{
@@ -94,15 +97,12 @@ export function HeroSection() {
                 border: '2px solid transparent',
               }}
             >
-              <span>Book Nate Butler</span>
+              <span>Get the Book</span>
             </button>
 
             <button
               onClick={() => {
-                const bookSection = document.getElementById('books')
-                if (bookSection) {
-                  bookSection.scrollIntoView({ behavior: 'smooth' })
-                }
+                document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
               }}
               className="w-full inline-flex items-center justify-center px-8 py-4 rounded-xl text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-sm transition-all duration-300 hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
               style={{
@@ -110,7 +110,7 @@ export function HeroSection() {
                 boxShadow: '0 0 32px rgba(0, 229, 255, 0.55), 0 0 8px rgba(0, 229, 255, 0.3), 0 8px 16px rgba(0, 100, 120, 0.4), 0 4px 8px rgba(0, 200, 220, 0.2)',
               }}
             >
-              Get the Book
+              Book Nate Butler
             </button>
           </motion.div>
         </div>
@@ -203,21 +203,7 @@ export function HeroSection() {
                 {...fadeInUp}
                 transition={{ delay: 0.45, duration: 0.8, ease: easeOut }}
               >
-                {/* Primary: BOOK NATE BUTLER */}
-                <button
-                  onClick={() => {
-                    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-sm transition-all duration-300 hover:text-[#00e5ff] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
-                  style={{
-                    background: 'linear-gradient(rgba(19,19,24,1), rgba(19,19,24,1)) padding-box, linear-gradient(135deg, rgba(0,229,255,0.7), rgba(77,127,255,0.7)) border-box',
-                    border: '2px solid transparent',
-                  }}
-                >
-                  Book Nate Butler
-                </button>
-
-                {/* Secondary: GET THE BOOK */}
+                {/* Primary: GET THE BOOK */}
                 <button
                   onClick={() => {
                     const bookSection = document.getElementById('books')
@@ -225,13 +211,27 @@ export function HeroSection() {
                       bookSection.scrollIntoView({ behavior: 'smooth' })
                     }
                   }}
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-sm transition-all duration-300 hover:text-[#00e5ff] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
+                  style={{
+                    background: 'linear-gradient(rgba(19,19,24,1), rgba(19,19,24,1)) padding-box, linear-gradient(135deg, rgba(0,229,255,0.7), rgba(77,127,255,0.7)) border-box',
+                    border: '2px solid transparent',
+                  }}
+                >
+                  Get the Book
+                </button>
+
+                {/* Secondary: BOOK NATE BUTLER */}
+                <button
+                  onClick={() => {
+                    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
+                  }}
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-base transition-all duration-300 hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
                   style={{
                     background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
                     boxShadow: '0 0 32px rgba(0, 229, 255, 0.55), 0 0 8px rgba(0, 229, 255, 0.3), 0 8px 16px rgba(0, 100, 120, 0.4), 0 4px 8px rgba(0, 200, 220, 0.2)',
                   }}
                 >
-                  Get the Book
+                  Book Nate Butler
                 </button>
               </motion.div>
 
