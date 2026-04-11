@@ -129,14 +129,15 @@ export function MobileBottomNav() {
     }
 
     const handleScroll = () => {
-      const sections = ['podcast', 'about', 'books', 'coaching']
+      const sections = ['about', 'books', 'coaching', 'podcast']
 
       let found = false
       for (const id of sections) {
         const el = document.getElementById(id)
         if (el) {
           const rect = el.getBoundingClientRect()
-          if (rect.top < window.innerHeight * 0.6 && rect.bottom > 64) {
+          // Section must be at least 30% visible in viewport to trigger active state
+          if (rect.top < window.innerHeight * 0.3 && rect.bottom > 64) {
             setActiveSection(id)
             found = true
             break
