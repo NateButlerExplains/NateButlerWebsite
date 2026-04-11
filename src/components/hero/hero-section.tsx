@@ -103,7 +103,11 @@ export function HeroSection() {
               onClick={() => {
                 document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
               }}
-              className="w-full inline-flex items-center justify-center px-8 py-3 rounded-xl bg-white/[0.04] border border-outline-variant text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-xs transition-all duration-300 hover:bg-white/[0.08] hover:border-[rgba(0,229,255,0.45)] hover:text-[#00e5ff] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
+              className="w-full inline-flex items-center justify-center px-8 py-3 rounded-xl text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-xs transition-all duration-300 hover:text-[#00e5ff] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
+              style={{
+                background: 'linear-gradient(rgba(19,19,24,1), rgba(19,19,24,1)) padding-box, linear-gradient(135deg, rgba(0,229,255,0.7), rgba(77,127,255,0.7)) border-box',
+                border: '2px solid transparent',
+              }}
             >
               <span>Book Nate Butler</span>
             </button>
@@ -219,7 +223,11 @@ export function HeroSection() {
                   onClick={() => {
                     document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
                   }}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/[0.04] border border-outline-variant text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-sm transition-all duration-300 hover:bg-white/[0.08] hover:border-[rgba(0,229,255,0.45)] hover:text-[#00e5ff] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-sm transition-all duration-300 hover:text-[#00e5ff] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
+                  style={{
+                    background: 'linear-gradient(rgba(19,19,24,1), rgba(19,19,24,1)) padding-box, linear-gradient(135deg, rgba(0,229,255,0.7), rgba(77,127,255,0.7)) border-box',
+                    border: '2px solid transparent',
+                  }}
                 >
                   Book Nate Butler
                 </button>

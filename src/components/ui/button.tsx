@@ -79,15 +79,16 @@ export function Button({
       'active:shadow-neon-glow-secondary',
     ),
 
-    // Ghost: Glass tint with subtle outline, tertiary actions
-    // - Background: white at 4% opacity for glass tint
-    // - Border: subtle outline at 15% opacity (outline-variant)
-    // - Text: normal surface color
-    // - Hover: background tint increases to 8%, border and text shift to muted cyan
-    // - Used for: Tertiary actions, links styled as buttons
+    // Ghost: Gradient border with transparent interior, tertiary actions
+    // - Background: transparent interior with gradient cyan-to-blue border
+    // - Border: 2px gradient border (cyan to blue at 70% opacity)
+    // - Text: normal surface color, shifts to cyan on hover
+    // - Hover: text shifts to bright cyan (#00e5ff)
+    // - Used for: Tertiary actions, secondary CTAs
+    // Note: Uses inline style for gradient border effect (background + border trick)
     ghost: cn(
-      'bg-white/[0.04] border border-outline-variant text-on-surface',
-      'hover:bg-white/[0.08] hover:border-[rgba(0,229,255,0.45)] hover:text-[#00e5ff]',
+      'text-on-surface',
+      'hover:text-[#00e5ff]',
     ),
   }
 
