@@ -86,21 +86,6 @@ export function HeroSection() {
           >
             <button
               onClick={() => {
-                const bookSection = document.getElementById('books')
-                if (bookSection) {
-                  bookSection.scrollIntoView({ behavior: 'smooth' })
-                }
-              }}
-              className="w-full inline-flex items-center justify-center px-8 py-4 rounded-xl text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-sm transition-all duration-300 shadow-neon-glow-strong hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
-              style={{
-                background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
-              }}
-            >
-              Get the Book
-            </button>
-
-            <button
-              onClick={() => {
                 document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
               }}
               className="w-full inline-flex items-center justify-center px-8 py-3 rounded-xl text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-xs transition-all duration-300 hover:text-[#00e5ff] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
@@ -110,6 +95,22 @@ export function HeroSection() {
               }}
             >
               <span>Book Nate Butler</span>
+            </button>
+
+            <button
+              onClick={() => {
+                const bookSection = document.getElementById('books')
+                if (bookSection) {
+                  bookSection.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
+              className="w-full inline-flex items-center justify-center px-8 py-4 rounded-xl text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-sm transition-all duration-300 hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
+              style={{
+                background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
+                boxShadow: '0 0 32px rgba(0, 229, 255, 0.55), 0 0 8px rgba(0, 229, 255, 0.3), 0 8px 16px rgba(0, 100, 120, 0.4), 0 4px 8px rgba(0, 200, 220, 0.2)',
+              }}
+            >
+              Get the Book
             </button>
           </motion.div>
         </div>
@@ -202,23 +203,7 @@ export function HeroSection() {
                 {...fadeInUp}
                 transition={{ delay: 0.45, duration: 0.8, ease: easeOut }}
               >
-                {/* Primary: GET THE BOOK */}
-                <button
-                  onClick={() => {
-                    const bookSection = document.getElementById('books')
-                    if (bookSection) {
-                      bookSection.scrollIntoView({ behavior: 'smooth' })
-                    }
-                  }}
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-base transition-all duration-300 shadow-neon-glow-strong hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
-                  style={{
-                    background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
-                  }}
-                >
-                  Get the Book
-                </button>
-
-                {/* Secondary: BOOK NATE BUTLER */}
+                {/* Primary: BOOK NATE BUTLER */}
                 <button
                   onClick={() => {
                     document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
@@ -230,6 +215,23 @@ export function HeroSection() {
                   }}
                 >
                   Book Nate Butler
+                </button>
+
+                {/* Secondary: GET THE BOOK */}
+                <button
+                  onClick={() => {
+                    const bookSection = document.getElementById('books')
+                    if (bookSection) {
+                      bookSection.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  }}
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-base transition-all duration-300 hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
+                  style={{
+                    background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
+                    boxShadow: '0 0 32px rgba(0, 229, 255, 0.55), 0 0 8px rgba(0, 229, 255, 0.3), 0 8px 16px rgba(0, 100, 120, 0.4), 0 4px 8px rgba(0, 200, 220, 0.2)',
+                  }}
+                >
+                  Get the Book
                 </button>
               </motion.div>
 
