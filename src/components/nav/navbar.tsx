@@ -140,9 +140,14 @@ export function Navbar() {
                 const discordUrl = process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || '#'
                 window.open(discordUrl, '_blank')
               }}
-              className="font-space-grotesk text-xs uppercase tracking-widest text-white/70 transition-all duration-200 hover:text-[#fface8]"
+              className="transition-all duration-200 hover:opacity-100 opacity-70"
             >
-              Join Discord
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/Discord_logo.svg"
+                alt="Discord"
+                className="h-5 w-auto"
+              />
             </button>
 
             <button
