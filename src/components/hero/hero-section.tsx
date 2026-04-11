@@ -247,40 +247,31 @@ export function HeroSection() {
                     transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
                     style={{ width: 'max-content' }}
                   >
-                    {/* Logos duplicated for seamless loop */}
+                    {/* Logo images duplicated for seamless loop */}
                     {[...Array(2)].map((_, setIdx) => (
-                      <div key={setIdx} className="flex gap-10 items-center">
-                        {/* Appearances with upcoming badge */}
+                      <div key={setIdx} className="flex gap-12 items-center">
+                        {/* Featured logos */}
                         {[
-                          { label: 'Human-in-the-Loop Podcast', width: 140, upcoming: false },
-                          { label: 'Techniche Tips Podcast', width: 130, upcoming: false },
-                          { label: 'Art and Architecture', width: 120, upcoming: false },
-                          { label: 'Cyber Crime Junkies', width: 125, upcoming: false },
-                          { label: 'Neurodivergent Podcast', width: 130, upcoming: false },
-                          { label: 'CodeSwitch Podcast', width: 120, upcoming: true },
-                          { label: 'Transition to Cyber Panel', width: 135, upcoming: true },
+                          { src: '/images/Logos/Human in the Loop.png', alt: 'Human-in-the-Loop Podcast', upcoming: false },
+                          { src: '/images/Logos/Tech.png', alt: 'Techniche Tips Podcast', upcoming: false },
+                          { src: '/images/Logos/Architecture.png', alt: 'Art and Architecture', upcoming: false },
+                          { src: '/images/Logos/Crime Junkies.png', alt: 'Cyber Crime Junkies', upcoming: false },
+                          { src: '/images/Logos/Spark.png', alt: 'Neurodivergent Podcast', upcoming: false },
+                          { src: '/images/Logos/Code Switch.png', alt: 'CodeSwitch Podcast', upcoming: true },
+                          { src: '/images/Logos/T2Cyber.png', alt: 'Transition to Cyber Panel', upcoming: true },
                         ].map((item) => (
-                          <div key={item.label} className="flex items-center justify-center flex-shrink-0 relative">
-                            <div
-                              className="flex items-center justify-center px-3 py-2 rounded relative"
+                          <div key={item.alt} className="flex items-center justify-center flex-shrink-0 relative">
+                            {/* Logo image */}
+                            <img
+                              src={item.src}
+                              alt={item.alt}
+                              className="h-16 object-contain"
                               style={{
-                                width: item.width,
-                                background: item.upcoming ? 'rgba(112, 0, 255, 0.08)' : 'rgba(255,255,255,0.04)',
-                                border: item.upcoming ? '1px solid rgba(112, 0, 255, 0.2)' : '1px solid rgba(255,255,255,0.08)',
+                                opacity: item.upcoming ? 0.6 : 1,
+                                filter: 'brightness(0.95)',
                               }}
-                            >
-                              <span
-                                className="font-space-grotesk font-bold text-[10px] uppercase tracking-wider"
-                                style={{
-                                  color: item.upcoming ? 'rgba(176, 127, 255, 0.7)' : 'rgba(255,255,255,0.35)',
-                                  wordBreak: 'break-word',
-                                  lineHeight: '1.3',
-                                }}
-                              >
-                                {item.label}
-                              </span>
-                            </div>
-                            {/* Upcoming badge — outside rectangle, top center */}
+                            />
+                            {/* Upcoming badge — outside, top center */}
                             {item.upcoming && (
                               <span
                                 className="absolute -top-3 left-1/2 -translate-x-1/2 text-[8px] uppercase tracking-widest font-bold px-1.5 py-0.5 rounded flex-shrink-0 whitespace-nowrap"
