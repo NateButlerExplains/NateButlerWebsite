@@ -77,7 +77,16 @@ export function Navbar() {
         boxShadow: '0 4px 20px rgba(0, 229, 255, 0.1)',
       }}
     >
-      <div className="w-full px-6 lg:px-8 py-4">
+      {/* Feathered bottom edge — blends navbar into hero image on mobile */}
+      <div
+        className="md:hidden absolute left-0 right-0 pointer-events-none"
+        style={{
+          top: '100%',
+          height: '72px',
+          background: 'linear-gradient(to bottom, rgba(19, 19, 24, 0.7) 0%, transparent 100%)',
+        }}
+      />
+      <div className="w-full px-6 lg:px-8 py-2 md:py-4">
         <div className="max-w-screen-2xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <motion.div
