@@ -37,36 +37,46 @@ export default function BookMeNow() {
           Pick a time that works for you. Your booking syncs directly with my calendar.
         </p>
 
-        {/* Calendly inline widget — dark mode customized */}
+        {/* Calendly inline widget — dark mode customized, responsive */}
         <div
-          className="calendly-inline-widget"
+          className={`calendly-inline-widget ${styles.calendlyContainer}`}
           data-url={`${CALENDLY_URL}?${CALENDLY_PARAMS}`}
-          style={{
-            minWidth: '320px',
-            height: '700px',
-          }}
         />
         <style>{`
-          /* Target all Calendly-injected wrapper divs */
+          /* Remove padding/margin from Calendly wrapper divs */
           .calendly-inline-widget > div {
             background: transparent !important;
             background-color: transparent !important;
+            padding: 0 !important;
+            margin: 0 !important;
           }
           .calendly-inline-widget > div > div {
             background: transparent !important;
             background-color: transparent !important;
+            padding: 0 !important;
+            margin: 0 !important;
           }
           .calendly-inline-widget > div > div > div {
             background: transparent !important;
             background-color: transparent !important;
+            padding: 0 !important;
+            margin: 0 !important;
           }
 
+          /* Ensure iframe fills container completely */
           .calendly-inline-widget iframe {
+            width: 100% !important;
+            height: 100% !important;
             background-color: transparent !important;
             border: none !important;
+            display: block !important;
           }
+
+          /* Container styling */
           .calendly-inline-widget {
+            width: 100% !important;
             background-color: transparent !important;
+            overflow: hidden !important;
           }
 
           /* Dark mode styling for GDPR/cookie banner */
