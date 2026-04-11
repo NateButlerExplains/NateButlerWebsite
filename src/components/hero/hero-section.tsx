@@ -63,7 +63,17 @@ export function HeroSection() {
                   backgroundClip: 'text',
                 }}
               >
-                Cyber Starts Now
+                Cyber
+              </span>
+              <span className="block text-6xl sm:text-7xl font-space-grotesk"
+                style={{
+                  background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                Starts Now
               </span>
             </h1>
           </motion.div>
