@@ -136,8 +136,8 @@ export function MobileBottomNav() {
         const el = document.getElementById(id)
         if (el) {
           const rect = el.getBoundingClientRect()
-          // Section must be at least 30% visible in viewport to trigger active state
-          if (rect.top < window.innerHeight * 0.3 && rect.bottom > 64) {
+          // Section must be well into viewport to trigger active state (top < 25% of viewport)
+          if (rect.top < window.innerHeight * 0.25 && rect.bottom > 100) {
             setActiveSection(id)
             found = true
             break

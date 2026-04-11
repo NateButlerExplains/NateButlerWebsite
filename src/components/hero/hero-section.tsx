@@ -261,11 +261,16 @@ export function HeroSection() {
                                 width: item.width,
                                 background: item.upcoming ? 'rgba(112, 0, 255, 0.08)' : 'rgba(255,255,255,0.04)',
                                 border: item.upcoming ? '1px solid rgba(112, 0, 255, 0.2)' : '1px solid rgba(255,255,255,0.08)',
+                                paddingRight: item.upcoming ? '2rem' : '0.75rem',
                               }}
                             >
                               <span
-                                className="font-space-grotesk font-bold text-xs uppercase tracking-wider whitespace-nowrap"
-                                style={{ color: item.upcoming ? 'rgba(176, 127, 255, 0.7)' : 'rgba(255,255,255,0.35)' }}
+                                className="font-space-grotesk font-bold text-xs uppercase tracking-wider"
+                                style={{
+                                  color: item.upcoming ? 'rgba(176, 127, 255, 0.7)' : 'rgba(255,255,255,0.35)',
+                                  wordBreak: 'break-word',
+                                  lineHeight: '1.2',
+                                }}
                               >
                                 {item.label}
                               </span>
@@ -273,7 +278,7 @@ export function HeroSection() {
                             {/* Upcoming badge */}
                             {item.upcoming && (
                               <span
-                                className="absolute -top-2 -right-2 text-[9px] uppercase tracking-widest font-bold px-1.5 py-0.5 rounded"
+                                className="absolute top-1 right-1 text-[8px] uppercase tracking-widest font-bold px-1 py-0.5 rounded flex-shrink-0"
                                 style={{
                                   background: 'rgba(112, 0, 255, 0.3)',
                                   color: '#D1BCFF',

@@ -28,7 +28,7 @@ export default function AboutSection() {
           <h2 className={styles.headline}>About Nate</h2>
 
           <p className={styles.bio}>
-            Nate Butler spent 10 years in enterprise cybersecurity across Fortune 100 banks, Big 4 consulting, MSPs, and MSSPs — from network security controls to risk architecture. A chance elevator meeting with a mentor in Charlotte unlocked a new vision: transforming how professionals see their own expertise. Today he helps security practitioners break into leadership roles and advance their impact by owning their value before they ever walk into a room.
+            Nate Butler spent 10 years in enterprise cybersecurity across Fortune 100 banks, Big 4 consulting, MSPs, and MSSPs, ranging from network security controls to risk architecture. A chance elevator meeting with a mentor in Charlotte unlocked a new vision: transforming how professionals see their own expertise. Today he helps security practitioners break into leadership roles and advance their impact by owning their value before they ever walk into a room.
           </p>
 
           {/* Trust signals */}
