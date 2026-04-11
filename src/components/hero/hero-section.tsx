@@ -149,11 +149,11 @@ export function HeroSection() {
                 className="mb-10"
               >
                 <h1 className="font-black leading-tight tracking-tighter space-y-0">
-                  <span className="block text-6xl lg:text-9xl text-white font-space-grotesk">
+                  <span className="block text-7xl lg:text-8xl text-white font-space-grotesk">
                     Next Gen
                   </span>
                   <span
-                    className="block text-6xl lg:text-9xl font-space-grotesk"
+                    className="block text-7xl lg:text-8xl font-space-grotesk"
                     style={{
                       background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
                       WebkitBackgroundClip: 'text',
