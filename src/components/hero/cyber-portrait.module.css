@@ -198,7 +198,7 @@
   width: 100%;
   background: linear-gradient(90deg, #00e5ff, #d1bcff, #00e5ff);
   background-size: 200% 100%;
-  animation: shimmer 5s linear infinite;
+  animation: shimmer 8s ease-in-out infinite;
   border-radius: 2px;
 }
 

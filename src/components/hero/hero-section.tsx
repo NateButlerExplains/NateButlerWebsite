@@ -52,20 +52,18 @@ export function HeroSection() {
           >
             <h1 className="font-black leading-tight tracking-tighter space-y-0">
               <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
-                Unlock Your
+                Next Gen
               </span>
               <span
                 className="block text-6xl sm:text-7xl font-space-grotesk"
                 style={{
-                  background: 'linear-gradient(to right, #00C9FF, #D1BCFF)',
+                  background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                  textShadow: '0 0 12px rgba(0, 201, 255, 0.15)',
-                  filter: 'drop-shadow(0 0 3px rgba(0, 201, 255, 0.2))',
                 }}
               >
-                Cyber Future
+                Cyber Starts Now
               </span>
             </h1>
           </motion.div>
@@ -152,20 +150,18 @@ export function HeroSection() {
               >
                 <h1 className="font-black leading-tight tracking-tighter space-y-0">
                   <span className="block text-6xl lg:text-9xl text-white font-space-grotesk">
-                    Unlock Your
+                    Next Gen
                   </span>
                   <span
                     className="block text-6xl lg:text-9xl font-space-grotesk"
                     style={{
-                      background: 'linear-gradient(to right, #00C9FF, #D1BCFF)',
+                      background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
                       backgroundClip: 'text',
-                      textShadow: '0 0 12px rgba(0, 201, 255, 0.15)',
-                      filter: 'drop-shadow(0 0 3px rgba(0, 201, 255, 0.2))',
                     }}
                   >
-                    Cyber Future
+                    Cyber Starts Now
                   </span>
                 </h1>
               </motion.div>
@@ -177,8 +173,7 @@ export function HeroSection() {
                 className="mb-12"
               >
                 <p className="text-lg leading-relaxed text-slate-300 max-w-xl font-manrope">
-                  High-impact GRC, AI, Cyber & Tech speaker delivering elite strategic
-                  intelligence for the next generation of security practitioners.
+                  A playbook for aspiring cybersecurity professionals ready to break in and stand out.
                 </p>
               </motion.div>
 
@@ -243,7 +238,7 @@ export function HeroSection() {
                 <div className="relative" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', overflow: 'visible', paddingTop: '1.5rem' }}>
                   <motion.div
                     className="flex gap-10 items-center"
-                    animate={{ x: [0, -1] }}
+                    animate={{ x: [0, -2040] }}
                     transition={{ duration: 45, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
                     style={{ width: 'max-content' }}
                   >
