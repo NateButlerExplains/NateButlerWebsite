@@ -149,19 +149,30 @@ export function HeroSection() {
                 className="mb-10"
               >
                 <h1 className="font-black leading-tight tracking-tighter space-y-0">
-                  <span
-                    className="block text-7xl lg:text-8xl font-space-grotesk"
-                    style={{
-                      background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                    }}
-                  >
-                    Cyber Starts Now
+                  <span className="block text-7xl lg:text-8xl font-space-grotesk">
+                    <span className="text-white">Next Gen </span>
+                    <span
+                      style={{
+                        background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
+                      }}
+                    >
+                      Cyber
+                    </span>
                   </span>
-                  <span className="block text-7xl lg:text-8xl text-white font-space-grotesk">
-                    Next Gen
+                  <span className="block text-7xl lg:text-8xl font-space-grotesk">
+                    <span
+                      style={{
+                        background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
+                      }}
+                    >
+                      Starts Now
+                    </span>
                   </span>
                 </h1>
               </motion.div>
