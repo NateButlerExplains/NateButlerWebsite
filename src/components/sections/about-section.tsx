@@ -28,22 +28,22 @@ export default function AboutSection() {
           <h2 className={styles.headline}>About Nate</h2>
 
           <p className={styles.bio}>
-            Nate Butler is a cybersecurity strategist and speaker with 15+ years of experience in enterprise risk management, AI governance, and digital resilience. He&apos;s trained 500+ industry leaders and delivered keynotes at 40+ major conferences, positioning organizations for success in an AI-driven threat landscape.
+            From a military family and a Fort Carson upbringing to Senior Security Architect at Bank of America — Nate Butler&apos;s path through cybersecurity was anything but straight. After 8+ years climbing the corporate ladder at Microsoft, CloudWyze, and Bank of America, a chance elevator meeting with a mentor changed everything. Today he channels that hard-won expertise into one mission: helping professionals break into and advance in cybersecurity through his CLEAR framework — so they can own their value before they ever walk into a room.
           </p>
 
           {/* Trust signals */}
           <div className={styles.trustSignals}>
             <div className={styles.signal}>
-              <span className={styles.signalNumber}>15+</span>
-              <span className={styles.signalLabel}>Years in Cybersecurity</span>
+              <span className={styles.signalNumber}>8+</span>
+              <span className={styles.signalLabel}>Years in Corporate Cybersecurity</span>
             </div>
             <div className={styles.signal}>
-              <span className={styles.signalNumber}>500+</span>
-              <span className={styles.signalLabel}>Industry Leaders Trained</span>
+              <span className={styles.signalNumber}>85%</span>
+              <span className={styles.signalLabel}>Student Job Placement Rate</span>
             </div>
             <div className={styles.signal}>
-              <span className={styles.signalNumber}>40+</span>
-              <span className={styles.signalLabel}>Keynote Speaking Events</span>
+              <span className={styles.signalNumber}>$45K</span>
+              <span className={styles.signalLabel}>Avg Salary Increase Per Graduate</span>
             </div>
           </div>
         </div>
