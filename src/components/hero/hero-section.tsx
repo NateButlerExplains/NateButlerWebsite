@@ -130,7 +130,7 @@ export function HeroSection() {
             <div className="w-full col-span-7">
               {/* Badge */}
               <motion.div {...fadeInUp} className="mb-10">
-                <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full backdrop-blur-lg bg-purple-950/40 border border-purple-500/50">
+                <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl backdrop-blur-lg bg-purple-950/40 border border-purple-500/50">
                   <svg
                     width="16"
                     height="16"
@@ -146,7 +146,7 @@ export function HeroSection() {
                     <path d="M9 12l2 2 4-4" />
                   </svg>
                   <span className="text-xs uppercase tracking-widest font-semibold text-purple-300">
-                    Cyber Keynote Speaker
+                    Helping People Break Into Cyber
                   </span>
                 </div>
               </motion.div>
