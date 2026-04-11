@@ -150,8 +150,8 @@ export function MobileBottomNav() {
       }
     }
 
+    // Only attach listener, don't call on mount so Home stays active on initial load
     window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll()
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [pathname])
