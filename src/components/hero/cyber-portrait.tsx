@@ -3,14 +3,12 @@
 import styles from './cyber-portrait.module.css'
 
 /**
- * Cyber Portrait — High-Impact Speaker Authority Image
+ * Cyber Portrait — Speaker Authority Image
  *
- * Premium cyber-enhanced headshot with:
- * - Grayscale default state, full color on hover
- * - Animated cyan scan line from top to bottom
- * - Glass panel overlays: "SYSTEM ONLINE" + "BIO-METRIC LOCK"
- * - Holographic effects and scale transform on hover
- * - Glowing cyan border with soft blur
+ * Clean, professional headshot with:
+ * - No interactive hover effects
+ * - Simple glowing cyan border with soft blur
+ * - Minimalist design focused on the speaker
  */
 export function CyberPortrait() {
   return (
@@ -21,38 +19,10 @@ export function CyberPortrait() {
       {/* Main image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/Hero - Nate.png"
-        alt="Nate Butler — Global Command Authority"
+        src="/images/Nate Hero - Main.jpeg"
+        alt="Nate Butler — Cyber Speaker"
         className={styles.portraitImage}
       />
-
-      {/* Holographic overlay */}
-      <div className={styles.holographicOverlay} />
-
-      {/* Animated scan line */}
-      <div className={styles.scanLine} />
-
-      {/* Glass Panel: Top Left — System Status */}
-      <div className={`${styles.glassPanel} ${styles.panelTopLeft}`}>
-        <div className={styles.statusIndicator}>
-          <div className={styles.statusDot} />
-          <div className={styles.statusText}>System Online</div>
-        </div>
-        <div className={styles.progressBar}>
-          <div className={styles.progressFill} />
-        </div>
-      </div>
-
-      {/* Glass Panel: Bottom Right — Security Status */}
-      <div className={`${styles.glassPanel} ${styles.panelBottomRight}`}>
-        <div className={styles.securityIcon}>
-          <svg className={styles.lockIcon} viewBox="0 0 24 24" fill="none">
-            <path d="M12 1L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-5zm-2 11l-3-3 1.41-1.41L10 9.17l5.59-5.59L17 5l-7 7z" />
-          </svg>
-          <div className={styles.biometricText}>Bio-Metric Lock</div>
-        </div>
-        <div className={styles.encryptedBadge}>Encrypted</div>
-      </div>
 
       {/* Border glow */}
       <div className={styles.portraitBorder} />

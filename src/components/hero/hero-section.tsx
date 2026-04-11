@@ -233,16 +233,16 @@ export function HeroSection() {
 
               {/* Featured Appearances Ticker */}
               <motion.div
-                className="pt-12 border-t border-white/10"
+                className="pt-8 border-t border-white/10"
                 {...fadeInUp}
                 transition={{ delay: 0.6, duration: 0.8, ease: easeOut }}
               >
-                <p className="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-6">
+                <p className="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-4">
                   Featured On
                 </p>
 
                 {/* Scrolling ticker — constrained to left column width, no overflow */}
-                <div className="relative" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', overflow: 'visible', paddingTop: '1.5rem' }}>
+                <div className="relative" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', overflow: 'visible', paddingTop: '1rem' }}>
                   <motion.div
                     className="flex gap-10 items-center"
                     animate={{ x: [0, -2040] }}
