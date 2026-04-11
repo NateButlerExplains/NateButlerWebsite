@@ -19,7 +19,7 @@ export function HeroSection() {
   return (
     <section className="relative w-full hero-section overflow-x-hidden md:flex md:items-center md:pt-28 pb-0 md:pb-20 md:min-h-auto">
       {/* MOBILE: Full-height portrait with overlay layout */}
-      <div className="md:hidden relative w-full h-screen -mt-[60px]">
+      <div className="md:hidden relative w-full h-screen -mt-[48px]">
         {/* Mobile headshot image fills screen */}
         <motion.div
           className="absolute inset-0"
