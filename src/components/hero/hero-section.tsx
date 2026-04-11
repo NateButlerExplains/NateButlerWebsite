@@ -125,11 +125,11 @@ export function HeroSection() {
           transition={{ duration: 0.6 }}
         >
 
-          <div className="grid grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-12 gap-12 lg:gap-14 items-center">
             {/* LEFT COLUMN: Content (7 columns) */}
             <div className="w-full col-span-7">
               {/* Badge */}
-              <motion.div {...fadeInUp} className="mb-16">
+              <motion.div {...fadeInUp} className="mb-10">
                 <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full backdrop-blur-lg bg-purple-950/40 border border-purple-500/50">
                   <svg
                     width="16"
@@ -190,10 +190,21 @@ export function HeroSection() {
               <motion.div
                 {...fadeInUp}
                 transition={{ delay: 0.3, duration: 0.8, ease: easeOut }}
-                className="mb-12"
+                className="mb-6"
               >
                 <p className="text-lg leading-relaxed text-slate-300 max-w-xl font-manrope">
                   A playbook for aspiring cybersecurity professionals ready to break in and stand out.
+                </p>
+              </motion.div>
+
+              {/* Secondary tagline */}
+              <motion.div
+                {...fadeInUp}
+                transition={{ delay: 0.38, duration: 0.8, ease: easeOut }}
+                className="mb-12"
+              >
+                <p className="text-base leading-relaxed text-slate-400 max-w-xl font-manrope">
+                  Helping future cyber professionals find their path with clarity and confidence.
                 </p>
               </motion.div>
 
@@ -225,10 +236,16 @@ export function HeroSection() {
                   onClick={() => {
                     document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
                   }}
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-base transition-all duration-300 hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
+                  className="inline-flex items-center justify-center px-10 py-4 rounded-xl text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-base transition-all duration-300 hover:-translate-y-[2px] active:scale-95 active:translate-y-0 relative overflow-hidden"
                   style={{
                     background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
-                    boxShadow: '0 0 32px rgba(0, 229, 255, 0.55), 0 0 8px rgba(0, 229, 255, 0.3), 0 8px 16px rgba(0, 100, 120, 0.4), 0 4px 8px rgba(0, 200, 220, 0.2)',
+                    boxShadow: '0 0 40px rgba(0, 229, 255, 0.6), 0 0 12px rgba(0, 229, 255, 0.4), 0 12px 24px rgba(0, 100, 120, 0.5), 0 6px 12px rgba(0, 200, 220, 0.3)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 0 50px rgba(0, 229, 255, 0.75), 0 0 16px rgba(0, 229, 255, 0.5), 0 16px 32px rgba(0, 100, 120, 0.6), 0 8px 16px rgba(0, 200, 220, 0.4)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 0 40px rgba(0, 229, 255, 0.6), 0 0 12px rgba(0, 229, 255, 0.4), 0 12px 24px rgba(0, 100, 120, 0.5), 0 6px 12px rgba(0, 200, 220, 0.3)'
                   }}
                 >
                   Book Nate Butler

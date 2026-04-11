@@ -37,7 +37,7 @@
   color: #00e5ff;
   margin: 0 0 1rem 0;
   text-align: center;
-  text-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+  text-shadow: 0 0 12px rgba(0, 229, 255, 0.12);
 }
 
 @media (min-width: 1024px) {
