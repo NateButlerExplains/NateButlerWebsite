@@ -44,10 +44,23 @@ export default function BookMeNow() {
           style={{
             minWidth: '320px',
             height: '700px',
-            overflow: 'hidden',
           }}
         />
         <style>{`
+          /* Target all Calendly-injected wrapper divs */
+          .calendly-inline-widget > div {
+            background: transparent !important;
+            background-color: transparent !important;
+          }
+          .calendly-inline-widget > div > div {
+            background: transparent !important;
+            background-color: transparent !important;
+          }
+          .calendly-inline-widget > div > div > div {
+            background: transparent !important;
+            background-color: transparent !important;
+          }
+
           .calendly-inline-widget iframe {
             background-color: transparent !important;
             border: none !important;
@@ -55,6 +68,7 @@ export default function BookMeNow() {
           .calendly-inline-widget {
             background-color: transparent !important;
           }
+
           /* Dark mode styling for GDPR/cookie banner */
           iframe[src*="calendly"] {
             color-scheme: dark !important;
