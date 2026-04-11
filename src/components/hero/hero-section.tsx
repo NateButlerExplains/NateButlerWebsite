@@ -244,7 +244,7 @@ export function HeroSection() {
                   <motion.div
                     className="flex gap-10 items-center"
                     animate={{ x: ['0%', '-50%'] }}
-                    transition={{ duration: 45, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
+                    transition={{ duration: 38, repeat: Infinity, ease: [0.25, 0.1, 0.25, 1], repeatType: 'loop' }}
                     style={{ width: 'max-content' }}
                   >
                     {/* Logo images duplicated for seamless loop */}
