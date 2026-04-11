@@ -43,8 +43,7 @@ export default function BookMeNow() {
           data-url={`${CALENDLY_URL}?${CALENDLY_PARAMS}`}
           style={{
             minWidth: '320px',
-            height: '1000px',
-            marginTop: '2rem',
+            height: '700px',
             overflow: 'hidden',
           }}
         />
