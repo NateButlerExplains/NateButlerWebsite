@@ -78,7 +78,7 @@ export function HeroSection() {
           >
             <button
               onClick={() => {
-                window.location.href = '/book-me-now'
+                document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
               }}
               className="w-full inline-flex items-center justify-center px-8 py-4 rounded-full bg-cyan-400 text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-1 active:scale-95"
               style={{
@@ -191,7 +191,7 @@ export function HeroSection() {
                 {/* Primary: BOOK NATE */}
                 <button
                   onClick={() => {
-                    window.location.href = '/book-me-now'
+                    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
                   }}
                   className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-cyan-400 text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-1 active:scale-95"
                   style={{
