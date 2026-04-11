@@ -62,6 +62,7 @@ const config: Config = {
       },
       boxShadow: {
         'neon-glow': '0 0 40px rgba(0, 229, 255, 0.1)',
+        'neon-glow-strong': '0 0 32px rgba(0, 229, 255, 0.55), 0 0 8px rgba(0, 229, 255, 0.3)',
         'neon-glow-secondary': '0 0 40px rgba(112, 0, 255, 0.1)',
         'neon-glow-tertiary': '0 0 40px rgba(255, 0, 229, 0.1)',
       },

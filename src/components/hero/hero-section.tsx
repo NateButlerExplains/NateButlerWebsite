@@ -86,15 +86,14 @@ export function HeroSection() {
           >
             <button
               onClick={() => {
-                // Scroll to book section or open book link
                 const bookSection = document.getElementById('books')
                 if (bookSection) {
                   bookSection.scrollIntoView({ behavior: 'smooth' })
                 }
               }}
-              className="w-full inline-flex items-center justify-center px-8 py-4 rounded-full bg-cyan-400 text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-1 active:scale-95"
+              className="w-full inline-flex items-center justify-center px-8 py-4 rounded-xl text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-sm transition-all duration-300 shadow-neon-glow-strong hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
               style={{
-                boxShadow: '0 0 30px rgba(0, 229, 255, 0.5)',
+                background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
               }}
             >
               Get the Book
@@ -104,7 +103,7 @@ export function HeroSection() {
               onClick={() => {
                 document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
               }}
-              className="w-full inline-flex items-center justify-center px-8 py-3 rounded-full bg-transparent border border-slate-400 text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-xs transition-all duration-200 hover:border-cyan-400 hover:text-cyan-400 active:scale-95"
+              className="w-full inline-flex items-center justify-center px-8 py-3 rounded-xl bg-white/[0.04] border border-outline-variant text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-xs transition-all duration-300 hover:bg-white/[0.08] hover:border-[rgba(0,229,255,0.45)] hover:text-[#00e5ff] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
             >
               <span>Book Nate Butler</span>
             </button>
@@ -207,17 +206,9 @@ export function HeroSection() {
                       bookSection.scrollIntoView({ behavior: 'smooth' })
                     }
                   }}
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-cyan-400 text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-1 active:scale-95"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-base transition-all duration-300 shadow-neon-glow-strong hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
                   style={{
-                    boxShadow: '0 0 30px rgba(0, 229, 255, 0.5)',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow =
-                      '0 0 40px rgba(0, 229, 255, 0.7)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow =
-                      '0 0 30px rgba(0, 229, 255, 0.5)'
+                    background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
                   }}
                 >
                   Get the Book
@@ -228,7 +219,7 @@ export function HeroSection() {
                   onClick={() => {
                     document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
                   }}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-transparent border border-slate-400 text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-sm transition-all duration-200 hover:border-cyan-400 hover:text-cyan-400 active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/[0.04] border border-outline-variant text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-sm transition-all duration-300 hover:bg-white/[0.08] hover:border-[rgba(0,229,255,0.45)] hover:text-[#00e5ff] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
                 >
                   Book Nate Butler
                 </button>

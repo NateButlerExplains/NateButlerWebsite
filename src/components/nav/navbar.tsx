@@ -139,9 +139,9 @@ export function Navbar() {
               onClick={() => {
                 window.location.href = '/book-me-now'
               }}
-              className="font-space-grotesk text-sm font-bold uppercase tracking-wider px-6 py-2 rounded-full bg-[#00E5FF] text-slate-900 transition-all duration-200 hover:scale-105"
+              className="inline-flex items-center justify-center px-6 py-2 rounded-xl font-space-grotesk font-bold uppercase tracking-wider text-xs text-slate-900 transition-all duration-300 shadow-neon-glow-strong hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
               style={{
-                boxShadow: '0 0 20px rgba(0, 229, 255, 0.4)',
+                background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
               }}
             >
               Book Now

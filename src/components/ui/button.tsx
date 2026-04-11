@@ -39,11 +39,11 @@ export function Button({
   // Base button styles: shared across all variants
   const baseStyles = cn(
     'inline-flex items-center justify-center',
-    'rounded-full font-medium',
-    'transition-all duration-200',
+    'rounded-xl font-medium',
+    'transition-all duration-300',
     'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary',
-    'active:scale-95',
-    'hover:scale-105',
+    'active:scale-95 active:translate-y-0',
+    'hover:-translate-y-[2px]',
   )
 
   // Size variants
@@ -55,16 +55,16 @@ export function Button({
 
   // Variant styles
   const variantStyles = {
-    // Primary: Cyan glow, high contrast, main CTA
-    // - Background: primary cyan (#00e5ff)
+    // Primary: Gradient cyan-to-blue, high contrast, main CTA
+    // - Background: gradient from primary cyan (#00e5ff) to blue (#4D7FFF)
     // - Text: high contrast black (text-on-primary)
-    // - Glow: neon-glow effect (cyan shadow)
-    // - Hover: glow intensifies, slight scale up
+    // - Glow: neon-glow-strong effect (two-layer cyan shadow)
+    // - Hover: glow intensifies
     // - Used for: "Book Me Now" and other primary actions
     primary: cn(
-      'bg-primary text-on-primary',
-      'hover:shadow-neon-glow',
-      'active:shadow-neon-glow',
+      'bg-gradient-to-br from-primary to-[#4D7FFF] text-on-primary',
+      'shadow-neon-glow-strong',
+      'hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)]',
     ),
 
     // Secondary: Purple glow, supporting role
@@ -79,16 +79,15 @@ export function Button({
       'active:shadow-neon-glow-secondary',
     ),
 
-    // Ghost: Transparent with outline, tertiary actions
-    // - Background: transparent
+    // Ghost: Glass tint with subtle outline, tertiary actions
+    // - Background: white at 4% opacity for glass tint
     // - Border: subtle outline at 15% opacity (outline-variant)
     // - Text: normal surface color
-    // - Hover: border and text shift to primary cyan, glow activates
+    // - Hover: background tint increases to 8%, border and text shift to muted cyan
     // - Used for: Tertiary actions, links styled as buttons
     ghost: cn(
-      'bg-transparent border border-outline-variant text-on-surface',
-      'hover:border-primary hover:text-primary hover:shadow-neon-glow',
-      'active:shadow-neon-glow',
+      'bg-white/[0.04] border border-outline-variant text-on-surface',
+      'hover:bg-white/[0.08] hover:border-[rgba(0,229,255,0.45)] hover:text-[#00e5ff]',
     ),
   }
 
