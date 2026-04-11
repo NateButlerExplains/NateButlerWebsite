@@ -43,40 +43,58 @@ export default function BookMeNow() {
           data-url={`${CALENDLY_URL}?${CALENDLY_PARAMS}`}
         />
         <style>{`
-          /* Remove padding/margin from Calendly wrapper divs */
-          .calendly-inline-widget > div {
-            background: transparent !important;
-            background-color: transparent !important;
+          /* Aggressive reset of all Calendly wrapper divs */
+          .calendly-inline-widget {
+            width: 100% !important;
+            height: 100% !important;
             padding: 0 !important;
             margin: 0 !important;
-          }
-          .calendly-inline-widget > div > div {
             background: transparent !important;
             background-color: transparent !important;
-            padding: 0 !important;
-            margin: 0 !important;
-          }
-          .calendly-inline-widget > div > div > div {
-            background: transparent !important;
-            background-color: transparent !important;
-            padding: 0 !important;
-            margin: 0 !important;
+            overflow: hidden !important;
+            border: none !important;
           }
 
-          /* Ensure iframe fills container completely */
+          .calendly-inline-widget > * {
+            width: 100% !important;
+            height: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            background: transparent !important;
+            background-color: transparent !important;
+            border: none !important;
+            box-sizing: border-box !important;
+          }
+
+          .calendly-inline-widget > div {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+          }
+
+          .calendly-inline-widget > div > * {
+            width: 100% !important;
+            height: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            background: transparent !important;
+            background-color: transparent !important;
+            border: none !important;
+            box-sizing: border-box !important;
+          }
+
+          /* Ensure iframe fills container with zero spacing */
           .calendly-inline-widget iframe {
             width: 100% !important;
             height: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
             background-color: transparent !important;
             border: none !important;
             display: block !important;
-          }
-
-          /* Container styling */
-          .calendly-inline-widget {
-            width: 100% !important;
-            background-color: transparent !important;
-            overflow: hidden !important;
+            box-sizing: border-box !important;
+            min-width: 100% !important;
+            min-height: 100% !important;
           }
 
           /* Dark mode styling for GDPR/cookie banner */
