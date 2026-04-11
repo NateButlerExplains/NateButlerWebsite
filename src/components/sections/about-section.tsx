@@ -28,22 +28,22 @@ export default function AboutSection() {
           <h2 className={styles.headline}>About Nate</h2>
 
           <p className={styles.bio}>
-            From a military family and a Fort Carson upbringing to Senior Security Architect at Bank of America — Nate Butler&apos;s path through cybersecurity was anything but straight. After 8+ years climbing the corporate ladder at Microsoft, CloudWyze, and Bank of America, a chance elevator meeting with a mentor changed everything. Today he channels that hard-won expertise into one mission: helping professionals break into and advance in cybersecurity through his CLEAR framework — so they can own their value before they ever walk into a room.
+            Nate Butler spent 10 years in enterprise cybersecurity across Fortune 100 banks, Big 4 consulting, MSPs, and MSSPs — from network security controls to risk architecture. A chance elevator meeting with a mentor in Charlotte unlocked a new vision: transforming how professionals see their own expertise. Today he helps security practitioners break into leadership roles and advance their impact by owning their value before they ever walk into a room.
           </p>
 
           {/* Trust signals */}
           <div className={styles.trustSignals}>
             <div className={styles.signal}>
-              <span className={styles.signalNumber}>8+</span>
-              <span className={styles.signalLabel}>Years in Corporate Cybersecurity</span>
+              <span className={styles.signalNumber}>10</span>
+              <span className={styles.signalLabel}>Years in Enterprise Cybersecurity</span>
             </div>
             <div className={styles.signal}>
               <span className={styles.signalNumber}>85%</span>
-              <span className={styles.signalLabel}>Student Job Placement Rate</span>
+              <span className={styles.signalLabel}>Job Placement Rate</span>
             </div>
             <div className={styles.signal}>
               <span className={styles.signalNumber}>$45K</span>
-              <span className={styles.signalLabel}>Avg Salary Increase Per Graduate</span>
+              <span className={styles.signalLabel}>Avg Salary Increase Per Student</span>
             </div>
           </div>
         </div>
