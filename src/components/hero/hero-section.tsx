@@ -243,8 +243,8 @@ export function HeroSection() {
                 <div className="relative" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', overflow: 'visible', paddingTop: '1.5rem' }}>
                   <motion.div
                     className="flex gap-10 items-center"
-                    animate={{ x: ['0%', '-50%'] }}
-                    transition={{ duration: 38, repeat: Infinity, ease: [0.25, 0.1, 0.25, 1], repeatType: 'loop' }}
+                    animate={{ x: [0, -1] }}
+                    transition={{ duration: 45, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
                     style={{ width: 'max-content' }}
                   >
                     {/* Logo images duplicated for seamless loop */}
