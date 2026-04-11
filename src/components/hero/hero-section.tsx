@@ -223,62 +223,56 @@ export function HeroSection() {
                 </button>
               </motion.div>
 
-              {/* Stats Bar with border */}
+              {/* Podcast / Media Logo Ticker */}
               <motion.div
-                className="flex flex-row gap-8 md:gap-12 pt-12 border-t border-white/10"
+                className="pt-12 border-t border-white/10"
                 {...fadeInUp}
                 transition={{ delay: 0.6, duration: 0.8, ease: easeOut }}
               >
-                {/* Stat 1: Keynotes — Cyan */}
-                <div className="flex flex-col">
-                  <div className="text-6xl md:text-7xl font-black font-space-grotesk text-cyan-400">
-                    500+
-                  </div>
-                  <div className="text-xs uppercase tracking-widest text-slate-500 mt-3 font-semibold">
-                    Keynotes
-                  </div>
-                </div>
+                <p className="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-6">
+                  As Heard On
+                </p>
 
-                {/* Divider */}
-                <div className="hidden md:block w-px bg-white/5" />
-
-                {/* Stat 2: Fortune 100s — Purple */}
-                <div className="flex flex-col">
-                  <div
-                    className="text-6xl md:text-7xl font-black font-space-grotesk"
-                    style={{
-                      background: 'linear-gradient(to right, #B78FFF, #D1BCFF)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                    }}
+                {/* Scrolling ticker — constrained to left column width, no overflow */}
+                <div className="relative overflow-hidden" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)' }}>
+                  <motion.div
+                    className="flex gap-10 items-center"
+                    animate={{ x: ['0%', '-50%'] }}
+                    transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+                    style={{ width: 'max-content' }}
                   >
-                    40+
-                  </div>
-                  <div className="text-xs uppercase tracking-widest text-slate-500 mt-3 font-semibold">
-                    Fortune 100s
-                  </div>
-                </div>
-
-                {/* Divider */}
-                <div className="hidden md:block w-px bg-white/5" />
-
-                {/* Stat 3: Reach — Magenta */}
-                <div className="flex flex-col">
-                  <div
-                    className="text-6xl md:text-7xl font-black font-space-grotesk"
-                    style={{
-                      background: 'linear-gradient(to right, #D1BCFF, #FF88DD)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                    }}
-                  >
-                    15M
-                  </div>
-                  <div className="text-xs uppercase tracking-widest text-slate-500 mt-3 font-semibold">
-                    Reach
-                  </div>
+                    {/* Logos duplicated for seamless loop */}
+                    {[...Array(2)].map((_, setIdx) => (
+                      <div key={setIdx} className="flex gap-10 items-center">
+                        {/* Placeholder podcast/media logos — replace with real SVGs */}
+                        {[
+                          { label: 'CyberTalk', width: 90 },
+                          { label: 'SANS', width: 60 },
+                          { label: 'Darknet Diaries', width: 110 },
+                          { label: 'ISACA', width: 70 },
+                          { label: 'Risky Biz', width: 80 },
+                          { label: 'Security Weekly', width: 120 },
+                        ].map((logo) => (
+                          <div
+                            key={logo.label}
+                            className="flex items-center justify-center flex-shrink-0 px-3 py-2 rounded"
+                            style={{
+                              width: logo.width,
+                              background: 'rgba(255,255,255,0.04)',
+                              border: '1px solid rgba(255,255,255,0.08)',
+                            }}
+                          >
+                            <span
+                              className="font-space-grotesk font-bold text-xs uppercase tracking-wider whitespace-nowrap"
+                              style={{ color: 'rgba(255,255,255,0.35)' }}
+                            >
+                              {logo.label}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
