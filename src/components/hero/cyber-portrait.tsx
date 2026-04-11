@@ -24,7 +24,10 @@ export function CyberPortrait() {
         className={styles.portraitImage}
       />
 
-      {/* Border glow */}
+      {/* Fade overlay — blends portrait edges into background */}
+      <div className={styles.portraitFade} />
+
+      {/* Border */}
       <div className={styles.portraitBorder} />
     </div>
   )

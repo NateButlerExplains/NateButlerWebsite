@@ -287,12 +287,12 @@ export function HeroSection() {
 
             {/* RIGHT COLUMN: Cyber Portrait (5 columns) */}
             <motion.div
-              className="w-full col-span-5 flex justify-center lg:justify-end items-center"
+              className="w-full col-span-5 flex justify-center items-center"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: easeOut }}
             >
-              <div className="w-full max-w-lg lg:max-w-2xl">
+              <div className="w-full max-w-lg lg:max-w-xl">
                 <CyberPortrait />
               </div>
             </motion.div>
