@@ -23,7 +23,7 @@ export default function BookMeNow() {
   return (
     <section className={styles.container} id="booking">
       <div className={styles.wrapper}>
-        <h2 className={styles.headline}>Book Me Now</h2>
+        <h2 className={styles.headline}>Book Discovery Call</h2>
         <p className={styles.subheadline}>
           Pick a time that works for you. Your booking syncs directly with my calendar.
         </p>
