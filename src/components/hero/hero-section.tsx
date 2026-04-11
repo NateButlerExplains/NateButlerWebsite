@@ -240,7 +240,7 @@ export function HeroSection() {
                 </p>
 
                 {/* Scrolling ticker — constrained to left column width, no overflow */}
-                <div className="relative overflow-hidden" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)' }}>
+                <div className="relative" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', overflow: 'visible', paddingTop: '1.5rem' }}>
                   <motion.div
                     className="flex gap-10 items-center"
                     animate={{ x: ['0%', '-50%'] }}
