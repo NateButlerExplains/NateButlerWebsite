@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#0a0a0f"/>
+
+  <!-- Shield -->
+  <g id="shield">
+    <!-- Shield outline/body -->
+    <path d="M 100 30 L 160 60 L 160 110 C 160 150 100 170 100 170 C 100 170 40 150 40 110 L 40 60 Z"
+          fill="none"
+          stroke="#00e5ff"
+          stroke-width="3"
+          stroke-linejoin="round"/>
+
+    <!-- Shield fill subtle background -->
+    <path d="M 100 30 L 160 60 L 160 110 C 160 150 100 170 100 170 C 100 170 40 150 40 110 L 40 60 Z"
+          fill="#00e5ff"
+          opacity="0.1"/>
+
+    <!-- Checkmark -->
+    <g id="checkmark" transform="translate(100, 110)">
+      <!-- Left part of checkmark -->
+      <line x1="-20" y1="5" x2="-5" y2="25"
+            stroke="#00e5ff"
+            stroke-width="4"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+      <!-- Right part of checkmark -->
+      <line x1="-5" y1="25" x2="25" y2="-15"
+            stroke="#00e5ff"
+            stroke-width="4"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Glow effect -->
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Apply glow to shield -->
+  <g filter="url(#glow)">
+    <path d="M 100 30 L 160 60 L 160 110 C 160 150 100 170 100 170 C 100 170 40 150 40 110 L 40 60 Z"
+          fill="none"
+          stroke="#00e5ff"
+          stroke-width="3"
+          stroke-linejoin="round"
+          opacity="0.3"/>
+  </g>
+</svg>

@@ -27,6 +27,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#131318" />
         <meta name="color-scheme" content="dark" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body className="bg-cyber-dark text-on-surface antialiased">
         {/* Global cyber intelligence HUD background */}
