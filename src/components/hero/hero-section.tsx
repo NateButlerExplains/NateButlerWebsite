@@ -117,25 +117,19 @@ export function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Join Discord button - upper right */}
+          {/* Book Nate button - upper right */}
           <motion.button
             onClick={() => {
-              const discordUrl = process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || '#'
-              window.open(discordUrl, '_blank')
+              window.location.href = '/book-me-now'
             }}
-            className="absolute top-0 right-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-transparent border border-slate-400 text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-sm transition-all duration-200 hover:border-cyan-400 hover:text-cyan-400 active:scale-95"
+            className="absolute top-0 right-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-cyan-400 text-slate-900 font-space-grotesk font-semibold uppercase tracking-widest text-sm transition-all duration-200 hover:shadow-lg hover:-translate-y-1 active:scale-95"
+            style={{
+              boxShadow: '0 0 20px rgba(0, 229, 255, 0.4)',
+            }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8, ease: easeOut }}
           >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M20.317 4.3671a19.8062 19.8062 0 0 0-4.8383-1.4922.074.074 0 0 0-.0787.0369c-.210.3932-.441.9055-.603 1.309a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.309.077.077 0 0 0-.0787-.036 19.7896 19.7896 0 0 0-4.8383 1.4922.07.07 0 0 0-.0327.0277C1.618 8.4959 1.146 12.5899 2.0779 16.5681a.08.08 0 0 0 .0312.0479 19.9297 19.9297 0 0 0 6.0023 3.0294.078.078 0 0 0 .0852-.0286 14.175 14.175 0 0 0 1.232-2.00.076.076 0 0 0-.042-.106 13.107 13.107 0 0 1-1.873-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.294.075.075 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.075.075 0 0 1 .079.009c.12.098.246.198.373.295a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.076.076 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.029.077.077 0 0 0 .032-.479c.955-3.999.287-7.981-.956-11.980a.071.071 0 0 0-.031-.035zM8.02 15.3312c-1.039 0-1.895-.952-1.895-2.126 0-1.173.84-2.126 1.895-2.126 1.062 0 1.902.953 1.895 2.126 0 1.173-.84 2.126-1.895 2.126zm7.973 0c-1.039 0-1.895-.952-1.895-2.126 0-1.173.84-2.126 1.895-2.126 1.062 0 1.902.953 1.895 2.126 0 1.173-.833 2.126-1.895 2.126z" />
-            </svg>
             Book Nate
           </motion.button>
 
@@ -203,33 +197,6 @@ export function HeroSection() {
                 </p>
               </motion.div>
 
-              {/* Buttons */}
-              <motion.div
-                className="flex flex-row gap-5 mb-16"
-                {...fadeInUp}
-                transition={{ delay: 0.45, duration: 0.8, ease: easeOut }}
-              >
-                {/* Primary: BOOK ME NOW */}
-                <button
-                  onClick={() => {
-                    window.location.href = '/book-me-now'
-                  }}
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-cyan-400 text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-1 active:scale-95"
-                  style={{
-                    boxShadow: '0 0 30px rgba(0, 229, 255, 0.5)',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow =
-                      '0 0 40px rgba(0, 229, 255, 0.7)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow =
-                      '0 0 30px rgba(0, 229, 255, 0.5)'
-                  }}
-                >
-                  Book Nate Butler
-                </button>
-              </motion.div>
 
               {/* Featured Appearances Ticker */}
               <motion.div
@@ -245,9 +212,9 @@ export function HeroSection() {
                 <div className="relative overflow-hidden" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)' }}>
                   <motion.div
                     className="flex gap-10 items-center"
-                    animate={{ x: ['0%', '-50%'] }}
-                    transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                    style={{ width: 'max-content' }}
+                    animate={{ x: [0, -1] }}
+                    transition={{ duration: 20, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
+                    style={{ width: 'fit-content' }}
                   >
                     {/* Logos duplicated for seamless loop */}
                     {[...Array(2)].map((_, setIdx) => (
@@ -269,15 +236,16 @@ export function HeroSection() {
                                 width: item.width,
                                 background: item.upcoming ? 'rgba(112, 0, 255, 0.08)' : 'rgba(255,255,255,0.04)',
                                 border: item.upcoming ? '1px solid rgba(112, 0, 255, 0.2)' : '1px solid rgba(255,255,255,0.08)',
-                                paddingRight: item.upcoming ? '2rem' : '0.75rem',
+                                paddingTop: item.upcoming ? '1.75rem' : '0.5rem',
+                                paddingBottom: '0.5rem',
                               }}
                             >
                               <span
-                                className="font-space-grotesk font-bold text-xs uppercase tracking-wider"
+                                className="font-space-grotesk font-bold text-[10px] uppercase tracking-wider"
                                 style={{
                                   color: item.upcoming ? 'rgba(176, 127, 255, 0.7)' : 'rgba(255,255,255,0.35)',
                                   wordBreak: 'break-word',
-                                  lineHeight: '1.2',
+                                  lineHeight: '1.3',
                                 }}
                               >
                                 {item.label}
@@ -286,7 +254,7 @@ export function HeroSection() {
                             {/* Upcoming badge */}
                             {item.upcoming && (
                               <span
-                                className="absolute top-1 right-1 text-[8px] uppercase tracking-widest font-bold px-1 py-0.5 rounded flex-shrink-0"
+                                className="absolute top-1 left-1/2 -translate-x-1/2 text-[8px] uppercase tracking-widest font-bold px-1.5 py-0.5 rounded flex-shrink-0 whitespace-nowrap"
                                 style={{
                                   background: 'rgba(112, 0, 255, 0.3)',
                                   color: '#D1BCFF',
