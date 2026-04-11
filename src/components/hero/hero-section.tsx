@@ -43,7 +43,7 @@ export function HeroSection() {
         </motion.div>
 
         {/* Overlay: Headline + Buttons positioned on bottom of portrait */}
-        <div className="absolute inset-0 flex flex-col justify-end px-6 pt-2 pb-28 z-10">
+        <div className="absolute inset-0 flex flex-col justify-end px-6 pt-2 pb-32 z-10">
           {/* Headline overlaid on bottom portion */}
           <motion.div
             {...fadeInUp}
