@@ -257,31 +257,29 @@ export function HeroSection() {
                           { src: '/images/Logos/Architecture.png', alt: 'Art and Architecture', upcoming: false },
                           { src: '/images/Logos/Crime Junkies.png', alt: 'Cyber Crime Junkies', upcoming: false },
                           { src: '/images/Logos/Spark.png', alt: 'Neurodivergent Podcast', upcoming: false },
+                          { src: '/images/Logos/ByteSize Balance.png', alt: 'ByteSize Balance', upcoming: false },
                           { src: '/images/Logos/Code Switch.png', alt: 'CodeSwitch Podcast', upcoming: true },
                           { src: '/images/Logos/T2Cyber.png', alt: 'Transition to Cyber Panel', upcoming: true },
                         ].map((item) => (
                           <div key={item.alt} className="flex items-center justify-center flex-shrink-0 relative">
-                            {/* Logo image */}
+                            {/* Logo image — no dimming, full brightness */}
                             <img
                               src={item.src}
                               alt={item.alt}
                               className="h-16 object-contain"
-                              style={{
-                                opacity: item.upcoming ? 0.6 : 1,
-                                filter: 'brightness(0.95)',
-                              }}
                             />
-                            {/* Upcoming badge — outside, top center */}
+                            {/* Upcoming badge — outside, top center, more prominent */}
                             {item.upcoming && (
                               <span
-                                className="absolute -top-3 left-1/2 -translate-x-1/2 text-[8px] uppercase tracking-widest font-bold px-1.5 py-0.5 rounded flex-shrink-0 whitespace-nowrap"
+                                className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-widest font-extrabold px-2 py-1 rounded flex-shrink-0 whitespace-nowrap"
                                 style={{
-                                  background: 'rgba(112, 0, 255, 0.3)',
-                                  color: '#D1BCFF',
-                                  border: '1px solid rgba(112, 0, 255, 0.4)',
+                                  background: 'rgba(112, 0, 255, 0.5)',
+                                  color: '#00e5ff',
+                                  border: '1px solid rgba(0, 229, 255, 0.6)',
+                                  boxShadow: '0 0 12px rgba(0, 229, 255, 0.3)',
                                 }}
                               >
-                                Soon
+                                Coming Soon
                               </span>
                             )}
                           </div>
