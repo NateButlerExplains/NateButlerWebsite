@@ -253,7 +253,7 @@ export function HeroSection() {
                         {/* Featured logos */}
                         {[
                           { src: '/images/Logos/Human in the Loop.png', alt: 'Human-in-the-Loop Podcast', upcoming: false },
-                          { src: '/images/Logos/Tech.png', alt: 'Techniche Tips Podcast', upcoming: false },
+                          { src: '/images/Logos/Tech2.png', alt: 'Techniche Tips Podcast', upcoming: false },
                           { src: '/images/Logos/Architecture.png', alt: 'Art and Architecture', upcoming: false },
                           { src: '/images/Logos/Crime Junkies.png', alt: 'Cyber Crime Junkies', upcoming: false },
                           { src: '/images/Logos/Spark.png', alt: 'Neurodivergent Podcast', upcoming: false },
