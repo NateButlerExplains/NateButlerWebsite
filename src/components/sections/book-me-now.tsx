@@ -8,6 +8,7 @@ const CALENDLY_URL = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.c
 // Dark mode theme parameters for Calendly
 const CALENDLY_PARAMS = new URLSearchParams({
   hide_event_type_details: '1',
+  hide_gdpr_banner: '0',
   background_color: '0d0d12',
   text_color: 'ffffff',
   primary_color: '00e5ff',
@@ -54,6 +55,19 @@ export default function BookMeNow() {
           }
           .calendly-inline-widget {
             background-color: transparent !important;
+          }
+          /* Dark mode styling for GDPR/cookie banner */
+          iframe[src*="calendly"] {
+            color-scheme: dark !important;
+          }
+          .calendly-gdpr-banner {
+            background-color: #0d0d12 !important;
+            color: #ffffff !important;
+            border-top: 1px solid rgba(0, 229, 255, 0.2) !important;
+          }
+          .calendly-gdpr-banner button {
+            background-color: #00e5ff !important;
+            color: #0d0d12 !important;
           }
         `}</style>
       </div>
