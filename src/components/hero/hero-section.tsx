@@ -223,14 +223,14 @@ export function HeroSection() {
                 </button>
               </motion.div>
 
-              {/* Podcast / Media Logo Ticker */}
+              {/* Featured Appearances Ticker */}
               <motion.div
                 className="pt-12 border-t border-white/10"
                 {...fadeInUp}
                 transition={{ delay: 0.6, duration: 0.8, ease: easeOut }}
               >
                 <p className="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-6">
-                  As Heard On
+                  Featured On
                 </p>
 
                 {/* Scrolling ticker — constrained to left column width, no overflow */}
@@ -238,36 +238,51 @@ export function HeroSection() {
                   <motion.div
                     className="flex gap-10 items-center"
                     animate={{ x: ['0%', '-50%'] }}
-                    transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+                    transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
                     style={{ width: 'max-content' }}
                   >
                     {/* Logos duplicated for seamless loop */}
                     {[...Array(2)].map((_, setIdx) => (
                       <div key={setIdx} className="flex gap-10 items-center">
-                        {/* Placeholder podcast/media logos — replace with real SVGs */}
+                        {/* Appearances with upcoming badge */}
                         {[
-                          { label: 'CyberTalk', width: 90 },
-                          { label: 'SANS', width: 60 },
-                          { label: 'Darknet Diaries', width: 110 },
-                          { label: 'ISACA', width: 70 },
-                          { label: 'Risky Biz', width: 80 },
-                          { label: 'Security Weekly', width: 120 },
-                        ].map((logo) => (
-                          <div
-                            key={logo.label}
-                            className="flex items-center justify-center flex-shrink-0 px-3 py-2 rounded"
-                            style={{
-                              width: logo.width,
-                              background: 'rgba(255,255,255,0.04)',
-                              border: '1px solid rgba(255,255,255,0.08)',
-                            }}
-                          >
-                            <span
-                              className="font-space-grotesk font-bold text-xs uppercase tracking-wider whitespace-nowrap"
-                              style={{ color: 'rgba(255,255,255,0.35)' }}
+                          { label: 'Human-in-the-Loop Podcast', width: 140, upcoming: false },
+                          { label: 'Techniche Tips Podcast', width: 130, upcoming: false },
+                          { label: 'Art and Architecture', width: 120, upcoming: false },
+                          { label: 'Cyber Crime Junkies', width: 125, upcoming: false },
+                          { label: 'Neurodivergent Podcast', width: 130, upcoming: false },
+                          { label: 'CodeSwitch Podcast', width: 120, upcoming: true },
+                          { label: 'Transition to Cyber Panel', width: 135, upcoming: true },
+                        ].map((item) => (
+                          <div key={item.label} className="flex items-center justify-center flex-shrink-0 relative">
+                            <div
+                              className="flex items-center justify-center px-3 py-2 rounded relative"
+                              style={{
+                                width: item.width,
+                                background: item.upcoming ? 'rgba(112, 0, 255, 0.08)' : 'rgba(255,255,255,0.04)',
+                                border: item.upcoming ? '1px solid rgba(112, 0, 255, 0.2)' : '1px solid rgba(255,255,255,0.08)',
+                              }}
                             >
-                              {logo.label}
-                            </span>
+                              <span
+                                className="font-space-grotesk font-bold text-xs uppercase tracking-wider whitespace-nowrap"
+                                style={{ color: item.upcoming ? 'rgba(176, 127, 255, 0.7)' : 'rgba(255,255,255,0.35)' }}
+                              >
+                                {item.label}
+                              </span>
+                            </div>
+                            {/* Upcoming badge */}
+                            {item.upcoming && (
+                              <span
+                                className="absolute -top-2 -right-2 text-[9px] uppercase tracking-widest font-bold px-1.5 py-0.5 rounded"
+                                style={{
+                                  background: 'rgba(112, 0, 255, 0.3)',
+                                  color: '#D1BCFF',
+                                  border: '1px solid rgba(112, 0, 255, 0.4)',
+                                }}
+                              >
+                                Soon
+                              </span>
+                            )}
                           </div>
                         ))}
                       </div>
