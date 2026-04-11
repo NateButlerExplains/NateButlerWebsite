@@ -5,7 +5,7 @@
     <path d="M 100 15 L 175 52 L 175 125 C 175 172 100 190 100 190 C 100 190 25 172 25 125 L 25 52 Z"
           fill="none"
           stroke="#0a0a0f"
-          stroke-width="12"
+          stroke-width="16"
           stroke-linejoin="round"
           stroke-linecap="round"/>
 
@@ -13,22 +13,22 @@
     <path d="M 100 15 L 175 52 L 175 125 C 175 172 100 190 100 190 C 100 190 25 172 25 125 L 25 52 Z"
           fill="none"
           stroke="#00e5ff"
-          stroke-width="8"
+          stroke-width="10"
           stroke-linejoin="round"
           stroke-linecap="round"/>
 
-    <!-- Large checkmark — ultra aggressive weight -->
-    <g id="checkmark" transform="translate(100, 120)">
+    <!-- Large checkmark — ultra aggressive weight, centered -->
+    <g id="checkmark" transform="translate(100, 110)">
       <!-- Left part of checkmark -->
-      <line x1="-32" y1="10" x2="-8" y2="40"
+      <line x1="-28" y1="8" x2="-6" y2="35"
             stroke="#00e5ff"
-            stroke-width="10"
+            stroke-width="13"
             stroke-linecap="round"
             stroke-linejoin="round"/>
       <!-- Right part of checkmark -->
-      <line x1="-8" y1="40" x2="38" y2="-18"
+      <line x1="-6" y1="35" x2="36" y2="-15"
             stroke="#00e5ff"
-            stroke-width="10"
+            stroke-width="13"
             stroke-linecap="round"
             stroke-linejoin="round"/>
     </g>
@@ -37,7 +37,7 @@
   <!-- Strong glow effect for extra pop -->
   <defs>
     <filter id="strongGlow">
-      <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -50,7 +50,7 @@
     <path d="M 100 15 L 175 52 L 175 125 C 175 172 100 190 100 190 C 100 190 25 172 25 125 L 25 52 Z"
           fill="none"
           stroke="#0a0a0f"
-          stroke-width="12"
+          stroke-width="16"
           stroke-linejoin="round"
           stroke-linecap="round"
           opacity="0.6"/>
@@ -61,7 +61,7 @@
     <path d="M 100 15 L 175 52 L 175 125 C 175 172 100 190 100 190 C 100 190 25 172 25 125 L 25 52 Z"
           fill="none"
           stroke="#00e5ff"
-          stroke-width="8"
+          stroke-width="10"
           stroke-linejoin="round"
           stroke-linecap="round"
           opacity="0.4"/>
