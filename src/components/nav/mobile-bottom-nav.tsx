@@ -195,19 +195,22 @@ export function MobileBottomNav() {
     return (
       <Link
         href="/"
-        className="flex flex-col items-center justify-center gap-[3px] py-2 px-3 transition-colors duration-200 -mt-3"
+        className="flex flex-col items-center justify-center gap-[3px] py-2 px-3 transition-colors duration-200"
       >
-        {/* Cyan pill/background behind the home icon */}
+        {/* Embossed button-like pill background */}
         <div
           className="flex items-center justify-center rounded-full w-12 h-12"
           style={{
             background: active
-              ? 'rgba(0, 229, 255, 0.18)'
-              : 'rgba(255, 255, 255, 0.06)',
+              ? 'linear-gradient(135deg, rgba(0, 229, 255, 0.25), rgba(0, 229, 255, 0.12))'
+              : 'linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04))',
             boxShadow: active
-              ? '0 0 16px rgba(0, 229, 255, 0.35)'
-              : '0 0 8px rgba(255, 255, 255, 0.05)',
-            transition: 'background 0.2s ease, box-shadow 0.2s ease',
+              ? 'inset 0 1px 2px rgba(255, 255, 255, 0.2), 0 0 20px rgba(0, 229, 255, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3)'
+              : 'inset 0 1px 2px rgba(255, 255, 255, 0.1), 0 0 8px rgba(255, 255, 255, 0.08), 0 2px 6px rgba(0, 0, 0, 0.2)',
+            border: active
+              ? '1px solid rgba(0, 229, 255, 0.3)'
+              : '1px solid rgba(255, 255, 255, 0.1)',
+            transition: 'all 0.2s ease',
           }}
         >
           <IconHome active={active} />
@@ -227,10 +230,10 @@ export function MobileBottomNav() {
       className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-cyber-dark/90 border-t border-white/10"
       style={{
         backdropFilter: 'blur(20px)',
-        paddingBottom: 'env(safe-area-inset-bottom)',
+        paddingBottom: 'max(0.5rem, env(safe-area-inset-bottom))',
       }}
     >
-      <div className="flex items-end justify-around w-full">
+      <div className="flex items-center justify-around w-full">
         <NavItem
           href="#podcast"
           id="podcast"
