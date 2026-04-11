@@ -52,7 +52,7 @@ export function HeroSection() {
           >
             <h1 className="font-black leading-tight tracking-tighter space-y-0">
               <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
-                Next Gen
+                A Speaker on
               </span>
               <span
                 className="block text-6xl sm:text-7xl font-space-grotesk"
@@ -63,32 +63,24 @@ export function HeroSection() {
                   backgroundClip: 'text',
                 }}
               >
-                Cyber
-              </span>
-              <span className="block text-6xl sm:text-7xl font-space-grotesk"
-                style={{
-                  background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                Starts Now
+                Breaking Into Cyber
               </span>
             </h1>
           </motion.div>
 
           {/* Buttons below headline */}
           <motion.div
-            className="flex flex-col gap-2"
+            className="flex flex-col gap-3"
             {...fadeInUp}
             transition={{ delay: 0.45, duration: 0.8, ease: easeOut }}
           >
             <button
               onClick={() => {
-                const bookSection = document.getElementById('books')
-                if (bookSection) {
-                  bookSection.scrollIntoView({ behavior: 'smooth' })
+                const kitSection = document.querySelector('[id*="kit"]') || document.querySelector('[id*="speaker"]')
+                if (kitSection) {
+                  kitSection.scrollIntoView({ behavior: 'smooth' })
+                } else {
+                  window.open('#', '_self')
                 }
               }}
               className="w-full inline-flex items-center justify-center px-8 py-3 rounded-xl text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-xs transition-all duration-300 hover:text-[#00e5ff] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
@@ -97,7 +89,7 @@ export function HeroSection() {
                 border: '2px solid transparent',
               }}
             >
-              <span>Get the Book</span>
+              <span>Download Speaker Kit</span>
             </button>
 
             <button
