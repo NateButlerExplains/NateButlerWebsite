@@ -234,29 +234,29 @@ export function MobileBottomNav() {
     >
       <div className="flex items-center justify-around w-full">
         <NavItem
-          href="#podcast"
-          id="podcast"
-          label="Podcast"
-          icon={<IconPodcast active={isActive('podcast')} />}
-        />
-        <NavItem
           href="#about"
           id="about"
           label="About"
           icon={<IconAbout active={isActive('about')} />}
         />
-        <HomeItem />
         <NavItem
           href="#books"
           id="books"
           label="Books"
           icon={<IconBooks active={isActive('books')} />}
         />
+        <HomeItem />
         <NavItem
           href="#coaching"
           id="coaching"
           label="Coaching"
           icon={<IconCoaching active={isActive('coaching')} />}
+        />
+        <NavItem
+          href="#podcast"
+          id="podcast"
+          label="Podcast"
+          icon={<IconPodcast active={isActive('podcast')} />}
         />
       </div>
     </nav>

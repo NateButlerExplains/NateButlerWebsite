@@ -56,11 +56,11 @@ export function Navbar() {
   }, [])
 
   const navLinks = [
-    { label: 'HOME', href: '/', id: 'home' },
     { label: 'ABOUT', href: '#about', id: 'about' },
-    { label: 'PODCAST', href: '#podcast', id: 'podcast' },
     { label: 'BOOKS', href: '#books', id: 'books' },
+    { label: 'HOME', href: '/', id: 'home' },
     { label: 'COACHING', href: '#coaching', id: 'coaching' },
+    { label: 'PODCAST', href: '#podcast', id: 'podcast' },
   ]
 
   const isLinkActive = (linkId: string) => {
