@@ -195,11 +195,11 @@ export function MobileBottomNav() {
     return (
       <Link
         href="/"
-        className="flex flex-col items-center justify-center gap-[3px] py-2 px-3 transition-colors duration-200"
+        className="flex flex-col items-center justify-center gap-[3px] py-1 px-3 transition-colors duration-200"
       >
         {/* Embossed button-like pill background */}
         <div
-          className="flex items-center justify-center rounded-full w-12 h-12"
+          className="flex items-center justify-center rounded-full w-9 h-9"
           style={{
             background: active
               ? 'linear-gradient(135deg, rgba(0, 229, 255, 0.25), rgba(0, 229, 255, 0.12))'
@@ -230,7 +230,7 @@ export function MobileBottomNav() {
       className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-cyber-dark/90 border-t border-white/10"
       style={{
         backdropFilter: 'blur(20px)',
-        paddingBottom: 'max(0.5rem, env(safe-area-inset-bottom))',
+        paddingBottom: 'env(safe-area-inset-bottom)',
       }}
     >
       <div className="flex items-center justify-around w-full">
