@@ -1,4 +1,5 @@
 import { HeroSection } from '@/components/hero/hero-section'
+import { FeaturedOn } from '@/components/sections/featured-on'
 import AboutSection from '@/components/sections/about-section'
 import BookMeNow from '@/components/sections/book-me-now'
 import DiscordCommunity from '@/components/sections/discord-community'
@@ -9,6 +10,7 @@ export default function Home() {
     <>
       <main className="relative z-[1] overflow-x-hidden bg-surface pb-16 md:pb-0">
         <HeroSection />
+        <FeaturedOn />
         <AboutSection />
         <BookMeNow />
         <DiscordCommunity />

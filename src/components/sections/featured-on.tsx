@@ -1,0 +1,70 @@
+'use client'
+
+import { motion, easeOut } from 'framer-motion'
+import styles from './featured-on.module.css'
+
+export function FeaturedOn() {
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, ease: easeOut },
+  }
+
+  return (
+    <section className={styles.container}>
+      <div className={styles.wrapper}>
+        <motion.div
+          className={styles.content}
+          {...fadeInUp}
+          transition={{ delay: 0.1, duration: 0.8, ease: easeOut }}
+        >
+          <p className={styles.label}>Featured On</p>
+
+          {/* Scrolling ticker — responsive for all screen sizes */}
+          <div className={styles.tickerContainer}>
+            <motion.div
+              className={styles.tickerTrack}
+              animate={{ x: [0, -2040] }}
+              transition={{ duration: 45, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
+              style={{ width: 'max-content' }}
+            >
+              {/* Logo images duplicated for seamless loop */}
+              {[...Array(2)].map((_, setIdx) => (
+                <div key={setIdx} className={styles.logoSet}>
+                  {/* Featured logos */}
+                  {[
+                    { src: '/images/Logos/Human in the Loop.png', alt: 'Human-in-the-Loop Podcast', upcoming: false },
+                    { src: '/images/Logos/Tech2.png', alt: 'Techniche Tips Podcast', upcoming: false },
+                    { src: '/images/Logos/Architecture.png', alt: 'Art and Architecture', upcoming: false },
+                    { src: '/images/Logos/Crime Junkies.png', alt: 'Cyber Crime Junkies', upcoming: false },
+                    { src: '/images/Logos/Spark.png', alt: 'Neurodivergent Podcast', upcoming: false },
+                    { src: '/images/Logos/ByteSize Balance.png', alt: 'ByteSize Balance', upcoming: false },
+                    { src: '/images/Logos/Code Switch.png', alt: 'CodeSwitch Podcast', upcoming: true },
+                    { src: '/images/Logos/T2Cyber.png', alt: 'Transition to Cyber Panel', upcoming: true },
+                  ].map((item) => (
+                    <div key={item.alt} className={styles.logoWrapper}>
+                      {/* Logo image */}
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className={styles.logo}
+                      />
+                      {/* Upcoming badge */}
+                      {item.upcoming && (
+                        <span className={styles.badge}>
+                          Coming Soon
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+export default FeaturedOn
