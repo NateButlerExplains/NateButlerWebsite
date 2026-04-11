@@ -44,8 +44,18 @@ export default function BookMeNow() {
             minWidth: '320px',
             height: '1000px',
             marginTop: '2rem',
+            overflow: 'hidden',
           }}
         />
+        <style>{`
+          .calendly-inline-widget iframe {
+            background-color: transparent !important;
+            border: none !important;
+          }
+          .calendly-inline-widget {
+            background-color: transparent !important;
+          }
+        `}</style>
       </div>
     </section>
   )
