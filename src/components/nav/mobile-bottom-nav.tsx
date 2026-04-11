@@ -33,11 +33,10 @@ function IconPodcast({ active }: { active: boolean }) {
       strokeLinejoin="round"
       className={active ? 'text-[#00E5FF]' : 'text-white/60'}
     >
-      <circle cx="12" cy="11" r="4" />
-      <path d="M12 1a9 9 0 0 1 9 9c0 4.5-2.6 8.4-6.4 10.3" />
-      <path d="M3.4 20.3A9 9 0 0 1 3 10" />
-      <line x1="12" y1="15" x2="12" y2="23" />
-      <line x1="9" y1="23" x2="15" y2="23" />
+      <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+      <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+      <line x1="12" y1="19" x2="12" y2="23" />
+      <line x1="8" y1="23" x2="16" y2="23" />
     </svg>
   )
 }
@@ -93,8 +92,8 @@ function IconBooks({ active }: { active: boolean }) {
       strokeLinejoin="round"
       className={active ? 'text-[#00E5FF]' : 'text-white/60'}
     >
-      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z" />
+      <polyline points="9 6 9 18" />
     </svg>
   )
 }
