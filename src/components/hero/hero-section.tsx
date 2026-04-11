@@ -267,8 +267,6 @@ export function HeroSection() {
                                 width: item.width,
                                 background: item.upcoming ? 'rgba(112, 0, 255, 0.08)' : 'rgba(255,255,255,0.04)',
                                 border: item.upcoming ? '1px solid rgba(112, 0, 255, 0.2)' : '1px solid rgba(255,255,255,0.08)',
-                                paddingTop: item.upcoming ? '1.75rem' : '0.5rem',
-                                paddingBottom: '0.5rem',
                               }}
                             >
                               <span
@@ -282,10 +280,10 @@ export function HeroSection() {
                                 {item.label}
                               </span>
                             </div>
-                            {/* Upcoming badge */}
+                            {/* Upcoming badge — outside rectangle, top center */}
                             {item.upcoming && (
                               <span
-                                className="absolute top-1 left-1/2 -translate-x-1/2 text-[8px] uppercase tracking-widest font-bold px-1.5 py-0.5 rounded flex-shrink-0 whitespace-nowrap"
+                                className="absolute -top-3 left-1/2 -translate-x-1/2 text-[8px] uppercase tracking-widest font-bold px-1.5 py-0.5 rounded flex-shrink-0 whitespace-nowrap"
                                 style={{
                                   background: 'rgba(112, 0, 255, 0.3)',
                                   color: '#D1BCFF',
