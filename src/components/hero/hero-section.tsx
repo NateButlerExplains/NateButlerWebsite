@@ -193,7 +193,7 @@ export function HeroSection() {
               >
                 <p className="text-lg leading-relaxed text-slate-300 max-w-xl font-manrope">
                   High-impact GRC, AI, Cyber & Tech speaker delivering elite strategic
-                  intelligence for the next generation of digital defense and resilience.
+                  intelligence for the next generation of security practitioners.
                 </p>
               </motion.div>
 
