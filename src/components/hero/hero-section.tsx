@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion, easeOut } from 'framer-motion'
 import { CyberPortrait } from './cyber-portrait'
 
@@ -10,6 +11,25 @@ import { CyberPortrait } from './cyber-portrait'
  * Desktop: Two-column layout with content left, portrait right
  */
 export function HeroSection() {
+  // Topics that rotate below "A Speaker on"
+  const SPEAKER_TOPICS = [
+    'Breaking Into Cyber',
+    'GRC',
+    'AI',
+  ]
+
+  const [topicIndex, setTopicIndex] = useState(0)
+
+  // Rotate topics every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTopicIndex((prev) => (prev + 1) % SPEAKER_TOPICS.length)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [SPEAKER_TOPICS.length])
+
+  const currentTopic = SPEAKER_TOPICS[topicIndex]
+
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -54,7 +74,12 @@ export function HeroSection() {
               <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
                 A Speaker on
               </span>
-              <span
+              <motion.span
+                key={topicIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.8, ease: easeOut }}
                 className="block text-6xl sm:text-7xl font-space-grotesk"
                 style={{
                   background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
@@ -63,8 +88,8 @@ export function HeroSection() {
                   backgroundClip: 'text',
                 }}
               >
-                Breaking Into Cyber
-              </span>
+                {currentTopic}
+              </motion.span>
             </h1>
           </motion.div>
 
@@ -153,18 +178,22 @@ export function HeroSection() {
                   <span className="block text-7xl lg:text-8xl font-space-grotesk">
                     <span className="text-white">A Speaker on </span>
                   </span>
-                  <span className="block text-7xl lg:text-8xl font-space-grotesk">
-                    <span
-                      style={{
-                        background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text',
-                      }}
-                    >
-                      Breaking Into Cyber
-                    </span>
-                  </span>
+                  <motion.span
+                    key={topicIndex}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.8, ease: easeOut }}
+                    className="block text-7xl lg:text-8xl font-space-grotesk"
+                    style={{
+                      background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}
+                  >
+                    {currentTopic}
+                  </motion.span>
                 </h1>
               </motion.div>
 
@@ -221,67 +250,6 @@ export function HeroSection() {
                 >
                   Book Nate Butler
                 </button>
-              </motion.div>
-
-              {/* Featured Appearances Ticker */}
-              <motion.div
-                className="pt-8 border-t border-white/10"
-                {...fadeInUp}
-                transition={{ delay: 0.6, duration: 0.8, ease: easeOut }}
-              >
-                <p className="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-4">
-                  Featured On
-                </p>
-
-                {/* Scrolling ticker — constrained to left column width, no overflow */}
-                <div className="relative" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', overflow: 'visible', paddingTop: '1rem' }}>
-                  <motion.div
-                    className="flex gap-10 items-center"
-                    animate={{ x: [0, -2040] }}
-                    transition={{ duration: 45, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
-                    style={{ width: 'max-content' }}
-                  >
-                    {/* Logo images duplicated for seamless loop */}
-                    {[...Array(2)].map((_, setIdx) => (
-                      <div key={setIdx} className="flex gap-12 items-center">
-                        {/* Featured logos */}
-                        {[
-                          { src: '/images/Logos/Human in the Loop.png', alt: 'Human-in-the-Loop Podcast', upcoming: false },
-                          { src: '/images/Logos/Tech2.png', alt: 'Techniche Tips Podcast', upcoming: false },
-                          { src: '/images/Logos/Architecture.png', alt: 'Art and Architecture', upcoming: false },
-                          { src: '/images/Logos/Crime Junkies.png', alt: 'Cyber Crime Junkies', upcoming: false },
-                          { src: '/images/Logos/Spark.png', alt: 'Neurodivergent Podcast', upcoming: false },
-                          { src: '/images/Logos/ByteSize Balance.png', alt: 'ByteSize Balance', upcoming: false },
-                          { src: '/images/Logos/Code Switch.png', alt: 'CodeSwitch Podcast', upcoming: true },
-                          { src: '/images/Logos/T2Cyber.png', alt: 'Transition to Cyber Panel', upcoming: true },
-                        ].map((item) => (
-                          <div key={item.alt} className="flex items-center justify-center flex-shrink-0 relative">
-                            {/* Logo image — no dimming, full brightness */}
-                            <img
-                              src={item.src}
-                              alt={item.alt}
-                              className="h-16 object-contain"
-                            />
-                            {/* Upcoming badge — outside, top center, more prominent */}
-                            {item.upcoming && (
-                              <span
-                                className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-widest font-extrabold px-2 py-1 rounded flex-shrink-0 whitespace-nowrap"
-                                style={{
-                                  background: 'rgba(112, 0, 255, 0.5)',
-                                  color: '#00e5ff',
-                                  border: '1px solid rgba(0, 229, 255, 0.6)',
-                                  boxShadow: '0 0 12px rgba(0, 229, 255, 0.3)',
-                                }}
-                              >
-                                Coming Soon
-                              </span>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    ))}
-                  </motion.div>
-                </div>
               </motion.div>
             </div>
 
