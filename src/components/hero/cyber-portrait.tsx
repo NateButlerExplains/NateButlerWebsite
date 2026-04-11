@@ -21,7 +21,7 @@ export function CyberPortrait() {
       {/* Main image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/nate-headshot-hq.png"
+        src="/images/Hero - Nate.png"
         alt="Nate Butler — Global Command Authority"
         className={styles.portraitImage}
       />

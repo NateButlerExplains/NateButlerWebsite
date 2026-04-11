@@ -159,17 +159,7 @@ export function HeroSection() {
               >
                 <h1 className="font-black leading-tight tracking-tighter space-y-0">
                   <span className="block text-7xl lg:text-8xl font-space-grotesk">
-                    <span className="text-white">Next Gen </span>
-                    <span
-                      style={{
-                        background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text',
-                      }}
-                    >
-                      Cyber
-                    </span>
+                    <span className="text-white">A Speaker on </span>
                   </span>
                   <span className="block text-7xl lg:text-8xl font-space-grotesk">
                     <span
@@ -180,7 +170,7 @@ export function HeroSection() {
                         backgroundClip: 'text',
                       }}
                     >
-                      Starts Now
+                      Breaking Into Cyber
                     </span>
                   </span>
                 </h1>
@@ -190,21 +180,10 @@ export function HeroSection() {
               <motion.div
                 {...fadeInUp}
                 transition={{ delay: 0.3, duration: 0.8, ease: easeOut }}
-                className="mb-6"
-              >
-                <p className="text-lg leading-relaxed text-slate-300 max-w-xl font-manrope">
-                  A playbook for aspiring cybersecurity professionals ready to break in and stand out.
-                </p>
-              </motion.div>
-
-              {/* Secondary tagline */}
-              <motion.div
-                {...fadeInUp}
-                transition={{ delay: 0.38, duration: 0.8, ease: easeOut }}
                 className="mb-12"
               >
-                <p className="text-base leading-relaxed text-slate-400 max-w-xl font-manrope">
-                  Helping future cyber professionals find their path with clarity and confidence.
+                <p className="text-lg leading-relaxed text-slate-300 max-w-xl font-manrope">
+                  Keynotes and talks built to inspire, educate, and guide the next generation of cyber talent.
                 </p>
               </motion.div>
 
@@ -214,7 +193,7 @@ export function HeroSection() {
                 {...fadeInUp}
                 transition={{ delay: 0.45, duration: 0.8, ease: easeOut }}
               >
-                {/* Primary: GET THE BOOK */}
+                {/* Primary: DOWNLOAD SPEAKER KIT */}
                 <button
                   onClick={() => {
                     const bookSection = document.getElementById('books')
@@ -228,7 +207,7 @@ export function HeroSection() {
                     border: '2px solid transparent',
                   }}
                 >
-                  Get the Book
+                  Download Speaker Kit
                 </button>
 
                 {/* Secondary: BOOK NATE BUTLER */}
