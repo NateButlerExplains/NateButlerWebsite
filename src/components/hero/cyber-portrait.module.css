@@ -107,7 +107,7 @@
 
 .portraitContainer:hover .scanLine {
   opacity: 0.4;
-  animation: scanLine 8s linear infinite;
+  animation: scanLine 12s linear infinite;
 }
 
 .holographicOverlay {
