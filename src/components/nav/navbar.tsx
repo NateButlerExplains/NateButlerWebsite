@@ -18,6 +18,7 @@ import { useState, useEffect } from 'react'
 export function Navbar() {
   const [activeSection, setActiveSection] = useState('home')
   const [mobileBookButtonOpacity, setMobileBookButtonOpacity] = useState(0)
+  const [mobileLogo, setMobileLogo] = useState({ justify: 'center', opacity: 1 })
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,6 +58,14 @@ export function Navbar() {
         // When CTA is scrolled off screen (rect.top < -50), opacity = 1
         const opacity = Math.max(0, Math.min(1, -rect.top / 50))
         setMobileBookButtonOpacity(opacity)
+
+        // Mobile logo: center while on homepage, transition to left as we scroll past hero
+        // Same scroll progression as book button
+        if (window.innerWidth < 768) {
+          const logoOpacity = opacity
+          const justify = opacity > 0.5 ? 'start' : 'center'
+          setMobileLogo({ justify, opacity: 1 })
+        }
       }
     }
 
@@ -99,7 +108,7 @@ export function Navbar() {
         }}
       />
       <div className="w-full px-6 lg:px-8 py-2 md:py-4">
-        <div className="max-w-screen-2xl mx-auto flex items-center justify-between">
+        <div className={`max-w-screen-2xl mx-auto flex items-center ${mobileLogo.justify === 'center' ? 'justify-center md:justify-between' : 'justify-start md:justify-between'}`}>
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
