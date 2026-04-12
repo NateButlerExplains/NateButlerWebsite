@@ -1,7 +1,50 @@
 import styles from './footer.module.css'
 
-const LINKEDIN_URL = 'https://linkedin.com'
-const TWITTER_URL = 'https://twitter.com'
+const SOCIAL_LINKS = {
+  tiktok: 'https://tiktok.com',
+  linkedin: 'https://linkedin.com',
+  youtube: 'https://youtube.com',
+  twitch: 'https://twitch.tv',
+}
+
+const socialIcons = [
+  {
+    name: 'TikTok',
+    url: SOCIAL_LINKS.tiktok,
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+      </svg>
+    ),
+  },
+  {
+    name: 'LinkedIn',
+    url: SOCIAL_LINKS.linkedin,
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+    ),
+  },
+  {
+    name: 'YouTube',
+    url: SOCIAL_LINKS.youtube,
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Twitch',
+    url: SOCIAL_LINKS.twitch,
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M11 2H2v17h6v3l4-3h5V7a2 2 0 0 0-2-2zm11-7H15v8h-4V2h7v2z" />
+      </svg>
+    ),
+  },
+]
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -10,6 +53,45 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.content}>
+          {/* Company */}
+          <div className={styles.column}>
+            <h3 className={styles.columnTitle}>Nate Butler</h3>
+            <ul className={styles.links}>
+              <li>
+                <a href="#about" className={styles.link}>
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#coaching" className={styles.link}>
+                  Coaching
+                </a>
+              </li>
+              <li>
+                <a href="#booking" className={styles.link}>
+                  Speaking Inquiries
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div className={styles.column}>
+            <h3 className={styles.columnTitle}>Resources</h3>
+            <ul className={styles.links}>
+              <li>
+                <a href="#books" className={styles.link}>
+                  Books
+                </a>
+              </li>
+              <li>
+                <a href="#podcast" className={styles.link}>
+                  Podcast
+                </a>
+              </li>
+            </ul>
+          </div>
+
           {/* Legal */}
           <div className={styles.column}>
             <h3 className={styles.columnTitle}>Legal</h3>
@@ -31,22 +113,18 @@ export default function Footer() {
           <div className={styles.column}>
             <h3 className={styles.columnTitle}>Follow</h3>
             <div className={styles.social}>
-              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className={styles.socialLink} title="LinkedIn">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M4.5 2C3.12 2 2 3.12 2 4.5V15.5C2 16.88 3.12 18 4.5 18H15.5C16.88 18 18 16.88 18 15.5V4.5C18 3.12 16.88 2 15.5 2H4.5ZM4.5 4H15.5C15.78 4 16 4.22 16 4.5V15.5C16 15.78 15.78 16 15.5 16H4.5C4.22 16 4 15.78 4 15.5V4.5C4 4.22 4.22 4 4.5 4ZM5.5 6C5.22 6 5 6.22 5 6.5C5 6.78 5.22 7 5.5 7C5.78 7 6 6.78 6 6.5C6 6.22 5.78 6 5.5 6ZM5 8H6V14H5V8ZM7 8H8V14H7V8ZM9 8H10V14H9V8ZM9 6C8.72 6 8.5 6.22 8.5 6.5C8.5 6.78 8.72 7 9 7C9.28 7 9.5 6.78 9.5 6.5C9.5 6.22 9.28 6 9 6Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a>
-              <a href={TWITTER_URL} target="_blank" rel="noopener noreferrer" className={styles.socialLink} title="Twitter">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M18.244 2.756c.682.482 1.279 1.04 1.789 1.659-.685-.305-1.42-.508-2.191-.606.787.47 1.392 1.215 1.697 2.117-.738-.443-1.556-.743-2.427-.915.666-.736 1.066-1.701 1.066-2.78 0-2.198-1.79-4-3.995-4-2.206 0-4 1.802-4 4 0 .313.036.62.106.916-3.328-.166-6.283-1.758-8.27-4.167-.346.597-.545 1.29-.545 2.033 0 1.388.707 2.612 1.78 3.329-.657-.021-1.276-.201-1.815-.503v.05c0 1.94 1.382 3.56 3.21 3.926-.336.092-.691.142-1.057.142-.259 0-.511-.025-.758-.074.512 1.59 1.992 2.748 3.749 2.78-1.371 1.075-3.099 1.717-4.977 1.717-.324 0-.644-.02-.955-.055 1.791 1.145 3.917 1.813 6.19 1.813 7.429 0 11.487-6.144 11.487-11.487 0-.175-.004-.349-.012-.521.789-.569 1.474-1.281 2.016-2.093z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a>
+              {socialIcons.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                  title={social.name}
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
         </div>
