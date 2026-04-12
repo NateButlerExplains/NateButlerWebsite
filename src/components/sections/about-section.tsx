@@ -43,7 +43,7 @@ export default function AboutSection() {
             </div>
             <div className={styles.signal}>
               <span className={styles.signalNumber}>$45K</span>
-              <span className={styles.signalLabel}>Avg Salary Increase Per Student</span>
+              <span className={styles.signalLabel}>Avg Salary Increase Per Learner</span>
             </div>
           </div>
         </div>

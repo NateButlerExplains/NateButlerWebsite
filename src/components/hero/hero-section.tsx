@@ -176,7 +176,7 @@ export function HeroSection() {
                     <path d="M9 12l2 2 4-4" />
                   </svg>
                   <span className="text-xs uppercase tracking-widest font-semibold text-purple-300">
-                    Helping People Break Into Cyber
+                    $800K+ salary uplift across learners
                   </span>
                 </div>
               </motion.div>
