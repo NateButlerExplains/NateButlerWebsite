@@ -14,15 +14,15 @@ See: .paul/PROJECT.md (updated 2026-04-09)
 
 Milestone: v0.2 Speaker Engagement & Content Authority  
 Phase: 2A of 3 (Keynote Landing Pages + Navigation)  
-Plan: Not started  
-Status: Ready to plan  
-Last activity: 2026-04-12 — Milestone created, Phase 2A-C structure ready
+Plan: 2A-01 created, awaiting approval  
+Status: PLAN created, ready for APPLY  
+Last activity: 2026-04-12 — Created 2A-01-PLAN.md
 
 Progress:
 - Overall: [███░░░░░░░] 25%
 - Milestone 1 (v0.1): [██████████] 100% COMPLETE
 - Milestone 2 (v0.2): [░░░░░░░░░░] 0%
-  - Phase 2A: Pending
+  - Phase 2A: Planning
   - Phase 2B: Pending
   - Phase 2C: Pending
 
@@ -33,10 +33,10 @@ Progress:
 Current loop state:
 ```
 PLAN ──▶ APPLY ──▶ UNIFY
-  ○        ○        ○     [Ready for first PLAN of Phase 2A]
+  ✓        ○        ○     [Plan created, awaiting approval]
 ```
 
-**Next action:** `/paul:plan` for Phase 2A (Keynote Landing Pages + Navigation)
+**Next action:** Review plan 2A-01, then `/paul:apply .paul/phases/02-speaker-engagement-content/2A-01-PLAN.md`
 
 ---
 
