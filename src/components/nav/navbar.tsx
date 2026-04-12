@@ -17,7 +17,7 @@ import { useState, useEffect } from 'react'
  */
 export function Navbar() {
   const [activeSection, setActiveSection] = useState('home')
-  const [showMobileBookButton, setShowMobileBookButton] = useState(false)
+  const [mobileBookButtonOpacity, setMobileBookButtonOpacity] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,12 +48,15 @@ export function Navbar() {
         setActiveSection('home')
       }
 
-      // Mobile: detect if we've scrolled past the hero CTA button
+      // Mobile: smooth fade in as user scrolls past hero CTA button
       const heroCtaButton = document.querySelector('[data-hero-cta]')
       if (heroCtaButton) {
         const rect = heroCtaButton.getBoundingClientRect()
-        // Show sticky button if hero CTA is above viewport (scrolled past it)
-        setShowMobileBookButton(rect.top < 0)
+        // Calculate opacity based on scroll position relative to hero CTA
+        // When CTA is fully visible (rect.top > 0), opacity = 0
+        // When CTA is scrolled off screen (rect.top < -50), opacity = 1
+        const opacity = Math.max(0, Math.min(1, -rect.top / 50))
+        setMobileBookButtonOpacity(opacity)
       }
     }
 
@@ -157,24 +160,20 @@ export function Navbar() {
             </button>
           </motion.div>
 
-          {/* Mobile: Sticky Book Now Button (appears when scrolling past hero CTA) */}
-          {showMobileBookButton && (
-            <motion.button
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-              onClick={() => {
-                document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-              className="md:hidden px-4 py-2 rounded-xl font-space-grotesk font-bold uppercase tracking-widest text-xs text-slate-900 transition-all duration-300 shadow-neon-glow-strong hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
-              style={{
-                background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
-              }}
-            >
-              Book Now
-            </motion.button>
-          )}
+          {/* Mobile: Sticky Book Now Button (smooth fade in as scrolling past hero CTA) */}
+          <motion.button
+            onClick={() => {
+              document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="md:hidden px-4 py-2 rounded-xl font-space-grotesk font-bold uppercase tracking-widest text-xs text-slate-900 transition-all duration-300 shadow-neon-glow-strong hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
+            style={{
+              background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
+              opacity: mobileBookButtonOpacity,
+              pointerEvents: mobileBookButtonOpacity > 0.1 ? 'auto' : 'none',
+            }}
+          >
+            Book Now
+          </motion.button>
         </div>
       </div>
     </nav>
