@@ -137,7 +137,7 @@ export function HeroSection() {
               className="w-full inline-flex items-center justify-center px-8 py-4 rounded-xl text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-sm transition-all duration-300 hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
               style={{
                 background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
-                boxShadow: '0 0 32px rgba(0, 229, 255, 0.55), 0 0 8px rgba(0, 229, 255, 0.3), 0 8px 16px rgba(0, 100, 120, 0.4), 0 4px 8px rgba(0, 200, 220, 0.2)',
+                boxShadow: '0 0 20px rgba(0, 229, 255, 0.4), 0 0 4px rgba(0, 229, 255, 0.2), 0 4px 12px rgba(0, 100, 120, 0.25)',
               }}
             >
               Book Nate Butler
@@ -252,13 +252,13 @@ export function HeroSection() {
                   className="inline-flex items-center justify-center px-10 py-4 rounded-xl text-slate-900 font-space-grotesk font-bold uppercase tracking-widest text-base transition-all duration-300 hover:-translate-y-[2px] active:scale-95 active:translate-y-0 relative overflow-hidden"
                   style={{
                     background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
-                    boxShadow: '0 0 40px rgba(0, 229, 255, 0.6), 0 0 12px rgba(0, 229, 255, 0.4), 0 12px 24px rgba(0, 100, 120, 0.5), 0 6px 12px rgba(0, 200, 220, 0.3)',
+                    boxShadow: '0 0 24px rgba(0, 229, 255, 0.35), 0 0 6px rgba(0, 229, 255, 0.2), 0 6px 16px rgba(0, 100, 120, 0.25)',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 50px rgba(0, 229, 255, 0.75), 0 0 16px rgba(0, 229, 255, 0.5), 0 16px 32px rgba(0, 100, 120, 0.6), 0 8px 16px rgba(0, 200, 220, 0.4)'
+                    e.currentTarget.style.boxShadow = '0 0 32px rgba(0, 229, 255, 0.45), 0 0 8px rgba(0, 229, 255, 0.25), 0 8px 20px rgba(0, 100, 120, 0.3)'
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 40px rgba(0, 229, 255, 0.6), 0 0 12px rgba(0, 229, 255, 0.4), 0 12px 24px rgba(0, 100, 120, 0.5), 0 6px 12px rgba(0, 200, 220, 0.3)'
+                    e.currentTarget.style.boxShadow = '0 0 24px rgba(0, 229, 255, 0.35), 0 0 6px rgba(0, 229, 255, 0.2), 0 6px 16px rgba(0, 100, 120, 0.25)'
                   }}
                 >
                   Book Nate Butler
