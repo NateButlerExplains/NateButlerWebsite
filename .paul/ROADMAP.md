@@ -8,18 +8,39 @@ Build a premium personal speaker website that positions Nate Butler as a Global 
 
 ## Current Milestone
 
-**v0.1 MVP — Launch Ready** (v0.1.0)  
-Status: In Progress (Phase 1 complete, Phase 2 starting)  
-Phases: 1 of 3 complete
+**v0.2 Speaker Engagement & Content Authority** (v0.2.0)  
+Status: Not started  
+Phases: 0 of 3 complete
 
 ---
 
-## Phases
+## Milestone 1: v0.1 MVP — Launch Ready ✅
+
+**Status:** Complete (2026-04-12)  
+**Phases:** 1 of 1 complete
+
+---
+
+## Milestone 2: v0.2 Speaker Engagement & Content Authority 🚧
+
+**Status:** In Progress  
+**Phases:** 0 of 3 complete
+
+| Phase | Name | Focus | Status | Completed |
+|-------|------|-------|--------|-----------|
+| 2A | Keynote Landing Pages + Navigation | Redesign navigation, create `/speaker/{eventType}` template, 4 booking landing pages | Not started | - |
+| 2B | Topics Cards + Demo Reel Placeholder | Build Topics card component, "See Nate in Action" section (placeholder) | Not started | - |
+| 2C | Event Planner Kit + Books + Podcast | `/event-planners`, `/books`, `/podcast` pages, downloadables | Not started | - |
+
+---
+
+## Milestone 3: v0.3 Engagement & Expansion 📅
+
+**Status:** Planned  
+**Phases:** TBD
 
 | Phase | Name | Deliverables | Status | Completed |
 |-------|------|--------------|--------|-----------|
-| 1 | MVP — Launch Ready | Hero, Nav, About, Book Me Now, Footer, Mobile | ✅ Complete | 2026-04-12 |
-| 2 | Content & Community Authority | Podcast, Books, Past Events | Not started | - |
 | 3 | Engagement & Expansion | Coaching, Calendar, Blog/Insights | Not started | - |
 
 ---
@@ -79,58 +100,91 @@ Phases: 1 of 3 complete
 
 ---
 
-### Phase 2: Content & Community Authority
+### Milestone 2: v0.2 Speaker Engagement & Content Authority
 
-**Goal:** Build credibility and expertise authority through podcast episodes, featured books, and past speaking events. Showcase track record, drive engagement, build warm leads for booking.
+**Goal:** Transform site into hyper-conversion speaker booking engine. Reorganize navigation to drive booking inquiries for different event types (Corporate, Executive Offsites, Conferences, Cyber Events). All other content (Coaching, Books, Podcast) links externally or surfaces as secondary.
 
 **Depends on:** Phase 1 (core pages, design system, infrastructure)  
-**Research:** Likely (MDX content strategy, podcast feed structure, image optimization for book covers and logos)  
-**Research topics:**
-- Podcast feed integration (existing platform? Spotify/Apple links?)
-- MDX structure for episodes, books, events (metadata, filtering, search)
-- Image optimization for overlapping card design (book covers, logos)
-- SEO strategy for content pages
-
-**Scope:**
-- **Podcast: CyberTalks Live** — MDX-driven episode list with title, guest (if applicable), description, listen buttons (Spotify, Apple Podcasts, direct links). Featured episodes section. Search/filter by topic (AI, Cybersecurity, GRC). Asymmetric card grid layout. Episode metadata (date, length, guest).
-- **Books** — Featured cybersecurity books (authored or recommended by Nate). Book covers with overlapping card design (break rigid boundaries). Descriptions, key takeaways, purchase/preview links. Staggered, asymmetric layout (not standard grid).
-- **Companies / Past Speaking Events** — Client logos and speaking engagement highlights. Event names, dates, audience sizes (builds social proof). Topics and impact metrics (e.g., "Briefed 500+ executives"). Testimonials from event organizers (if available). Timeline, carousel, or asymmetric card grid visual. Trust signal messaging ("Trusted by Fortune 1000 companies").
-
-**Plans:**
-- [ ] 02-01: Set up MDX structure for podcast episodes (metadata, filtering)
-- [ ] 02-02: Build Podcast section with episode list, featured episodes, search/filter
-- [ ] 02-03: Set up MDX structure for books (metadata, descriptions)
-- [ ] 02-04: Build Books section with overlapping card design
-- [ ] 02-05: Collect and structure past speaking events data (logos, testimonials)
-- [ ] 02-06: Build Companies / Past Events section with trust signals and social proof
-- [ ] 02-07: Optimize images for all content sections (logos, covers, portraits)
-- [ ] 02-08: Test performance and Core Web Vitals with content sections
+**Research:** Moderate (modern demo reel display options, TBD implementation)
 
 ---
 
-### Phase 3: Engagement & Expansion
+#### Phase 2A: Keynote Landing Pages + Navigation Restructure
 
-**Goal:** Enable deeper engagement through coaching services, optional availability calendar, and content strategy (blog/insights). Polish design system, expand reach, enable content marketing.
-
-**Depends on:** Phase 2 (established content patterns, design consistency)  
-**Research:** Unlikely (internal coaching format definitions, optional calendar integration)
+**Goal:** Create template-based landing pages for 4 event types, refactor navigation to lead directly to booking.
 
 **Scope:**
-- **Coaching / Workshops** — Custom training offerings for organizations. Format options (half-day workshops, full-day intensives, quarterly advisory). Duration, audience fit, format details. Inquiry form (similar to booking, but for coaching).
-- **Calendar / Availability** — Public speaking calendar (optional). Available booking dates and times. Integration with booking system for self-service scheduling (optional).
-- **Blog / Insights** — Articles on GRC, AI, cybersecurity trends. MDX-driven, version-controlled content. Search and category filtering. Social sharing buttons, estimated read time. Related articles suggestions.
-- **Content Polish & Design System Documentation** — Finalize all design tokens, component library documentation, accessibility audit.
+- **Navigation Restructure** — Desktop top nav: Corporate Events | Executive Offsites | Conferences | Cyber Events | Podcasts | More ▼
+- **Keynote Landing Page Template** — Single reusable template with `{eventType}` param. URL: `/speaker/{eventType}` where eventType = corporate | executive-offsite | conference | cyber-event
+- **Page Sections (Top to Bottom):**
+  - Hero section (customized per event type)
+  - "See Nate in Action" placeholder (modern demo reel, TBD implementation)
+  - Topics cards (3 cards: GRC, AI, Cybersecurity — no links, educational only, high visual impact)
+  - Calendly embed at bottom for direct booking
+- **Mobile Navigation** — Hamburger menu with all event types + Podcasts + Coaching (external) + Books
 
 **Plans:**
-- [ ] 03-01: Define coaching services and pricing structure
-- [ ] 03-02: Build Coaching section with inquiry form
-- [ ] 03-03: Integrate calendar system (optional, may defer)
-- [ ] 03-04: Set up blog/insights MDX structure (categories, tags, search)
-- [ ] 03-05: Create initial blog content (5-10 articles on GRC, AI, cybersecurity)
-- [ ] 03-06: Build blog section with search/filtering, social sharing
-- [ ] 03-07: Document design system and component library
-- [ ] 03-08: Run accessibility audit and fix issues
-- [ ] 03-09: Final performance optimization and Core Web Vitals review
+- [ ] 2A-01: Refactor navigation (desktop top bar + mobile hamburger)
+- [ ] 2A-02: Create `/speaker/{eventType}` dynamic route
+- [ ] 2A-03: Build Keynote landing page template with hero section
+- [ ] 2A-04: Add "See Nate in Action" placeholder section
+- [ ] 2A-05: Wire up Calendly on keynote pages
+- [ ] 2A-06: Test routing, navigation, mobile responsiveness
+- [ ] 2A-07: Deploy and verify all 4 event type pages work
+
+---
+
+#### Phase 2B: Topics Cards + Demo Reel Placeholder
+
+**Goal:** Build high-impact Topics card component and finalize modern demo reel display.
+
+**Scope:**
+- **Topics Card Component** — 3 cards (GRC, AI, Cybersecurity). Modern design (glassmorphism, animated hover, gradient overlays). Educational content + key takeaways. No links (visual only).
+- **"See Nate in Action" Section** — Placeholder for modern demo reel display. TBD implementation approach (carousel, modal, 3D cards, interactive timeline, hero video overlay). User still exploring options.
+
+**Plans:**
+- [ ] 2B-01: Design Topics card component (modern, wow-factor)
+- [ ] 2B-02: Implement animated hover states and interactions
+- [ ] 2B-03: Create "See Nate in Action" placeholder section
+- [ ] 2B-04: Explore modern video display options (3-5 approaches)
+- [ ] 2B-05: Test visual impact and responsive design
+
+---
+
+#### Phase 2C: Event Planner Kit + Books + Podcast Pages
+
+**Goal:** Build supporting pages for event planners, featured books, and podcast/TikTok highlights.
+
+**Scope:**
+- **Event Planner Kit** (`/event-planners`) — Downloadable speaker materials: speaker sheet, headshot, biography, MC intro. Clean, professional presentation. Entry point from "Download Speaker Kit" CTA.
+- **Books Page** (`/books`) — Featured books section. Book titles, covers, descriptions, links.
+- **Podcast Page** (`/podcast`) — Link to external TikTok/LinkedIn Live profile. Not hosted content, external redirect.
+
+**Plans:**
+- [ ] 2C-01: Build `/event-planners` page with file downloads
+- [ ] 2C-02: Create file download component (speaker sheet, headshot, bio, intro)
+- [ ] 2C-03: Build `/books` page with featured books
+- [ ] 2C-04: Build `/podcast` page (external link to profile)
+- [ ] 2C-05: Update navigation across site
+- [ ] 2C-06: Test all pages, responsiveness, file downloads
+- [ ] 2C-07: Deploy and verify external links working
+
+---
+
+### Milestone 3: v0.3 Engagement & Expansion
+
+**Goal:** Enable deeper engagement through coaching, calendar, and content strategy. Polish design system.
+
+**Status:** Planned (Phase 3)
+
+**Depends on:** Phase 2 (established content patterns, design consistency)
+
+**Scope:**
+- **Coaching** — External link to https://nate.kashboxcoaching.com/ (no new page)
+- **Calendar / Availability** — Public speaking calendar (optional)
+- **Blog / Insights** — MDX-driven articles on GRC, AI, cybersecurity trends
+
+**Plans:** TBD (to be defined in Phase 3 planning)
 
 ---
 
