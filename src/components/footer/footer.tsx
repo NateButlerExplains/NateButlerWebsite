@@ -1,6 +1,5 @@
 import styles from './footer.module.css'
 
-const DISCORD_URL = process.env.NEXT_PUBLIC_DISCORD_URL || 'https://discord.gg/yourserver'
 const LINKEDIN_URL = 'https://linkedin.com'
 const TWITTER_URL = 'https://twitter.com'
 
@@ -11,45 +10,6 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.content}>
-          {/* Resources */}
-          <div className={styles.column}>
-            <h3 className={styles.columnTitle}>Resources</h3>
-            <ul className={styles.links}>
-              <li>
-                <a href="#blog" className={styles.link}>
-                  Blog & Insights
-                </a>
-              </li>
-              <li>
-                <a href="#podcast" className={styles.link}>
-                  Podcast: CyberTalks
-                </a>
-              </li>
-              <li>
-                <a href="#books" className={styles.link}>
-                  Books
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div className={styles.column}>
-            <h3 className={styles.columnTitle}>Company</h3>
-            <ul className={styles.links}>
-              <li>
-                <a href="#about" className={styles.link}>
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#speaking" className={styles.link}>
-                  Speaking History
-                </a>
-              </li>
-            </ul>
-          </div>
-
           {/* Legal */}
           <div className={styles.column}>
             <h3 className={styles.columnTitle}>Legal</h3>
@@ -62,11 +22,6 @@ export default function Footer() {
               <li>
                 <a href="#terms" className={styles.link}>
                   Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="mailto:hello@natebutlertalks.com" className={styles.link}>
-                  Contact
                 </a>
               </li>
             </ul>
@@ -91,27 +46,6 @@ export default function Footer() {
                     fill="currentColor"
                   />
                 </svg>
-              </a>
-              <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" className={styles.socialLink} title="Discord">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M14.69 1.79C13.07.9 11.27.2 9.3.05c-.09 0-.16.04-.19.12-.2.39-.42.9-.58 1.3-.2-.03-.41-.05-.62-.05-2.08 0-4.1.6-5.8 1.73-1.27.8-2.29 1.88-2.96 3.16-.8 1.6-1.25 3.42-1.25 5.29 0 1.6.32 3.18.94 4.68.3.73.67 1.42 1.08 2.07-.15.45-.46 1.36-.56 1.66-.15.48.24.93.73.78 3.42-1.35 5.7-3.34 6.9-5.17 1.28.38 2.66.58 4.06.58 2.08 0 4.1-.6 5.8-1.73 1.27-.8 2.29-1.88 2.96-3.16.8-1.6 1.25-3.42 1.25-5.29 0-1.6-.32-3.18-.94-4.68-.3-.73-.67-1.42-1.08-2.07.15-.45.46-1.36.56-1.66.15-.48-.24-.93-.73-.78-3.42 1.35-5.7 3.34-6.9 5.17zm-4.59 10.62c-.73 0-1.32-.6-1.32-1.34 0-.74.59-1.34 1.32-1.34.73 0 1.32.6 1.32 1.34 0 .74-.59 1.34-1.32 1.34zm3.78-3.54c-.73 0-1.32-.6-1.32-1.34 0-.74.59-1.34 1.32-1.34.73 0 1.32.6 1.32 1.34 0 .74-.59 1.34-1.32 1.34z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className={styles.column}>
-            <h3 className={styles.columnTitle}>Ready?</h3>
-            <div className={styles.ctaButtons}>
-              <a href="#book-me-now" className={styles.ctaButton}>
-                Book Me Now
-              </a>
-              <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" className={styles.ctaButtonSecondary}>
-                Join Discord
               </a>
             </div>
           </div>

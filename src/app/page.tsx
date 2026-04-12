@@ -2,7 +2,6 @@ import { HeroSection } from '@/components/hero/hero-section'
 import { FeaturedOn } from '@/components/sections/featured-on'
 import AboutSection from '@/components/sections/about-section'
 import BookMeNow from '@/components/sections/book-me-now'
-import DiscordCommunity from '@/components/sections/discord-community'
 import Footer from '@/components/footer/footer'
 
 export default function Home() {
@@ -13,7 +12,6 @@ export default function Home() {
         <FeaturedOn />
         <AboutSection />
         <BookMeNow />
-        <DiscordCommunity />
       </main>
       <Footer />
     </>
