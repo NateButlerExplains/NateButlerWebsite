@@ -62,7 +62,6 @@ export function Navbar() {
         // Mobile logo: center while on homepage, transition to left as we scroll past hero
         // Same scroll progression as book button
         if (window.innerWidth < 768) {
-          const logoOpacity = opacity
           const justify = opacity > 0.5 ? 'start' : 'center'
           setMobileLogo({ justify, opacity: 1 })
         }
