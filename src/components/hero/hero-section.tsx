@@ -4,6 +4,20 @@ import { useState, useEffect } from 'react'
 import { motion, easeOut } from 'framer-motion'
 import { CyberPortrait } from './cyber-portrait'
 
+const MOBILE_TOPICS = [
+  'Students',
+  'Switchers',
+  'Teams',
+  'Professionals',
+]
+
+const DESKTOP_TOPICS = [
+  'Students',
+  'Career-Switchers',
+  'Teams',
+  'Professionals',
+]
+
 /**
  * Hero Section — Premium Cyber Command Authority
  *
@@ -11,20 +25,6 @@ import { CyberPortrait } from './cyber-portrait'
  * Desktop: Two-column layout with content left, portrait right
  */
 export function HeroSection() {
-  // Topics that rotate (fixed line "Cybersecurity Speaker For" + rotating audience)
-  const MOBILE_TOPICS = [
-    'Students',
-    'Switchers',
-    'Teams',
-    'Professionals',
-  ]
-
-  const DESKTOP_TOPICS = [
-    'Students',
-    'Career-Switchers',
-    'Teams',
-    'Professionals',
-  ]
 
   const [topicIndex, setTopicIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
