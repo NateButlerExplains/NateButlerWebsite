@@ -9,8 +9,8 @@ Build a premium personal speaker website that positions Nate Butler as a Global 
 ## Current Milestone
 
 **v0.1 MVP — Launch Ready** (v0.1.0)  
-Status: Not started  
-Phases: 0 of 3 complete
+Status: In Progress (Phase 1 complete, Phase 2 starting)  
+Phases: 1 of 3 complete
 
 ---
 
@@ -18,7 +18,7 @@ Phases: 0 of 3 complete
 
 | Phase | Name | Deliverables | Status | Completed |
 |-------|------|--------------|--------|-----------|
-| 1 | MVP — Launch Ready | Hero, Nav, About, Book Me Now, Footer, Mobile | Not started | - |
+| 1 | MVP — Launch Ready | Hero, Nav, About, Book Me Now, Footer, Mobile | ✅ Complete | 2026-04-12 |
 | 2 | Content & Community Authority | Podcast, Books, Past Events | Not started | - |
 | 3 | Engagement & Expansion | Coaching, Calendar, Blog/Insights | Not started | - |
 
