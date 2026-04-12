@@ -74,7 +74,7 @@ export function Navbar() {
         }}
       />
       <div className="w-full px-6 lg:px-8 py-2 md:py-4">
-        <div className="max-w-screen-2xl mx-auto flex items-center justify-between md:justify-between">
+        <div className="max-w-screen-2xl mx-auto relative flex items-center justify-between md:justify-between">
           {/* Logo — mobile centered, desktop left */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -155,7 +155,7 @@ export function Navbar() {
           </motion.div>
 
           {/* Mobile: Hamburger Menu */}
-          <div className="md:hidden">
+          <div className="md:hidden absolute right-6 lg:right-8">
             {/* Hamburger Button */}
             <button
               onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -203,22 +203,24 @@ export function Navbar() {
               </motion.div>
             )}
           </div>
-
-          {/* Mobile: Sticky Book Now Button (smooth fade in as scrolling past hero CTA) */}
-          <motion.button
-            onClick={() => {
-              document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
-            }}
-            className="md:hidden px-4 py-2 rounded-xl font-space-grotesk font-bold uppercase tracking-widest text-xs text-slate-900 transition-all duration-300 shadow-neon-glow-strong hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
-            style={{
-              background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
-              opacity: mobileBookButtonOpacity,
-              pointerEvents: mobileBookButtonOpacity > 0.1 ? 'auto' : 'none',
-            }}
-          >
-            Book Now
-          </motion.button>
         </div>
+
+        {/* Mobile: Sticky Book Now Button (smooth fade in as scrolling past hero CTA) */}
+        <motion.button
+          onClick={() => {
+            document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
+          }}
+          className="md:hidden absolute right-6 lg:right-8 px-4 py-2 rounded-xl font-space-grotesk font-bold uppercase tracking-widest text-xs text-slate-900 transition-all duration-300 shadow-neon-glow-strong hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
+          style={{
+            background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
+            opacity: mobileBookButtonOpacity,
+            pointerEvents: mobileBookButtonOpacity > 0.1 ? 'auto' : 'none',
+            top: '50%',
+            transform: 'translateY(-50%)',
+          }}
+        >
+          Book Now
+        </motion.button>
       </div>
     </nav>
   )
