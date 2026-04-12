@@ -71,7 +71,7 @@ export function HeroSection() {
             transition={{ delay: 0.15, duration: 0.8, ease: easeOut }}
             className="mb-6"
           >
-            <h1 className="font-black leading-tight tracking-tighter space-y-0">
+            <h1 className="font-black leading-tight tracking-tighter space-y-0" style={{ minHeight: '9rem' }}>
               <span className="block text-6xl sm:text-7xl text-white font-space-grotesk pr-2">
                 Cybersecurity Speaker For
               </span>
