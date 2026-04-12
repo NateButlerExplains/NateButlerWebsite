@@ -33,6 +33,7 @@ export function MobileSpecialGuest() {
               <div key={setIdx} className={styles.logoSet}>
                 {/* Featured logos */}
                 {[
+                  { src: '/images/JAG.png', alt: 'JAG', upcoming: false },
                   { src: '/images/Logos/Human in the Loop.png', alt: 'Human-in-the-Loop Podcast', upcoming: false },
                   { src: '/images/Logos/Tech2.png', alt: 'Techniche Tips Podcast', upcoming: false },
                   { src: '/images/Logos/Architecture.png', alt: 'Art and Architecture', upcoming: false },
