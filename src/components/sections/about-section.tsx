@@ -48,8 +48,27 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Right column - empty for asymmetry */}
-        <div className={styles.rightColumn}></div>
+        {/* Right column - About image with fading edges */}
+        <div className={styles.rightColumn}>
+          <div className={styles.imageContainer}>
+            {/* Outer glow effect */}
+            <div className={styles.imageGlow} />
+
+            {/* Main image */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/AboutNate.jpeg"
+              alt="Nate Butler"
+              className={styles.portraitImage}
+            />
+
+            {/* Fade overlay — blends image edges into background */}
+            <div className={styles.imageFade} />
+
+            {/* Border */}
+            <div className={styles.imageBorder} />
+          </div>
+        </div>
       </div>
     </section>
   )
