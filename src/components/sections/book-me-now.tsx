@@ -43,58 +43,73 @@ export default function BookMeNow() {
           data-url={`${CALENDLY_URL}?${CALENDLY_PARAMS}`}
         />
         <style>{`
-          /* Aggressive reset of all Calendly wrapper divs */
+          /* Calendly container — no scrolling, auto-height */
           .calendly-inline-widget {
             width: 100% !important;
-            height: 100% !important;
+            height: auto !important;
             padding: 0 !important;
             margin: 0 !important;
             background: transparent !important;
             background-color: transparent !important;
-            overflow: hidden !important;
+            overflow: visible !important;
             border: none !important;
+            display: block !important;
           }
 
           .calendly-inline-widget > * {
             width: 100% !important;
-            height: 100% !important;
+            height: auto !important;
             padding: 0 !important;
             margin: 0 !important;
             background: transparent !important;
             background-color: transparent !important;
             border: none !important;
             box-sizing: border-box !important;
+            overflow: visible !important;
           }
 
           .calendly-inline-widget > div {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
+            display: block !important;
+            width: 100% !important;
+            overflow: visible !important;
           }
 
           .calendly-inline-widget > div > * {
             width: 100% !important;
-            height: 100% !important;
+            height: auto !important;
             padding: 0 !important;
             margin: 0 !important;
             background: transparent !important;
             background-color: transparent !important;
             border: none !important;
             box-sizing: border-box !important;
+            overflow: visible !important;
           }
 
-          /* Ensure iframe fills container with zero spacing */
+          /* Calendly iframe — responsive, no scroll */
           .calendly-inline-widget iframe {
             width: 100% !important;
-            height: 100% !important;
+            height: auto !important;
+            min-height: 630px !important;
             padding: 0 !important;
             margin: 0 !important;
-            background-color: transparent !important;
+            background-color: #0d0d12 !important;
             border: none !important;
             display: block !important;
             box-sizing: border-box !important;
-            min-width: 100% !important;
-            min-height: 100% !important;
+            overflow: visible !important;
+          }
+
+          @media (min-width: 768px) {
+            .calendly-inline-widget iframe {
+              min-height: 700px !important;
+            }
+          }
+
+          @media (min-width: 1024px) {
+            .calendly-inline-widget iframe {
+              min-height: 820px !important;
+            }
           }
 
           /* Dark mode styling for GDPR/cookie banner */

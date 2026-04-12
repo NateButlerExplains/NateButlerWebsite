@@ -11,7 +11,7 @@ export function FeaturedOn() {
   }
 
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} hidden`}>
       <div className={styles.wrapper}>
         <motion.div
           className={styles.content}

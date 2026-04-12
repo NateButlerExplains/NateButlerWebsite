@@ -73,10 +73,7 @@ export function HeroSection() {
           >
             <h1 className="font-black leading-tight tracking-tighter space-y-0">
               <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
-                Cybersecurity
-              </span>
-              <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
-                Speaker For
+                Cybersecurity Speaker For
               </span>
               <motion.span
                 key={topicIndex}
@@ -173,10 +170,7 @@ export function HeroSection() {
               >
                 <h1 className="font-black leading-tight tracking-tighter space-y-0">
                   <span className="block text-7xl lg:text-8xl font-space-grotesk text-white">
-                    Cybersecurity
-                  </span>
-                  <span className="block text-7xl lg:text-8xl font-space-grotesk text-white">
-                    Speaker For
+                    Cybersecurity Speaker For
                   </span>
                   <motion.span
                     key={topicIndex}
