@@ -11,11 +11,12 @@ import { CyberPortrait } from './cyber-portrait'
  * Desktop: Two-column layout with content left, portrait right
  */
 export function HeroSection() {
-  // Topics that rotate below "A Speaker on"
+  // Topics that rotate
   const SPEAKER_TOPICS = [
-    'Breaking Into Cyber',
-    'GRC',
-    'AI',
+    'Cybersecurity Speaker For Students',
+    'Cybersecurity Speaker For Career-Switchers',
+    'Cybersecurity Speaker For Teams',
+    'Cybersecurity Speaker For Professionals',
   ]
 
   const [topicIndex, setTopicIndex] = useState(0)
@@ -49,7 +50,7 @@ export function HeroSection() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/Nate - headshot - Mobile.png"
+            src="/images/Nate Hero - Main.jpeg"
             alt="Nate Butler"
             className="w-full h-full object-cover object-top"
           />
@@ -93,30 +94,23 @@ export function HeroSection() {
             </h1>
           </motion.div>
 
-          {/* Buttons below headline */}
+          {/* Subheadline */}
           <motion.div
-            className="flex flex-col gap-3"
+            {...fadeInUp}
+            transition={{ delay: 0.3, duration: 0.8, ease: easeOut }}
+            className="mb-6"
+          >
+            <p className="text-base leading-relaxed text-slate-300 font-manrope">
+              Keynotes and workshops on Cybersecurity career, confidence, and practical entry paths into the industry.
+            </p>
+          </motion.div>
+
+          {/* Button below headline */}
+          <motion.div
+            className="flex flex-col"
             {...fadeInUp}
             transition={{ delay: 0.45, duration: 0.8, ease: easeOut }}
           >
-            <button
-              onClick={() => {
-                const kitSection = document.querySelector('[id*="kit"]') || document.querySelector('[id*="speaker"]')
-                if (kitSection) {
-                  kitSection.scrollIntoView({ behavior: 'smooth' })
-                } else {
-                  window.open('#', '_self')
-                }
-              }}
-              className="w-full inline-flex items-center justify-center px-8 py-3 rounded-xl text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-xs transition-all duration-300 hover:text-[#00e5ff] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
-              style={{
-                background: 'linear-gradient(rgba(19,19,24,1), rgba(19,19,24,1)) padding-box, linear-gradient(135deg, rgba(0,229,255,0.7), rgba(77,127,255,0.7)) border-box',
-                border: '2px solid transparent',
-              }}
-            >
-              <span>Download Speaker Kit</span>
-            </button>
-
             <button
               onClick={() => {
                 document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
@@ -204,7 +198,7 @@ export function HeroSection() {
                 className="mb-12"
               >
                 <p className="text-lg leading-relaxed text-slate-300 max-w-xl font-manrope">
-                  Keynotes and talks built to inspire, educate, and guide the next generation of cyber talent.
+                  Keynotes and workshops on Cybersecurity career, confidence, and practical entry paths into the industry.
                 </p>
               </motion.div>
 
@@ -250,6 +244,67 @@ export function HeroSection() {
                 >
                   Book Nate Butler
                 </button>
+              </motion.div>
+
+              {/* Special Guest Appearance On — Desktop only, left column */}
+              <motion.div
+                className="pt-4 md:pt-8"
+                {...fadeInUp}
+                transition={{ delay: 0.6, duration: 0.8, ease: easeOut }}
+              >
+                <p className="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-4">
+                  Special Guest Appearance On
+                </p>
+
+                {/* Scrolling ticker — constrained to left column width */}
+                <div className="relative" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', overflow: 'visible', paddingTop: '1rem' }}>
+                  <motion.div
+                    className="flex gap-10 items-center"
+                    animate={{ x: [0, -2040] }}
+                    transition={{ duration: 45, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
+                    style={{ width: 'max-content' }}
+                  >
+                    {/* Logo images duplicated for seamless loop */}
+                    {[...Array(2)].map((_, setIdx) => (
+                      <div key={setIdx} className="flex gap-12 items-center">
+                        {/* Featured logos */}
+                        {[
+                          { src: '/images/Logos/Human in the Loop.png', alt: 'Human-in-the-Loop Podcast', upcoming: false },
+                          { src: '/images/Logos/Tech2.png', alt: 'Techniche Tips Podcast', upcoming: false },
+                          { src: '/images/Logos/Architecture.png', alt: 'Art and Architecture', upcoming: false },
+                          { src: '/images/Logos/Crime Junkies.png', alt: 'Cyber Crime Junkies', upcoming: false },
+                          { src: '/images/Logos/Spark.png', alt: 'Neurodivergent Podcast', upcoming: false },
+                          { src: '/images/Logos/ByteSize Balance.png', alt: 'ByteSize Balance', upcoming: false },
+                          { src: '/images/Logos/Code Switch.png', alt: 'CodeSwitch Podcast', upcoming: true },
+                          { src: '/images/Logos/T2Cyber.png', alt: 'Transition to Cyber Panel', upcoming: true },
+                        ].map((item) => (
+                          <div key={item.alt} className="flex items-center justify-center flex-shrink-0 relative">
+                            {/* Logo image */}
+                            <img
+                              src={item.src}
+                              alt={item.alt}
+                              className="h-16 object-contain"
+                            />
+                            {/* Upcoming badge */}
+                            {item.upcoming && (
+                              <span
+                                className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-widest font-extrabold px-2 py-1 rounded flex-shrink-0 whitespace-nowrap"
+                                style={{
+                                  background: 'rgba(112, 0, 255, 0.5)',
+                                  color: '#00e5ff',
+                                  border: '1px solid rgba(0, 229, 255, 0.6)',
+                                  boxShadow: '0 0 12px rgba(0, 229, 255, 0.3)',
+                                }}
+                              >
+                                Coming Soon
+                              </span>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </motion.div>
+                </div>
               </motion.div>
             </div>
 

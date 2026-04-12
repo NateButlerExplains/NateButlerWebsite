@@ -18,7 +18,7 @@ export function FeaturedOn() {
           {...fadeInUp}
           transition={{ delay: 0.1, duration: 0.8, ease: easeOut }}
         >
-          <p className={styles.label}>Featured On</p>
+          <p className={styles.label}>Special Guest Appearance On</p>
 
           {/* Scrolling ticker — responsive for all screen sizes */}
           <div className={styles.tickerContainer}>

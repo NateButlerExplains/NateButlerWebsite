@@ -102,6 +102,22 @@
   );
 }
 
+/* Mobile-specific fade: starts later so text overlay remains visible */
+@media (max-width: 767px) {
+  .portraitFade {
+    background: linear-gradient(
+      to bottom,
+      transparent 55%,
+      rgba(13, 13, 18, 0.4) 75%,
+      rgba(13, 13, 18, 0.95) 100%
+    );
+  }
+
+  .portraitFade::after {
+    background: none;
+  }
+}
+
 .glassPanel {
   position: absolute;
   backdrop-filter: blur(12px);
