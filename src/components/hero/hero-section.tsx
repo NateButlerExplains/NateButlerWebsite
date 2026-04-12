@@ -14,7 +14,7 @@ export function HeroSection() {
   // Topics that rotate (fixed line "Cybersecurity Speaker For" + rotating audience)
   const SPEAKER_TOPICS = [
     'Students',
-    'Career-Switcher',
+    'Other Careers',
     'Teams',
     'Professionals',
   ]
@@ -83,7 +83,6 @@ export function HeroSection() {
                 transition={{ duration: 0.8, ease: easeOut }}
                 className="block text-6xl sm:text-7xl font-space-grotesk"
                 style={{
-                  fontSize: currentTopic === 'Career-Switcher' ? '48px' : undefined,
                   background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
