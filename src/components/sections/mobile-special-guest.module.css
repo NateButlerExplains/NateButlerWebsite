@@ -25,11 +25,11 @@
 }
 
 .label {
-  text-xs;
-  uppercase;
-  tracking-widest;
-  text-slate-500;
-  font-semibold;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(148, 163, 184, 1);
+  font-weight: 600;
   margin: 0;
   text-align: center;
 }
