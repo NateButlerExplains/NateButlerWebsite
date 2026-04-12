@@ -10,7 +10,7 @@ export function MobileSpecialGuest() {
   }
 
   return (
-    <section className="md:hidden relative w-full bg-surface px-6 py-8">
+    <section className="md:hidden relative w-full bg-surface px-6 py-12">
       <motion.div
         {...fadeInUp}
         className="w-full max-w-screen-2xl mx-auto"
