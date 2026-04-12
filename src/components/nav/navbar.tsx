@@ -16,38 +16,11 @@ import { useState, useEffect } from 'react'
  * - Mobile: bell icon only (navigation via bottom nav bar)
  */
 export function Navbar() {
-  const [activeSection, setActiveSection] = useState('home')
   const [mobileBookButtonOpacity, setMobileBookButtonOpacity] = useState(0)
+  const [showMobileMenu, setShowMobileMenu] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = [
-        { id: 'about', sectionId: 'about' },
-        { id: 'podcast', sectionId: 'podcast' },
-        { id: 'books', sectionId: 'books' },
-        { id: 'coaching', sectionId: 'coaching' },
-      ]
-
-      // Check which section is currently in viewport
-      let found = false
-      for (const { id, sectionId } of sections) {
-        const el = document.getElementById(sectionId)
-        if (el) {
-          const rect = el.getBoundingClientRect()
-          // If section is visible in viewport (top < window.innerHeight and bottom > 80px for navbar)
-          if (rect.top < window.innerHeight * 0.7 && rect.bottom > 80) {
-            setActiveSection(id)
-            found = true
-            break
-          }
-        }
-      }
-
-      // If no section found in viewport, we're at home/hero
-      if (!found) {
-        setActiveSection('home')
-      }
-
       // Mobile: smooth fade in as user scrolls past hero CTA button
       const heroCtaButton = document.querySelector('[data-hero-cta]')
       if (heroCtaButton) {
@@ -57,7 +30,6 @@ export function Navbar() {
         // When CTA is scrolled off screen (rect.top < -50), opacity = 1
         const opacity = Math.max(0, Math.min(1, -rect.top / 50))
         setMobileBookButtonOpacity(opacity)
-
       }
     }
 
@@ -69,17 +41,19 @@ export function Navbar() {
   }, [])
 
   const navLinks = [
-    { label: 'ABOUT', href: '#about', id: 'about' },
-    { label: 'BOOKS', href: '#books', id: 'books' },
-    { label: 'HOME', href: '/', id: 'home' },
-    { label: 'COACHING', href: '#coaching', id: 'coaching' },
-    { label: 'PODCAST', href: '#podcast', id: 'podcast' },
+    { label: 'CORPORATE EVENTS', href: '/speaker/corporate', id: 'corporate' },
+    { label: 'EXECUTIVE OFFSITES', href: '/speaker/executive-offsite', id: 'executive-offsite' },
+    { label: 'CONFERENCES', href: '/speaker/conference', id: 'conference' },
+    { label: 'CYBER EVENTS', href: '/speaker/cyber-event', id: 'cyber-event' },
+    { label: 'PODCASTS', href: '/podcast', id: 'podcast' },
   ]
 
-  const isLinkActive = (linkId: string) => {
-    if (linkId === 'home') return activeSection === 'home'
-    return activeSection === linkId
-  }
+  const moreLinks = [
+    { label: 'Coaching', href: 'https://nate.kashboxcoaching.com/', id: 'coaching', external: true },
+    { label: 'Books', href: '/books', id: 'books', external: false },
+    { label: 'Podcast', href: '/podcast', id: 'podcast-more', external: false },
+  ]
+
 
   return (
     <nav
@@ -130,15 +104,34 @@ export function Navbar() {
               <Link
                 key={idx}
                 href={link.href}
-                className={`font-space-grotesk text-sm uppercase tracking-tight transition-all duration-200 ${
-                  isLinkActive(link.id)
-                    ? 'text-[#00E5FF] border-b-2 border-[#00E5FF] pb-1'
-                    : 'text-white/70 hover:text-white'
-                }`}
+                className="font-space-grotesk text-sm uppercase tracking-tight transition-all duration-200 text-white/70 hover:text-white"
               >
                 {link.label}
               </Link>
             ))}
+
+            {/* More Dropdown */}
+            <div className="relative group">
+              <button className="font-space-grotesk text-sm uppercase tracking-tight transition-all duration-200 text-white/70 hover:text-white flex items-center gap-2">
+                More
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </button>
+              <div className="absolute right-0 mt-0 w-48 bg-[#131318] border border-[#00e5ff]/20 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                {moreLinks.map((link, idx) => (
+                  <Link
+                    key={idx}
+                    href={link.href}
+                    target={link.external ? '_blank' : undefined}
+                    rel={link.external ? 'noopener noreferrer' : undefined}
+                    className="block px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-all duration-200 first:rounded-t-lg last:rounded-b-lg"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
           {/* Right Side CTAs — Desktop Only */}
@@ -160,6 +153,56 @@ export function Navbar() {
               Book Now
             </button>
           </motion.div>
+
+          {/* Mobile: Hamburger Menu */}
+          <div className="md:hidden">
+            {/* Hamburger Button */}
+            <button
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+              className="p-2 text-white/70 hover:text-white transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {showMobileMenu ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+
+            {/* Mobile Menu */}
+            {showMobileMenu && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="absolute top-full left-0 right-0 bg-[#131318] border-b border-[#00e5ff]/20 z-40"
+              >
+                {navLinks.map((link, idx) => (
+                  <Link
+                    key={idx}
+                    href={link.href}
+                    onClick={() => setShowMobileMenu(false)}
+                    className="block px-6 py-4 text-sm font-space-grotesk uppercase text-white/70 hover:text-white hover:bg-white/5 transition-all border-b border-white/10 last:border-b-0"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                {moreLinks.map((link, idx) => (
+                  <Link
+                    key={idx}
+                    href={link.href}
+                    target={link.external ? '_blank' : undefined}
+                    rel={link.external ? 'noopener noreferrer' : undefined}
+                    onClick={() => !link.external && setShowMobileMenu(false)}
+                    className="block px-6 py-4 text-sm font-space-grotesk uppercase text-white/70 hover:text-white hover:bg-white/5 transition-all border-b border-white/10 last:border-b-0"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </motion.div>
+            )}
+          </div>
 
           {/* Mobile: Sticky Book Now Button (smooth fade in as scrolling past hero CTA) */}
           <motion.button
