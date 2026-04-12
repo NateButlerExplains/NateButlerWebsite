@@ -119,7 +119,7 @@ export function HeroSection() {
             className="mb-6"
           >
             <p className="text-base leading-relaxed text-slate-300 font-manrope">
-              Keynotes and workshops on Cybersecurity career, confidence, and practical entry paths into the industry.
+              Keynotes and workshops that show learners exactly how to land their first cybersecurity role...without prior experience.
             </p>
           </motion.div>
 
@@ -217,7 +217,7 @@ export function HeroSection() {
                 className="mb-12"
               >
                 <p className="text-lg leading-relaxed text-slate-300 max-w-xl font-manrope">
-                  Keynotes and workshops on Cybersecurity career, confidence, and practical entry paths into the industry.
+                  Keynotes and workshops that show learners exactly how to land their first cybersecurity role...without prior experience.
                 </p>
               </motion.div>
 
