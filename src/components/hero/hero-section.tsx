@@ -14,7 +14,7 @@ export function HeroSection() {
   // Topics that rotate (fixed line "Cybersecurity Speaker For" + rotating audience)
   const MOBILE_TOPICS = [
     'Students',
-    'Oth. Careers',
+    'Switchers',
     'Teams',
     'Professionals',
   ]
