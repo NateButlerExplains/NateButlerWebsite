@@ -83,7 +83,7 @@ export function HeroSection() {
                 transition={{ duration: 0.8, ease: easeOut }}
                 className="block text-6xl sm:text-7xl font-space-grotesk"
                 style={{
-                  fontSize: currentTopic === 'Career-Switchers' ? '64px' : undefined,
+                  fontSize: currentTopic === 'Career-Switchers' ? '46px' : undefined,
                   background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
