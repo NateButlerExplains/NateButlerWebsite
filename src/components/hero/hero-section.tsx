@@ -12,23 +12,41 @@ import { CyberPortrait } from './cyber-portrait'
  */
 export function HeroSection() {
   // Topics that rotate (fixed line "Cybersecurity Speaker For" + rotating audience)
-  const SPEAKER_TOPICS = [
+  const MOBILE_TOPICS = [
     'Students',
-    'Other Careers',
+    'Oth. Careers',
+    'Teams',
+    'Professionals',
+  ]
+
+  const DESKTOP_TOPICS = [
+    'Students',
+    'Career-Switchers',
     'Teams',
     'Professionals',
   ]
 
   const [topicIndex, setTopicIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    // Check if mobile on mount
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   // Rotate topics every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setTopicIndex((prev) => (prev + 1) % SPEAKER_TOPICS.length)
+      const topics = isMobile ? MOBILE_TOPICS : DESKTOP_TOPICS
+      setTopicIndex((prev) => (prev + 1) % topics.length)
     }, 4000)
     return () => clearInterval(interval)
-  }, [SPEAKER_TOPICS.length])
+  }, [isMobile])
 
+  const SPEAKER_TOPICS = isMobile ? MOBILE_TOPICS : DESKTOP_TOPICS
   const currentTopic = SPEAKER_TOPICS[topicIndex]
 
   const fadeInUp = {
