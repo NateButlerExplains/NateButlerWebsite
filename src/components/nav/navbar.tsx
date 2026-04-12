@@ -18,7 +18,6 @@ import { useState, useEffect } from 'react'
 export function Navbar() {
   const [activeSection, setActiveSection] = useState('home')
   const [mobileBookButtonOpacity, setMobileBookButtonOpacity] = useState(0)
-  const [mobileLogo, setMobileLogo] = useState({ justify: 'center', opacity: 1 })
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,12 +58,6 @@ export function Navbar() {
         const opacity = Math.max(0, Math.min(1, -rect.top / 50))
         setMobileBookButtonOpacity(opacity)
 
-        // Mobile logo: center while on homepage, transition to left as we scroll past hero
-        // Same scroll progression as book button
-        if (window.innerWidth < 768) {
-          const justify = opacity > 0.5 ? 'start' : 'center'
-          setMobileLogo({ justify, opacity: 1 })
-        }
       }
     }
 
