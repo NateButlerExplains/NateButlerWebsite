@@ -109,8 +109,6 @@ export function Navbar() {
       <div className="w-full px-6 lg:px-8 py-2 md:py-4">
         <div className="max-w-screen-2xl mx-auto flex items-center justify-between md:justify-between">
           {/* Logo — mobile centered, desktop left */}
-          <div className="flex-1 flex md:flex-none" style={{ justifyContent: window.innerWidth < 768 ? (mobileLogo.justify === 'center' ? 'center' : 'flex-start') : 'flex-start' }}>
-          {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
