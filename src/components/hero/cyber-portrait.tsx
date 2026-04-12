@@ -19,7 +19,7 @@ export function CyberPortrait() {
       {/* Main image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/Nate Hero - Main.jpeg"
+        src="/images/Breaking Into Cybersecurity.png"
         alt="Nate Butler — Cyber Speaker"
         className={styles.portraitImage}
       />
