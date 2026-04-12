@@ -72,7 +72,7 @@ export function HeroSection() {
             className="mb-6"
           >
             <h1 className="font-black leading-tight tracking-tighter space-y-0">
-              <span className="block text-5xl sm:text-7xl text-white font-space-grotesk pr-2">
+              <span className="block text-6xl sm:text-7xl text-white font-space-grotesk pr-2">
                 Cybersecurity Speaker For
               </span>
               <motion.span
@@ -81,9 +81,9 @@ export function HeroSection() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.8, ease: easeOut }}
-                className="block font-space-grotesk"
+                className="block text-6xl sm:text-7xl font-space-grotesk"
                 style={{
-                  fontSize: currentTopic === 'Career-Switchers' ? 'clamp(2.25rem, 8vw, 5.5rem)' : 'clamp(2.5rem, 9vw, 7rem)',
+                  fontSize: currentTopic === 'Career-Switchers' ? 'clamp(2.5rem, 8.5vw, 6rem)' : undefined,
                   background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',

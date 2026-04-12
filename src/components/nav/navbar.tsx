@@ -81,7 +81,7 @@ export function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 w-full"
       style={{
-        background: 'rgba(19, 19, 24, 0.7)',
+        background: 'rgba(19, 19, 24, 0.9)',
         backdropFilter: 'blur(40px)',
         boxShadow: '0 4px 20px rgba(0, 229, 255, 0.1)',
       }}
