@@ -17,6 +17,7 @@ import { useState, useEffect } from 'react'
  */
 export function Navbar() {
   const [activeSection, setActiveSection] = useState('home')
+  const [showMobileBookButton, setShowMobileBookButton] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +46,14 @@ export function Navbar() {
       // If no section found in viewport, we're at home/hero
       if (!found) {
         setActiveSection('home')
+      }
+
+      // Mobile: detect if we've scrolled past the hero CTA button
+      const heroCtaButton = document.querySelector('[data-hero-cta]')
+      if (heroCtaButton) {
+        const rect = heroCtaButton.getBoundingClientRect()
+        // Show sticky button if hero CTA is above viewport (scrolled past it)
+        setShowMobileBookButton(rect.top < 0)
       }
     }
 
@@ -148,28 +157,24 @@ export function Navbar() {
             </button>
           </motion.div>
 
-          {/* Mobile: Bell Icon Only */}
-          <motion.button
-            className="md:hidden p-2 text-[#00E5FF]"
-            whileTap={{ scale: 0.95 }}
-            style={{
-              filter: 'drop-shadow(0 0 6px rgba(0, 229, 255, 0.4))',
-            }}
-          >
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+          {/* Mobile: Sticky Book Now Button (appears when scrolling past hero CTA) */}
+          {showMobileBookButton && (
+            <motion.button
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => {
+                document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+              className="md:hidden px-4 py-2 rounded-xl font-space-grotesk font-bold uppercase tracking-widest text-xs text-slate-900 transition-all duration-300 shadow-neon-glow-strong hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
+              style={{
+                background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
+              }}
             >
-              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-            </svg>
-          </motion.button>
+              Book Now
+            </motion.button>
+          )}
         </div>
       </div>
     </nav>

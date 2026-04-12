@@ -112,6 +112,7 @@ export function HeroSection() {
             transition={{ delay: 0.45, duration: 0.8, ease: easeOut }}
           >
             <button
+              data-hero-cta
               onClick={() => {
                 document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
               }}
