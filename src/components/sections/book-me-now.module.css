@@ -59,26 +59,31 @@
 }
 
 .calendlyContainer {
+  /* Mobile: full-width, centered, no overflow */
   width: 100%;
   min-width: 320px;
-  max-width: 650px;
+  max-width: 100%;
   min-height: 630px;
   height: auto;
   margin: 0 auto;
-  overflow: visible;
+  overflow: hidden;
   display: block;
   background: transparent;
 }
 
 @media (min-width: 768px) {
   .calendlyContainer {
+    /* Tablet: increase height */
     min-height: 700px;
   }
 }
 
 @media (min-width: 1024px) {
   .calendlyContainer {
+    /* Desktop: constrain width, center, increase height */
+    max-width: 650px;
     min-height: 820px;
+    margin: 0 auto;
   }
 }
 

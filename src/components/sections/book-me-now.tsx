@@ -43,7 +43,7 @@ export default function BookMeNow() {
           data-url={`${CALENDLY_URL}?${CALENDLY_PARAMS}`}
         />
         <style>{`
-          /* Calendly container — no scrolling, auto-height */
+          /* Calendly widget container */
           .calendly-inline-widget {
             width: 100% !important;
             height: auto !important;
@@ -51,7 +51,7 @@ export default function BookMeNow() {
             margin: 0 !important;
             background: transparent !important;
             background-color: transparent !important;
-            overflow: visible !important;
+            overflow: hidden !important;
             border: none !important;
             display: block !important;
           }
@@ -65,13 +65,13 @@ export default function BookMeNow() {
             background-color: transparent !important;
             border: none !important;
             box-sizing: border-box !important;
-            overflow: visible !important;
+            overflow: hidden !important;
           }
 
           .calendly-inline-widget > div {
             display: block !important;
             width: 100% !important;
-            overflow: visible !important;
+            overflow: hidden !important;
           }
 
           .calendly-inline-widget > div > * {
@@ -83,7 +83,7 @@ export default function BookMeNow() {
             background-color: transparent !important;
             border: none !important;
             box-sizing: border-box !important;
-            overflow: visible !important;
+            overflow: hidden !important;
           }
 
           /* Calendly iframe — responsive, no scroll */
@@ -97,7 +97,7 @@ export default function BookMeNow() {
             border: none !important;
             display: block !important;
             box-sizing: border-box !important;
-            overflow: visible !important;
+            overflow: hidden !important;
           }
 
           @media (min-width: 768px) {
@@ -106,9 +106,39 @@ export default function BookMeNow() {
             }
           }
 
+          /* Desktop: center and constrain calendar width */
           @media (min-width: 1024px) {
+            .calendly-inline-widget {
+              max-width: 650px !important;
+              margin: 0 auto !important;
+            }
+
+            .calendly-inline-widget > * {
+              max-width: 650px !important;
+              margin: 0 auto !important;
+            }
+
+            .calendly-inline-widget > div {
+              max-width: 650px !important;
+              margin: 0 auto !important;
+            }
+
+            .calendly-inline-widget > div > * {
+              max-width: 650px !important;
+              margin: 0 auto !important;
+            }
+
             .calendly-inline-widget iframe {
               min-height: 820px !important;
+              max-width: 650px !important;
+              margin: 0 auto !important;
+            }
+          }
+
+          /* Mobile: remove white sliver at bottom */
+          @media (max-width: 767px) {
+            .calendly-inline-widget iframe {
+              margin-bottom: -2px !important;
             }
           }
 
