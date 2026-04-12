@@ -334,7 +334,7 @@ export function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: easeOut }}
             >
-              <div className="w-full max-w-lg lg:max-w-xl">
+              <div className="w-full">
                 <CyberPortrait />
               </div>
             </motion.div>
