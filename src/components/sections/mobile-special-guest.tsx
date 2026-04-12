@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, easeOut } from 'framer-motion'
+import styles from './mobile-special-guest.module.css'
 
 export function MobileSpecialGuest() {
   const fadeInUp = {
@@ -10,26 +11,26 @@ export function MobileSpecialGuest() {
   }
 
   return (
-    <section className="md:hidden relative w-full bg-surface px-6 py-12">
+    <section className={styles.container}>
       <motion.div
         {...fadeInUp}
-        className="w-full max-w-screen-2xl mx-auto"
+        className={styles.content}
       >
-        <p className="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-6 text-center">
+        <p className={styles.label}>
           Special Guest Appearance On
         </p>
 
         {/* Scrolling ticker for mobile */}
-        <div className="relative" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', overflow: 'visible' }}>
+        <div className={styles.tickerContainer}>
           <motion.div
-            className="flex gap-8 items-center justify-center"
+            className={styles.tickerTrack}
             animate={{ x: [0, -2040] }}
             transition={{ duration: 45, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
             style={{ width: 'max-content' }}
           >
             {/* Logo images duplicated for seamless loop */}
             {[...Array(2)].map((_, setIdx) => (
-              <div key={setIdx} className="flex gap-8 items-center">
+              <div key={setIdx} className={styles.logoSet}>
                 {/* Featured logos */}
                 {[
                   { src: '/images/Logos/Human in the Loop.png', alt: 'Human-in-the-Loop Podcast', upcoming: false },
@@ -41,24 +42,16 @@ export function MobileSpecialGuest() {
                   { src: '/images/Logos/Code Switch.png', alt: 'CodeSwitch Podcast', upcoming: true },
                   { src: '/images/Logos/T2Cyber.png', alt: 'Transition to Cyber Panel', upcoming: true },
                 ].map((item) => (
-                  <div key={item.alt} className="flex items-center justify-center flex-shrink-0 relative">
+                  <div key={item.alt} className={styles.logoWrapper}>
                     {/* Logo image */}
                     <img
                       src={item.src}
                       alt={item.alt}
-                      className="h-12 object-contain"
+                      className={styles.logo}
                     />
                     {/* Upcoming badge */}
                     {item.upcoming && (
-                      <span
-                        className="absolute -top-3 left-1/2 -translate-x-1/2 text-[8px] uppercase tracking-widest font-extrabold px-1.5 py-0.5 rounded flex-shrink-0 whitespace-nowrap"
-                        style={{
-                          background: 'rgba(112, 0, 255, 0.5)',
-                          color: '#00e5ff',
-                          border: '1px solid rgba(0, 229, 255, 0.6)',
-                          boxShadow: '0 0 12px rgba(0, 229, 255, 0.3)',
-                        }}
-                      >
+                      <span className={styles.badge}>
                         Coming Soon
                       </span>
                     )}
