@@ -24,7 +24,7 @@ export default function AboutSection() {
     >
       <div className={styles.content}>
         {/* Left column */}
-        <div className={styles.leftColumn}>
+        <div className={`${styles.leftColumn} col-span-7`}>
           <h2 className={styles.headline}>About Nate</h2>
 
           <p className={styles.bio}>
@@ -35,21 +35,21 @@ export default function AboutSection() {
           <div className={styles.trustSignals}>
             <div className={styles.signal}>
               <span className={styles.signalNumber}>10</span>
-              <span className={styles.signalLabel}>Years in Enterprise Cybersecurity</span>
+              <span className={styles.signalLabel}>Years in Enterprise<br />Cybersecurity</span>
             </div>
             <div className={styles.signal}>
               <span className={styles.signalNumber}>85%</span>
-              <span className={styles.signalLabel}>Job Placement Rate</span>
+              <span className={styles.signalLabel}>Job<br />Placement Rate</span>
             </div>
             <div className={styles.signal}>
               <span className={styles.signalNumber}>$45K</span>
-              <span className={styles.signalLabel}>Avg Salary Increase Per Learner</span>
+              <span className={styles.signalLabel}>Avg Salary Increase<br />Per Learner</span>
             </div>
           </div>
         </div>
 
         {/* Right column - About image with fading edges */}
-        <div className={styles.rightColumn}>
+        <div className={`${styles.rightColumn} col-span-5`}>
           <div className={styles.imageContainer}>
             {/* Outer glow effect */}
             <div className={styles.imageGlow} />

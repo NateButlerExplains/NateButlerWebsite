@@ -17,7 +17,7 @@
 
 @media (min-width: 1024px) {
   .container {
-    padding: 6.25rem 2rem;
+    padding: 6.25rem 0;
     scroll-margin-top: 100px;
   }
 }
@@ -47,12 +47,12 @@
 
 @media (min-width: 1024px) {
   .content {
-    max-width: 100%;
+    max-width: 1536px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 1.5rem;
-    grid-template-columns: 58.33% 41.67%;
-    gap: 3rem;
+    padding: 0 2rem;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3.5rem;
   }
 }
 
@@ -99,13 +99,12 @@
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
-  max-width: 38ch;
 }
 
 @media (min-width: 1024px) {
   .bio {
     font-size: 1.125rem;
-    max-width: 42ch;
+    max-width: 52ch;
   }
 }
 
