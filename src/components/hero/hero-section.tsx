@@ -71,7 +71,6 @@ export function HeroSection() {
             src="/images/main.png"
             alt="Nate Butler"
             className="w-full h-full object-cover object-top"
-            style={{ transform: 'scaleX(-1)' }}
           />
           {/* Gradient overlay for text readability */}
           <div
@@ -82,9 +81,10 @@ export function HeroSection() {
           />
         </motion.div>
 
-        {/* Badge in upper left corner */}
+        {/* Badge just below navbar */}
         <motion.div
-          className="absolute top-6 left-6 z-20"
+          className="absolute left-6 z-20"
+          style={{ top: 'calc(48px + 12px)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.15, duration: 0.8, ease: easeOut }}
