@@ -82,6 +82,34 @@ export function HeroSection() {
           />
         </motion.div>
 
+        {/* Badge in upper left corner */}
+        <motion.div
+          className="absolute top-6 left-6 z-20"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.15, duration: 0.8, ease: easeOut }}
+        >
+          <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl backdrop-blur-lg bg-purple-950/40 border border-purple-500/50">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-purple-300"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+            <span className="text-xs uppercase tracking-widest font-semibold text-purple-300">
+              $800K+ salary uplift across learners
+            </span>
+          </div>
+        </motion.div>
+
         {/* Overlay: Headline + Buttons positioned on bottom of portrait */}
         <div className="absolute inset-0 flex flex-col justify-end px-6 pt-2 pb-12 z-10">
           {/* Headline overlaid on bottom portion */}
