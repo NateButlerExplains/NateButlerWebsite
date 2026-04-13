@@ -153,7 +153,7 @@ export function Navbar() {
           </motion.div>
 
           {/* Mobile: "More" Button with Dropdown */}
-          <div className="md:hidden absolute right-6 lg:right-8">
+          <div className="md:hidden absolute right-2">
             {/* More Button */}
             <button
               onClick={() => setShowMobileMenu(!showMobileMenu)}
