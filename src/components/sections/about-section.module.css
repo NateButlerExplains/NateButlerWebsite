@@ -104,7 +104,6 @@
 @media (min-width: 1024px) {
   .bio {
     font-size: 1.125rem;
-    max-width: 52ch;
   }
 }
 
