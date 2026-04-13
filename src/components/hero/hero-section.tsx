@@ -71,7 +71,7 @@ export function HeroSection() {
             src="/images/main.png"
             alt="Nate Butler"
             className="w-full h-full object-cover object-top"
-            style={{ filter: 'invert(1)' }}
+            style={{ transform: 'scaleX(-1)' }}
           />
           {/* Gradient overlay for text readability */}
           <div
