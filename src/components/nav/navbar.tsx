@@ -44,18 +44,11 @@ export function Navbar() {
   const navLinks = [
     { label: 'CORPORATE EVENTS', href: '/speaker/corporate', id: 'corporate' },
     { label: 'EXECUTIVE OFFSITES', href: '/speaker/executive-offsite', id: 'executive-offsite' },
-    { label: 'CONFERENCES', href: '/speaker/conference', id: 'conference' },
-    { label: 'CYBER EVENTS', href: '/speaker/cyber-event', id: 'cyber-event' },
-    { label: 'PODCASTS', href: '/podcast', id: 'podcast' },
+    { label: 'CYBER CONFERENCES', href: '/speaker/conference', id: 'conference' },
+    { label: 'VIRTUAL EVENTS', href: '/speaker/cyber-event', id: 'cyber-event' },
   ]
 
   const moreLinks = [
-    { label: 'Coaching', href: 'https://nate.kashboxcoaching.com/', id: 'coaching', external: true },
-    { label: 'Books', href: '/books', id: 'books', external: false },
-    { label: 'Podcast', href: '/podcast', id: 'podcast-more', external: false },
-  ]
-
-  const mobileMoreLinks = [
     { label: 'My Books', href: '/books', id: 'books', external: false },
     { label: 'Coaching', href: 'https://nate.kashboxcoaching.com/', id: 'coaching', external: true },
     { label: 'CyberTalks (TikTok)', href: 'https://www.tiktok.com/@natebutlerexplains', id: 'tiktok', external: true },
@@ -121,11 +114,9 @@ export function Navbar() {
             <div className="relative group">
               <button className="font-space-grotesk text-sm uppercase tracking-tight transition-all duration-200 text-white/70 hover:text-white flex items-center gap-2">
                 More
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
+                <span className="text-base leading-none tracking-widest">···</span>
               </button>
-              <div className="absolute right-0 mt-0 w-48 bg-[#131318] border border-[#00e5ff]/20 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="absolute right-0 mt-0 w-52 bg-[#131318] border border-[#00e5ff]/20 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 {moreLinks.map((link, idx) => (
                   <Link
                     key={idx}
@@ -169,14 +160,12 @@ export function Navbar() {
               className="flex items-center gap-2 p-2 text-white/70 hover:text-white transition-colors font-space-grotesk text-sm uppercase tracking-widest font-semibold"
             >
               More
-              <svg
-                className="w-4 h-4 transition-transform duration-200"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                style={{ transform: showMobileMenu ? 'rotate(180deg)' : 'rotate(0deg)' }}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {showMobileMenu ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
               </svg>
             </button>
 
@@ -186,9 +175,9 @@ export function Navbar() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="absolute top-full right-0 w-48 bg-[#131318] border border-[#00e5ff]/20 rounded-lg shadow-lg z-40 mt-2"
+                className="absolute top-full right-0 w-52 bg-[#131318] border border-[#00e5ff]/20 rounded-lg shadow-lg z-40 mt-2"
               >
-                {mobileMoreLinks.map((link, idx) => (
+                {moreLinks.map((link, idx) => (
                   <Link
                     key={idx}
                     href={link.href}
