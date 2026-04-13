@@ -11,9 +11,10 @@ import { useState, useEffect } from 'react'
  * - Semi-transparent dark background with backdrop blur
  * - Cyan glow shadow
  * - Logo on left (Nate Butler)
- * - Center menu links (HOME, ABOUT, PODCAST, BOOKS, COACHING) — desktop only with scroll-spy active state
- * - Right-side CTAs (Join Discord, Book Now) — desktop only
- * - Mobile: bell icon only (navigation via bottom nav bar)
+ * - Center menu links (CORPORATE EVENTS, EXECUTIVE OFFSITES, CONFERENCES, CYBER EVENTS, PODCASTS) — desktop only
+ * - More dropdown (desktop) with extended links
+ * - Right-side CTA (Book Now) — desktop only
+ * - Mobile: "More" button (text + chevron) with dropdown (My Books, Coaching, CyberTalks, LinkedIn)
  */
 export function Navbar() {
   const [mobileBookButtonOpacity, setMobileBookButtonOpacity] = useState(0)
@@ -54,6 +55,12 @@ export function Navbar() {
     { label: 'Podcast', href: '/podcast', id: 'podcast-more', external: false },
   ]
 
+  const mobileMoreLinks = [
+    { label: 'My Books', href: '/books', id: 'books', external: false },
+    { label: 'Coaching', href: 'https://nate.kashboxcoaching.com/', id: 'coaching', external: true },
+    { label: 'CyberTalks (TikTok)', href: 'https://www.tiktok.com/@natebutlerexplains', id: 'tiktok', external: true },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/natebutlerexplains', id: 'linkedin', external: true },
+  ]
 
   return (
     <nav
@@ -154,48 +161,41 @@ export function Navbar() {
             </button>
           </motion.div>
 
-          {/* Mobile: Hamburger Menu */}
+          {/* Mobile: "More" Button with Dropdown */}
           <div className="md:hidden absolute right-6 lg:right-8">
-            {/* Hamburger Button */}
+            {/* More Button */}
             <button
               onClick={() => setShowMobileMenu(!showMobileMenu)}
-              className="p-2 text-white/70 hover:text-white transition-colors"
+              className="flex items-center gap-2 p-2 text-white/70 hover:text-white transition-colors font-space-grotesk text-sm uppercase tracking-widest font-semibold"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {showMobileMenu ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
+              More
+              <svg
+                className="w-4 h-4 transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                style={{ transform: showMobileMenu ? 'rotate(180deg)' : 'rotate(0deg)' }}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </button>
 
-            {/* Mobile Menu */}
+            {/* Mobile More Menu - fixed dropdown position */}
             {showMobileMenu && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="absolute top-full left-0 right-0 bg-[#131318] border-b border-[#00e5ff]/20 z-40"
+                className="absolute top-full right-0 w-48 bg-[#131318] border border-[#00e5ff]/20 rounded-lg shadow-lg z-40 mt-2"
               >
-                {navLinks.map((link, idx) => (
-                  <Link
-                    key={idx}
-                    href={link.href}
-                    onClick={() => setShowMobileMenu(false)}
-                    className="block px-6 py-4 text-sm font-space-grotesk uppercase text-white/70 hover:text-white hover:bg-white/5 transition-all border-b border-white/10 last:border-b-0"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-                {moreLinks.map((link, idx) => (
+                {mobileMoreLinks.map((link, idx) => (
                   <Link
                     key={idx}
                     href={link.href}
                     target={link.external ? '_blank' : undefined}
                     rel={link.external ? 'noopener noreferrer' : undefined}
                     onClick={() => !link.external && setShowMobileMenu(false)}
-                    className="block px-6 py-4 text-sm font-space-grotesk uppercase text-white/70 hover:text-white hover:bg-white/5 transition-all border-b border-white/10 last:border-b-0"
+                    className="block px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-all border-b border-white/10 first:rounded-t-lg last:border-b-0 last:rounded-b-lg"
                   >
                     {link.label}
                   </Link>
