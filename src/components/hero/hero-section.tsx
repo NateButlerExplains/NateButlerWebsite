@@ -68,7 +68,7 @@ export function HeroSection() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/Breaking Into Cybersecurity.png"
+            src="/images/Break In.png"
             alt="Nate Butler"
             className="w-full h-full object-cover object-top"
           />
