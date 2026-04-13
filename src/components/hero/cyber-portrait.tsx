@@ -19,7 +19,7 @@ export function CyberPortrait() {
       {/* Main image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/Break In.png"
+        src="/images/main.png"
         alt="Nate Butler — Cyber Speaker"
         className={styles.portraitImage}
       />
