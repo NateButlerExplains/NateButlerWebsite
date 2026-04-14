@@ -68,10 +68,7 @@ export function HeroSection() {
           >
             <h1 className="font-black leading-tight tracking-tighter space-y-0">
               <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
-                Help Your Audience
-              </span>
-              <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
-                Break Into
+                Help the
               </span>
               <span
                 className="block text-6xl sm:text-7xl font-space-grotesk"
@@ -82,7 +79,13 @@ export function HeroSection() {
                   backgroundClip: 'text',
                 }}
               >
-                Cybersecurity
+                Next Gen
+              </span>
+              <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
+                Break Into
+              </span>
+              <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
+                Cyber
               </span>
             </h1>
           </motion.div>
@@ -150,10 +153,7 @@ export function HeroSection() {
               >
                 <h1 className="font-black leading-tight tracking-tighter space-y-0">
                   <span className="block text-7xl lg:text-8xl text-white font-space-grotesk">
-                    Help Your Audience
-                  </span>
-                  <span className="block text-7xl lg:text-8xl text-white font-space-grotesk">
-                    Break Into
+                    Help the
                   </span>
                   <span
                     className="block text-7xl lg:text-8xl font-space-grotesk"
@@ -164,7 +164,13 @@ export function HeroSection() {
                       backgroundClip: 'text',
                     }}
                   >
-                    Cybersecurity
+                    Next Gen
+                  </span>
+                  <span className="block text-7xl lg:text-8xl text-white font-space-grotesk">
+                    Break Into
+                  </span>
+                  <span className="block text-7xl lg:text-8xl text-white font-space-grotesk">
+                    Cyber
                   </span>
                 </h1>
               </motion.div>
