@@ -121,6 +121,38 @@ export function HeroSection() {
               Check Speaking Availability
             </button>
           </motion.div>
+
+          {/* Trust Signals / Metrics — Mobile */}
+          <motion.div
+            className="grid grid-cols-3 gap-3 mt-8"
+            {...fadeInUp}
+            transition={{ delay: 0.6, duration: 0.8, ease: easeOut }}
+          >
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-2xl font-bold font-space-grotesk text-[#00E5FF]" style={{ textShadow: '0 0 10px rgba(0, 229, 255, 0.4)' }}>
+                10
+              </span>
+              <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 text-center leading-tight">
+                Years in<br />Enterprise<br />Cyber
+              </span>
+            </div>
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-2xl font-bold font-space-grotesk text-[#00E5FF]" style={{ textShadow: '0 0 10px rgba(0, 229, 255, 0.4)' }}>
+                85%
+              </span>
+              <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 text-center leading-tight">
+                Job<br />Placement<br />Rate
+              </span>
+            </div>
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-2xl font-bold font-space-grotesk text-[#00E5FF]" style={{ textShadow: '0 0 10px rgba(0, 229, 255, 0.4)' }}>
+                $45K
+              </span>
+              <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 text-center leading-tight">
+                Avg Salary<br />Increase<br />Per Learner
+              </span>
+            </div>
+          </motion.div>
         </div>
       </div>
 
@@ -211,6 +243,38 @@ export function HeroSection() {
                 >
                   Check Speaking Availability
                 </button>
+              </motion.div>
+
+              {/* Trust Signals / Metrics */}
+              <motion.div
+                className="grid grid-cols-3 gap-4 mt-12"
+                {...fadeInUp}
+                transition={{ delay: 0.6, duration: 0.8, ease: easeOut }}
+              >
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-4xl font-bold font-space-grotesk text-[#00E5FF]" style={{ textShadow: '0 0 10px rgba(0, 229, 255, 0.4)' }}>
+                    10
+                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-slate-400 text-center">
+                    Years in Enterprise<br />Cybersecurity
+                  </span>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-4xl font-bold font-space-grotesk text-[#00E5FF]" style={{ textShadow: '0 0 10px rgba(0, 229, 255, 0.4)' }}>
+                    85%
+                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-slate-400 text-center">
+                    Job<br />Placement Rate
+                  </span>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-4xl font-bold font-space-grotesk text-[#00E5FF]" style={{ textShadow: '0 0 10px rgba(0, 229, 255, 0.4)' }}>
+                    $45K
+                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-slate-400 text-center">
+                    Avg Salary Increase<br />Per Learner
+                  </span>
+                </div>
               </motion.div>
             </div>
 
