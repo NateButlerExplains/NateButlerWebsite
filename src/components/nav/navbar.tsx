@@ -52,8 +52,8 @@ export function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 w-full"
       style={{
-        background: isPastFold ? 'rgba(19, 19, 24, 0.9)' : 'transparent',
-        backdropFilter: isPastFold ? 'blur(40px)' : 'none',
+        background: isPastFold ? 'rgba(19, 19, 24, 0.9)' : 'rgba(19, 19, 24, 0.7)',
+        backdropFilter: isPastFold ? 'blur(40px)' : 'blur(20px)',
         boxShadow: isPastFold ? '0 4px 20px rgba(0, 229, 255, 0.1)' : 'none',
         pointerEvents: isPastFold ? 'auto' : 'none',
         transition: 'all 0.35s ease',
