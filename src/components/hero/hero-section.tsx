@@ -109,7 +109,7 @@ export function HeroSection() {
                 boxShadow: '0 0 20px rgba(0, 229, 255, 0.4), 0 0 4px rgba(0, 229, 255, 0.2), 0 4px 12px rgba(0, 100, 120, 0.25)',
               }}
             >
-              Request Nate for Your Event
+              Check Speaking Availability
             </button>
           </motion.div>
         </div>
@@ -174,24 +174,7 @@ export function HeroSection() {
                 {...fadeInUp}
                 transition={{ delay: 0.45, duration: 0.8, ease: easeOut }}
               >
-                {/* Primary: DOWNLOAD SPEAKER KIT */}
-                <button
-                  onClick={() => {
-                    const bookSection = document.getElementById('books')
-                    if (bookSection) {
-                      bookSection.scrollIntoView({ behavior: 'smooth' })
-                    }
-                  }}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-slate-100 font-space-grotesk font-semibold uppercase tracking-widest text-sm transition-all duration-300 hover:text-[#00e5ff] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
-                  style={{
-                    background: 'linear-gradient(rgba(19,19,24,1), rgba(19,19,24,1)) padding-box, linear-gradient(135deg, rgba(0,229,255,0.7), rgba(77,127,255,0.7)) border-box',
-                    border: '2px solid transparent',
-                  }}
-                >
-                  Download Speaker Kit
-                </button>
-
-                {/* Secondary: BOOK NATE BUTLER */}
+                {/* Primary CTA: CHECK SPEAKING AVAILABILITY */}
                 <button
                   onClick={() => {
                     document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
@@ -208,7 +191,7 @@ export function HeroSection() {
                     e.currentTarget.style.boxShadow = '0 0 24px rgba(0, 229, 255, 0.35), 0 0 6px rgba(0, 229, 255, 0.2), 0 6px 16px rgba(0, 100, 120, 0.25)'
                   }}
                 >
-                  Request Nate for Your Event
+                  Check Speaking Availability
                 </button>
               </motion.div>
 

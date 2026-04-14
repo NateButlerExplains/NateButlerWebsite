@@ -49,9 +49,10 @@ export function Navbar() {
   ]
 
   const moreLinks = [
+    { label: 'For Event Planners', href: '/book-me-now', id: 'event-planners', external: false },
     { label: 'My Books', href: '/books', id: 'books', external: false },
     { label: 'Coaching', href: 'https://nate.kashboxcoaching.com/', id: 'coaching', external: true },
-    { label: 'CyberTalks (TikTok)', href: 'https://www.tiktok.com/@natebutlerexplains', id: 'tiktok', external: true },
+    { label: 'CyberTalks (Podcast Host)', href: 'https://www.tiktok.com/@natebutlerexplains', id: 'podcast-host', external: true },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/natebutlerexplains', id: 'linkedin', external: true },
   ]
 
