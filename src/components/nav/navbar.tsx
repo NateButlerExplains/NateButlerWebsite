@@ -17,24 +17,12 @@ import { useState, useEffect } from 'react'
  * - Mobile: "More" button (text + chevron) with dropdown (My Books, Coaching, CyberTalks, LinkedIn)
  */
 export function Navbar() {
-  const [mobileBookButtonOpacity, setMobileBookButtonOpacity] = useState(0)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [isPastFold, setIsPastFold] = useState<boolean>(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      // Mobile: smooth fade in as user scrolls past hero CTA button
-      const heroCtaButton = document.querySelector('[data-hero-cta]')
-      if (heroCtaButton) {
-        const rect = heroCtaButton.getBoundingClientRect()
-        // Calculate opacity based on scroll position relative to hero CTA
-        // When CTA is fully visible (rect.top > 0), opacity = 0
-        // When CTA is scrolled off screen (rect.top < -50), opacity = 1
-        const opacity = Math.max(0, Math.min(1, -rect.top / 50))
-        setMobileBookButtonOpacity(opacity)
-      }
-
-      // Desktop: above/below-fold navbar state transition
+      // Above/below-fold navbar state transition (desktop and mobile)
       setIsPastFold(window.scrollY >= window.innerHeight)
     }
 
@@ -79,7 +67,7 @@ export function Navbar() {
         }}
       />
       <div className="w-full px-6 lg:px-8 py-2 md:py-4">
-        <div className={`max-w-screen-2xl mx-auto relative flex items-center justify-between ${isPastFold ? 'md:justify-between' : 'md:justify-center'}`}>
+        <div className={`max-w-screen-2xl mx-auto relative flex items-center ${isPastFold ? 'md:justify-between justify-between' : 'md:justify-center justify-center'}`}>
           {/* Logo — mobile centered, desktop left */}
           <motion.div
             layout
@@ -161,7 +149,12 @@ export function Navbar() {
           </motion.div>
 
           {/* Mobile: "More" Button with Dropdown */}
-          <div className="md:hidden absolute right-2">
+          <motion.div
+            className="md:hidden absolute right-2"
+            animate={{ opacity: isPastFold ? 1 : 0 }}
+            transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+            style={{ pointerEvents: isPastFold ? 'auto' : 'none' }}
+          >
             {/* More Button */}
             <button
               onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -199,26 +192,37 @@ export function Navbar() {
                 ))}
               </motion.div>
             )}
-          </div>
+          </motion.div>
         </div>
 
-        {/* Mobile: Sticky Book Now Button (smooth fade in as scrolling past hero CTA) */}
-        <motion.button
-          onClick={() => {
-            document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
-          }}
-          className="md:hidden absolute right-6 lg:right-8 px-4 py-2 rounded-xl font-space-grotesk font-bold uppercase tracking-widest text-xs text-slate-900 transition-all duration-300 shadow-neon-glow-strong hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
-          style={{
-            background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
-            opacity: mobileBookButtonOpacity,
-            pointerEvents: mobileBookButtonOpacity > 0.1 ? 'auto' : 'none',
-            top: '50%',
-            transform: 'translateY(-50%)',
-          }}
-        >
-          Book Now
-        </motion.button>
       </div>
+
+      {/* Mobile: Bottom Navigation Bar (appears after fold) */}
+      <motion.div
+        className="md:hidden fixed bottom-0 left-0 right-0 z-50 w-full border-t border-[#00e5ff]/10"
+        animate={{ opacity: isPastFold ? 1 : 0, y: isPastFold ? 0 : 20 }}
+        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+        style={{
+          pointerEvents: isPastFold ? 'auto' : 'none',
+          background: 'rgba(19, 19, 24, 0.95)',
+          backdropFilter: 'blur(40px)',
+          boxShadow: '0 -4px 20px rgba(0, 229, 255, 0.1)',
+        }}
+      >
+        <div className="w-full px-6 py-3 flex items-center justify-center">
+          <button
+            onClick={() => {
+              document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="w-full inline-flex items-center justify-center px-6 py-3 rounded-xl font-space-grotesk font-bold uppercase tracking-widest text-xs text-slate-900 transition-all duration-300 shadow-neon-glow-strong hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
+            style={{
+              background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
+            }}
+          >
+            Check Speaking Availability
+          </button>
+        </div>
+      </motion.div>
     </nav>
   )
 }
