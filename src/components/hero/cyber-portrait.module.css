@@ -37,7 +37,8 @@
 
 .portraitContainer {
   position: relative;
-  min-height: 460px;
+  width: 100%;
+  aspect-ratio: 3 / 4;
   border-radius: 1rem;
   overflow: visible;
   box-shadow:
@@ -69,11 +70,12 @@
 }
 
 .portraitImage {
-  position: relative;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
   transform: scaleX(-1);
   z-index: 2;
   border-radius: 1rem;

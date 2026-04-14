@@ -67,8 +67,8 @@ export function Navbar() {
         }}
       />
       <div className="w-full px-6 lg:px-8 py-2 md:py-4">
-        <div className={`max-w-screen-2xl mx-auto relative flex items-center ${isPastFold ? 'md:justify-between justify-between' : 'md:justify-center justify-center'}`}>
-          {/* Logo — mobile centered, desktop left */}
+        <div className={`max-w-screen-2xl mx-auto relative flex items-center ${isPastFold ? 'justify-start' : 'justify-center'}`}>
+          {/* Logo — sole flex-flow child; centered above fold, shifts left below fold */}
           <motion.div
             layout
             initial={{ opacity: 0 }}
@@ -87,9 +87,9 @@ export function Navbar() {
             </Link>
           </motion.div>
 
-          {/* Center Menu — Desktop Only */}
+          {/* Center Menu — Desktop Only — absolutely positioned so it doesn't affect logo centering */}
           <motion.div
-            className="hidden md:flex items-center gap-8"
+            className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2"
             initial={{ opacity: 0 }}
             animate={{ opacity: isPastFold ? 1 : 0 }}
             transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
@@ -127,9 +127,9 @@ export function Navbar() {
             </div>
           </motion.div>
 
-          {/* Right Side CTAs — Desktop Only */}
+          {/* Right Side CTAs — Desktop Only — absolutely positioned */}
           <motion.div
-            className="hidden md:flex items-center gap-6"
+            className="hidden md:flex items-center gap-6 absolute right-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: isPastFold ? 1 : 0 }}
             transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
@@ -148,7 +148,7 @@ export function Navbar() {
             </button>
           </motion.div>
 
-          {/* Mobile: "More" Button with Dropdown */}
+          {/* Mobile: "More" Button with Dropdown — absolutely positioned */}
           <motion.div
             className="md:hidden absolute right-2"
             animate={{ opacity: isPastFold ? 1 : 0 }}
