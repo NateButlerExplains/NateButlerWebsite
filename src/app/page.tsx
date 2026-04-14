@@ -1,4 +1,5 @@
 import { HeroSection } from '@/components/hero/hero-section'
+import { SpecialGuestSection } from '@/components/sections/special-guest-section'
 import { FeaturedOn } from '@/components/sections/featured-on'
 import MobileSpecialGuest from '@/components/sections/mobile-special-guest'
 import AboutSection from '@/components/sections/about-section'
@@ -10,6 +11,7 @@ export default function Home() {
     <>
       <main className="relative z-[1] overflow-x-hidden bg-surface pb-16 md:pb-0">
         <HeroSection />
+        <SpecialGuestSection />
         <FeaturedOn />
         <MobileSpecialGuest />
         <AboutSection />

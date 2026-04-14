@@ -71,8 +71,8 @@ export function Navbar() {
           {/* Logo — mobile centered, desktop left */}
           <motion.div
             layout
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.6, layout: { duration: 0.4, ease: [0.4, 0, 0.2, 1] } }}
           >
             <Link
