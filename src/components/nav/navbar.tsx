@@ -198,31 +198,34 @@ export function Navbar() {
       </div>
 
       {/* Mobile: Bottom Navigation Bar (appears after fold) */}
-      <motion.div
-        className="md:hidden fixed bottom-0 left-0 right-0 z-50 w-full border-t border-[#00e5ff]/10"
-        animate={{ opacity: isPastFold ? 1 : 0, y: isPastFold ? 0 : 20 }}
-        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-        style={{
-          pointerEvents: isPastFold ? 'auto' : 'none',
-          background: 'rgba(19, 19, 24, 0.95)',
-          backdropFilter: 'blur(40px)',
-          boxShadow: '0 -4px 20px rgba(0, 229, 255, 0.1)',
-        }}
-      >
-        <div className="w-full px-6 py-3 flex items-center justify-center">
-          <button
-            onClick={() => {
-              document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
-            }}
-            className="w-full inline-flex items-center justify-center px-6 py-3 rounded-xl font-space-grotesk font-bold uppercase tracking-widest text-xs text-slate-900 transition-all duration-300 shadow-neon-glow-strong hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
-            style={{
-              background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
-            }}
-          >
-            Check Speaking Availability
-          </button>
-        </div>
-      </motion.div>
+      {isPastFold && (
+        <motion.div
+          className="md:hidden fixed bottom-0 left-0 right-0 z-50 w-full border-t border-[#00e5ff]/10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+          style={{
+            background: 'rgba(19, 19, 24, 0.95)',
+            backdropFilter: 'blur(40px)',
+            boxShadow: '0 -4px 20px rgba(0, 229, 255, 0.1)',
+          }}
+        >
+          <div className="w-full px-6 py-3 flex items-center justify-center">
+            <button
+              onClick={() => {
+                document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+              className="w-full inline-flex items-center justify-center px-6 py-3 rounded-xl font-space-grotesk font-bold uppercase tracking-widest text-xs text-slate-900 transition-all duration-300 shadow-neon-glow-strong hover:shadow-[0_0_40px_rgba(0,229,255,0.75),_0_0_12px_rgba(0,229,255,0.4)] hover:-translate-y-[2px] active:scale-95 active:translate-y-0"
+              style={{
+                background: 'linear-gradient(135deg, #00e5ff 0%, #4D7FFF 100%)',
+              }}
+            >
+              Check Speaking Availability
+            </button>
+          </div>
+        </motion.div>
+      )}
     </nav>
   )
 }
