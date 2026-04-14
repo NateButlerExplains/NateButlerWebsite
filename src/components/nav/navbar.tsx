@@ -148,51 +148,53 @@ export function Navbar() {
             </button>
           </motion.div>
 
-          {/* Mobile: "More" Button with Dropdown — absolutely positioned */}
-          <motion.div
-            className="md:hidden absolute right-2"
-            animate={{ opacity: isPastFold ? 1 : 0 }}
-            transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-            style={{ pointerEvents: isPastFold ? 'auto' : 'none' }}
-          >
-            {/* More Button */}
-            <button
-              onClick={() => setShowMobileMenu(!showMobileMenu)}
-              className="flex items-center gap-2 p-2 text-white/70 hover:text-white transition-colors font-space-grotesk text-sm uppercase tracking-widest font-semibold"
+          {/* Mobile: "More" Button with Dropdown — only rendered after fold */}
+          {isPastFold && (
+            <motion.div
+              className="md:hidden absolute right-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
             >
-              More
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {showMobileMenu ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-
-            {/* Mobile More Menu - fixed dropdown position */}
-            {showMobileMenu && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="absolute top-full right-0 w-52 bg-[#131318] border border-[#00e5ff]/20 rounded-lg shadow-lg z-40 mt-2"
+              {/* More Button */}
+              <button
+                onClick={() => setShowMobileMenu(!showMobileMenu)}
+                className="flex items-center gap-2 p-2 text-white/70 hover:text-white transition-colors font-space-grotesk text-sm uppercase tracking-widest font-semibold"
               >
-                {moreLinks.map((link, idx) => (
-                  <Link
-                    key={idx}
-                    href={link.href}
-                    target={link.external ? '_blank' : undefined}
-                    rel={link.external ? 'noopener noreferrer' : undefined}
-                    onClick={() => !link.external && setShowMobileMenu(false)}
-                    className="block px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-all border-b border-white/10 first:rounded-t-lg last:border-b-0 last:rounded-b-lg"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </motion.div>
-            )}
-          </motion.div>
+                More
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {showMobileMenu ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+
+              {/* Mobile More Menu - fixed dropdown position */}
+              {showMobileMenu && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="absolute top-full right-0 w-52 bg-[#131318] border border-[#00e5ff]/20 rounded-lg shadow-lg z-40 mt-2"
+                >
+                  {moreLinks.map((link, idx) => (
+                    <Link
+                      key={idx}
+                      href={link.href}
+                      target={link.external ? '_blank' : undefined}
+                      rel={link.external ? 'noopener noreferrer' : undefined}
+                      onClick={() => !link.external && setShowMobileMenu(false)}
+                      className="block px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-all border-b border-white/10 first:rounded-t-lg last:border-b-0 last:rounded-b-lg"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </motion.div>
+          )}
         </div>
 
       </div>

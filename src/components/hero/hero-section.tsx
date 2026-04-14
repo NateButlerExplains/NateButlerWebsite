@@ -67,11 +67,11 @@ export function HeroSection() {
             className="mb-6"
           >
             <h1 className="font-black leading-tight tracking-tighter space-y-0">
-              <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
+              <span className="block text-[9vw] sm:text-5xl text-white font-space-grotesk">
                 Help the
               </span>
               <span
-                className="block text-6xl sm:text-7xl font-space-grotesk"
+                className="block text-[9vw] sm:text-5xl font-space-grotesk"
                 style={{
                   background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
                   WebkitBackgroundClip: 'text',
@@ -79,13 +79,13 @@ export function HeroSection() {
                   backgroundClip: 'text',
                 }}
               >
-                Next Gen
+                Next Generation
               </span>
-              <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
+              <span className="block text-[9vw] sm:text-5xl text-white font-space-grotesk">
                 Break Into
               </span>
-              <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
-                Cyber
+              <span className="block text-[9vw] sm:text-5xl text-white font-space-grotesk">
+                Cybersecurity
               </span>
             </h1>
           </motion.div>
@@ -196,10 +196,13 @@ export function HeroSection() {
                       backgroundClip: 'text',
                     }}
                   >
-                    Next Gen
+                    Next Generation
                   </span>
                   <span className="block text-7xl lg:text-8xl text-white font-space-grotesk">
-                    Break Into Cyber
+                    Break Into
+                  </span>
+                  <span className="block text-7xl lg:text-8xl text-white font-space-grotesk">
+                    Cybersecurity
                   </span>
                 </h1>
               </motion.div>
