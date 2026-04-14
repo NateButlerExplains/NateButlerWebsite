@@ -11,10 +11,10 @@ export default function Home() {
     <>
       <main className="relative z-[1] overflow-x-hidden bg-surface pb-16 md:pb-0">
         <HeroSection />
-        <SpecialGuestSection />
         <FeaturedOn />
         <MobileSpecialGuest />
         <AboutSection />
+        <SpecialGuestSection />
         <BookMeNow />
       </main>
       <Footer />

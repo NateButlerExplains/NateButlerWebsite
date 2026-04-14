@@ -53,7 +53,7 @@ export function HeroSection() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg backdrop-blur-lg bg-purple-950/40 border border-purple-500/50">
             <span className="text-[10px] uppercase tracking-wider font-semibold text-purple-300">
-              Speaker, mentor, and cybersecurity professional
+              Cybersecurity Speaker | Mentor | Career Transition Advocate
             </span>
           </div>
         </motion.div>
@@ -131,13 +131,13 @@ export function HeroSection() {
         >
 
           <div className="grid grid-cols-12 gap-12 lg:gap-14 items-center">
-            {/* LEFT COLUMN: Content (8 columns) */}
-            <div className="w-full col-span-8">
+            {/* LEFT COLUMN: Content (9 columns) */}
+            <div className="w-full col-span-9">
               {/* Badge */}
               <motion.div {...fadeInUp} className="mb-10">
                 <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl backdrop-blur-lg bg-purple-950/40 border border-purple-500/50">
                   <span className="text-xs uppercase tracking-widest font-semibold text-purple-300">
-                    Speaker, mentor, and cybersecurity professional
+                    Cybersecurity Speaker | Mentor | Career Transition Advocate
                   </span>
                 </div>
               </motion.div>
@@ -176,7 +176,7 @@ export function HeroSection() {
                 className="mb-12"
               >
                 <p className="text-lg leading-relaxed text-slate-300 max-w-xl font-manrope">
-                  Designed for audiences ready to move from exploring cybersecurity to actually entering the field.
+                  Practical keynotes for students, professionals, career-switchers, and teams who want a real path into cybersecurity.
                 </p>
               </motion.div>
 
@@ -208,9 +208,9 @@ export function HeroSection() {
               </motion.div>
             </div>
 
-            {/* RIGHT COLUMN: Cyber Portrait (4 columns) */}
+            {/* RIGHT COLUMN: Cyber Portrait (3 columns) */}
             <motion.div
-              className="w-full col-span-4 flex justify-center items-center"
+              className="w-full col-span-3 flex justify-center items-center"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: easeOut }}
