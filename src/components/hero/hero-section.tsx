@@ -88,7 +88,7 @@ export function HeroSection() {
             className="mb-6"
           >
             <p className="text-base leading-relaxed text-slate-300 font-manrope">
-              Practical talks for audiences who want a real path into cybersecurity.
+              Designed for audiences ready to move from exploring cybersecurity to actually entering the field.
             </p>
           </motion.div>
 
@@ -164,7 +164,7 @@ export function HeroSection() {
                 className="mb-12"
               >
                 <p className="text-lg leading-relaxed text-slate-300 max-w-xl font-manrope">
-                  Practical talks for audiences who want a real path into cybersecurity.
+                  Designed for audiences ready to move from exploring cybersecurity to actually entering the field.
                 </p>
               </motion.div>
 
