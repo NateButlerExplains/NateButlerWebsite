@@ -67,6 +67,12 @@ export function HeroSection() {
             className="mb-6"
           >
             <h1 className="font-black leading-tight tracking-tighter space-y-0">
+              <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
+                Help Your Audience
+              </span>
+              <span className="block text-6xl sm:text-7xl text-white font-space-grotesk">
+                Break Into
+              </span>
               <span
                 className="block text-6xl sm:text-7xl font-space-grotesk"
                 style={{
@@ -76,7 +82,7 @@ export function HeroSection() {
                   backgroundClip: 'text',
                 }}
               >
-                Help Your Audience Break Into Cybersecurity.
+                Cyber
               </span>
             </h1>
           </motion.div>
@@ -143,6 +149,12 @@ export function HeroSection() {
                 className="mb-10"
               >
                 <h1 className="font-black leading-tight tracking-tighter space-y-0">
+                  <span className="block text-7xl lg:text-8xl text-white font-space-grotesk">
+                    Help Your Audience
+                  </span>
+                  <span className="block text-7xl lg:text-8xl text-white font-space-grotesk">
+                    Break Into
+                  </span>
                   <span
                     className="block text-7xl lg:text-8xl font-space-grotesk"
                     style={{
@@ -152,7 +164,7 @@ export function HeroSection() {
                       backgroundClip: 'text',
                     }}
                   >
-                    Help Your Audience Break Into Cybersecurity.
+                    Cyber
                   </span>
                 </h1>
               </motion.div>
