@@ -45,6 +45,16 @@ export function HeroSection() {
 
         {/* Overlay: Headline + Buttons positioned on bottom of portrait */}
         <div className="absolute inset-0 flex flex-col justify-end px-6 pt-2 pb-3 z-10">
+          {/* Dark background behind text for readability */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to top, rgba(13,13,18,0.85) 0%, rgba(13,13,18,0.65) 35%, transparent 70%)',
+            }}
+          />
+        </div>
+        {/* Overlay: Headline + Buttons positioned on bottom of portrait */}
+        <div className="absolute inset-0 flex flex-col justify-end px-6 pt-2 pb-3 z-20">
           {/* Headline overlaid on bottom portion */}
           <motion.div
             {...fadeInUp}
@@ -52,7 +62,7 @@ export function HeroSection() {
             className="mb-6"
           >
             <h1 className="font-black leading-tight tracking-tighter space-y-0">
-              <span className="block text-[9vw] sm:text-5xl text-white font-space-grotesk">
+              <span className="block text-[9vw] sm:text-5xl text-white font-space-grotesk" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
                 Help the
               </span>
               <span
@@ -62,14 +72,16 @@ export function HeroSection() {
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
+                  textShadow: '0 2px 4px rgba(0,0,0,0.5)',
+                  WebkitTextStroke: '0.5px rgba(0, 229, 255, 0.3)',
                 }}
               >
                 Next Generation
               </span>
-              <span className="block text-[9vw] sm:text-5xl text-white font-space-grotesk">
+              <span className="block text-[9vw] sm:text-5xl text-white font-space-grotesk" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
                 Break Into
               </span>
-              <span className="block text-[9vw] sm:text-5xl text-white font-space-grotesk">
+              <span className="block text-[9vw] sm:text-5xl text-white font-space-grotesk" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
                 Cybersecurity
               </span>
             </h1>
