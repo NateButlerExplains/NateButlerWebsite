@@ -43,21 +43,6 @@ export function HeroSection() {
           />
         </motion.div>
 
-        {/* Badge just below navbar */}
-        <motion.div
-          className="absolute left-4 z-20"
-          style={{ top: 'calc(48px + 80px)' }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.15, duration: 0.8, ease: easeOut }}
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg backdrop-blur-lg bg-purple-950/40 border border-purple-500/50">
-            <span className="text-[10px] uppercase tracking-wider font-semibold text-purple-300">
-              Helping People Break Into Cybersecurity
-            </span>
-          </div>
-        </motion.div>
-
         {/* Overlay: Headline + Buttons positioned on bottom of portrait */}
         <div className="absolute inset-0 flex flex-col justify-end px-6 pt-2 pb-12 z-10">
           {/* Headline overlaid on bottom portion */}
@@ -168,15 +153,6 @@ export function HeroSection() {
           <div className="grid grid-cols-12 gap-12 lg:gap-14 items-center">
             {/* LEFT COLUMN: Content (9 columns) */}
             <div className="w-full col-span-8">
-              {/* Badge */}
-              <motion.div {...fadeInUp} className="mb-10">
-                <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl backdrop-blur-lg bg-purple-950/40 border border-purple-500/50">
-                  <span className="text-xs uppercase tracking-widest font-semibold text-purple-300">
-                    Helping People Break Into Cybersecurity
-                  </span>
-                </div>
-              </motion.div>
-
               {/* Headline */}
               <motion.div
                 {...fadeInUp}

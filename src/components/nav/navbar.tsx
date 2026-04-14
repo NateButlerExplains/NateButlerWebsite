@@ -52,9 +52,12 @@ export function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 w-full"
       style={{
-        background: 'rgba(19, 19, 24, 0.9)',
-        backdropFilter: 'blur(40px)',
-        boxShadow: '0 4px 20px rgba(0, 229, 255, 0.1)',
+        background: isPastFold ? 'rgba(19, 19, 24, 0.9)' : 'transparent',
+        backdropFilter: isPastFold ? 'blur(40px)' : 'none',
+        boxShadow: isPastFold ? '0 4px 20px rgba(0, 229, 255, 0.1)' : 'none',
+        opacity: isPastFold ? 1 : 0,
+        pointerEvents: isPastFold ? 'auto' : 'none',
+        transition: 'all 0.35s ease',
       }}
     >
       {/* Feathered bottom edge — blends navbar into hero image on mobile */}
