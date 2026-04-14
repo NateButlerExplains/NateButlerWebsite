@@ -41,3 +41,8 @@ next-env.d.ts
 .firebaserc
 firebase-debug.log
 .firebase/
+
+# Claude Code ephemeral directories
+.claude/worktrees/
+.claude/plans/
+.claude/projects/
