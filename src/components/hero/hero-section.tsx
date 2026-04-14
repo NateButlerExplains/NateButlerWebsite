@@ -182,7 +182,7 @@ export function HeroSection() {
                 className="mb-12"
               >
                 <p className="text-lg leading-relaxed text-slate-300 max-w-xl font-manrope">
-                  Practical keynotes for students, professionals, career-switchers, and teams who want a real path into cybersecurity.
+                  Practical talks for career changers, students, and early professionals entering cyber.
                 </p>
               </motion.div>
 
