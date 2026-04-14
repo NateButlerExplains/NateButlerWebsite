@@ -1,22 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import { motion, easeOut } from 'framer-motion'
 import { CyberPortrait } from './cyber-portrait'
-
-const MOBILE_TOPICS = [
-  'Students',
-  'Switchers',
-  'Teams',
-  'Professionals',
-]
-
-const DESKTOP_TOPICS = [
-  'Students',
-  'Career-Switchers',
-  'Teams',
-  'Professionals',
-]
 
 /**
  * Hero Section — Premium Cyber Command Authority
@@ -25,29 +10,6 @@ const DESKTOP_TOPICS = [
  * Desktop: Two-column layout with content left, portrait right
  */
 export function HeroSection() {
-
-  const [topicIndex, setTopicIndex] = useState(0)
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    // Check if mobile on mount
-    const checkMobile = () => setIsMobile(window.innerWidth < 768)
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
-
-  // Rotate topics every 4 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const topics = isMobile ? MOBILE_TOPICS : DESKTOP_TOPICS
-      setTopicIndex((prev) => (prev + 1) % topics.length)
-    }, 4000)
-    return () => clearInterval(interval)
-  }, [isMobile])
-
-  const SPEAKER_TOPICS = isMobile ? MOBILE_TOPICS : DESKTOP_TOPICS
-  const currentTopic = SPEAKER_TOPICS[topicIndex]
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -118,16 +80,11 @@ export function HeroSection() {
             transition={{ delay: 0.15, duration: 0.8, ease: easeOut }}
             className="mb-6"
           >
-            <h1 className="font-black leading-tight tracking-tighter space-y-0" style={{ minHeight: '9rem' }}>
+            <h1 className="font-black leading-tight tracking-tighter space-y-0">
               <span className="block text-6xl sm:text-7xl text-white font-space-grotesk pr-2">
-                Cybersecurity Speaker For
+                Book a Speaker Who
               </span>
-              <motion.span
-                key={topicIndex}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.8, ease: easeOut }}
+              <span
                 className="block text-6xl sm:text-7xl font-space-grotesk"
                 style={{
                   background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
@@ -136,8 +93,8 @@ export function HeroSection() {
                   backgroundClip: 'text',
                 }}
               >
-                {currentTopic}
-              </motion.span>
+                Helps Audiences Break Into Cybersecurity
+              </span>
             </h1>
           </motion.div>
 
@@ -148,7 +105,7 @@ export function HeroSection() {
             className="mb-6"
           >
             <p className="text-base leading-relaxed text-slate-300 font-manrope">
-              Keynotes and workshops that show learners exactly how to land their first cybersecurity role...without prior experience.
+              Practical talks for audiences who want a real path into cybersecurity.
             </p>
           </motion.div>
 
@@ -218,14 +175,9 @@ export function HeroSection() {
               >
                 <h1 className="font-black leading-tight tracking-tighter space-y-0">
                   <span className="block text-7xl lg:text-8xl font-space-grotesk text-white">
-                    Cybersecurity Speaker For
+                    Book a Speaker Who
                   </span>
-                  <motion.span
-                    key={topicIndex}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.8, ease: easeOut }}
+                  <span
                     className="block text-7xl lg:text-8xl font-space-grotesk"
                     style={{
                       background: 'linear-gradient(to right, #00E5FF, #4D7FFF)',
@@ -234,8 +186,8 @@ export function HeroSection() {
                       backgroundClip: 'text',
                     }}
                   >
-                    {currentTopic}
-                  </motion.span>
+                    Helps Audiences Break Into Cybersecurity
+                  </span>
                 </h1>
               </motion.div>
 
@@ -246,7 +198,7 @@ export function HeroSection() {
                 className="mb-12"
               >
                 <p className="text-lg leading-relaxed text-slate-300 max-w-xl font-manrope">
-                  Keynotes and workshops that show learners exactly how to land their first cybersecurity role...without prior experience.
+                  Practical talks for audiences who want a real path into cybersecurity.
                 </p>
               </motion.div>
 
