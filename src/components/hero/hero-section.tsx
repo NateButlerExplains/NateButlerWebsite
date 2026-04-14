@@ -53,7 +53,7 @@ export function HeroSection() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg backdrop-blur-lg bg-purple-950/40 border border-purple-500/50">
             <span className="text-[10px] uppercase tracking-wider font-semibold text-purple-300">
-              Helping People Break Into Cyber
+              Helping People Break Into Cybersecurity
             </span>
           </div>
         </motion.div>
@@ -172,7 +172,7 @@ export function HeroSection() {
               <motion.div {...fadeInUp} className="mb-10">
                 <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl backdrop-blur-lg bg-purple-950/40 border border-purple-500/50">
                   <span className="text-xs uppercase tracking-widest font-semibold text-purple-300">
-                    Helping People Break Into Cyber
+                    Helping People Break Into Cybersecurity
                   </span>
                 </div>
               </motion.div>
