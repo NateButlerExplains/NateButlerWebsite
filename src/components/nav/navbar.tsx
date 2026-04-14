@@ -19,6 +19,7 @@ import { useState, useEffect } from 'react'
 export function Navbar() {
   const [mobileBookButtonOpacity, setMobileBookButtonOpacity] = useState(0)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
+  const [isPastFold, setIsPastFold] = useState<boolean>(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,9 +33,12 @@ export function Navbar() {
         const opacity = Math.max(0, Math.min(1, -rect.top / 50))
         setMobileBookButtonOpacity(opacity)
       }
+
+      // Desktop: above/below-fold navbar state transition
+      setIsPastFold(window.scrollY >= window.innerHeight)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     // Call once on mount to set initial state
     handleScroll()
 
@@ -75,12 +79,13 @@ export function Navbar() {
         }}
       />
       <div className="w-full px-6 lg:px-8 py-2 md:py-4">
-        <div className="max-w-screen-2xl mx-auto relative flex items-center justify-between md:justify-between">
+        <div className={`max-w-screen-2xl mx-auto relative flex items-center justify-between ${isPastFold ? 'md:justify-between' : 'md:justify-center'}`}>
           {/* Logo — mobile centered, desktop left */}
           <motion.div
+            layout
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, layout: { duration: 0.4, ease: [0.4, 0, 0.2, 1] } }}
           >
             <Link
               href="/"
@@ -98,8 +103,9 @@ export function Navbar() {
           <motion.div
             className="hidden md:flex items-center gap-8"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            animate={{ opacity: isPastFold ? 1 : 0 }}
+            transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+            style={{ pointerEvents: isPastFold ? 'auto' : 'none' }}
           >
             {navLinks.map((link, idx) => (
               <Link
@@ -136,9 +142,10 @@ export function Navbar() {
           {/* Right Side CTAs — Desktop Only */}
           <motion.div
             className="hidden md:flex items-center gap-6"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isPastFold ? 1 : 0 }}
+            transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+            style={{ pointerEvents: isPastFold ? 'auto' : 'none' }}
           >
             <button
               onClick={() => {
