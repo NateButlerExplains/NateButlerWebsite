@@ -126,7 +126,7 @@ export function HeroSection() {
                 boxShadow: '0 0 20px rgba(0, 229, 255, 0.4), 0 0 4px rgba(0, 229, 255, 0.2), 0 4px 12px rgba(0, 100, 120, 0.25)',
               }}
             >
-              Check Availability
+              Check Speaking Availability
             </button>
           </motion.div>
         </div>
@@ -242,7 +242,7 @@ export function HeroSection() {
                     e.currentTarget.style.boxShadow = '0 0 24px rgba(0, 229, 255, 0.35), 0 0 6px rgba(0, 229, 255, 0.2), 0 6px 16px rgba(0, 100, 120, 0.25)'
                   }}
                 >
-                  Check Availability
+                  Check Speaking Availability
                 </button>
               </motion.div>
 
