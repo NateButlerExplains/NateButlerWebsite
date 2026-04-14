@@ -2,6 +2,8 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 /**
  * Mobile Bottom Navigation Bar
@@ -9,11 +11,24 @@ import { usePathname } from 'next/navigation'
  * Fixed navigation bar at bottom of mobile screens (hidden on desktop).
  * 5 items: Corporate Events | Executive Offsites | [Home - center/featured] | Cyber Conferences | Virtual Events
  *
+ * Only appears after user scrolls past the fold (hero section).
  * Desktop (md:) hides this and uses top navbar instead.
  */
 
 export function MobileBottomNav() {
   const pathname = usePathname()
+  const [isPastFold, setIsPastFold] = useState<boolean>(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsPastFold(window.scrollY >= window.innerHeight)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const isActive = (id: string) => {
     if (pathname === '/') return id === 'home'
@@ -87,9 +102,13 @@ export function MobileBottomNav() {
     )
   }
 
-  return (
-    <nav
+  return isPastFold ? (
+    <motion.nav
       className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-cyber-dark/90 border-t border-white/10"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
       style={{
         backdropFilter: 'blur(20px)',
         paddingBottom: 'env(safe-area-inset-bottom)',
@@ -122,8 +141,8 @@ export function MobileBottomNav() {
           line2="Events"
         />
       </div>
-    </nav>
-  )
+    </motion.nav>
+  ) : null
 }
 
 export default MobileBottomNav
