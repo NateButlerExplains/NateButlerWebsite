@@ -30,7 +30,7 @@ export function HeroSection() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/main.png"
+            src="/images/Hero.png"
             alt="Nate Butler"
             className="w-full h-full object-cover object-top"
           />
