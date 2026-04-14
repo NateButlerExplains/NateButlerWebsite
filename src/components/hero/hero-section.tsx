@@ -199,10 +199,7 @@ export function HeroSection() {
                     Next Gen
                   </span>
                   <span className="block text-7xl lg:text-8xl text-white font-space-grotesk">
-                    Break Into
-                  </span>
-                  <span className="block text-7xl lg:text-8xl text-white font-space-grotesk">
-                    Cyber
+                    Break Into Cyber
                   </span>
                 </h1>
               </motion.div>
