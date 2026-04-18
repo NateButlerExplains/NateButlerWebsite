@@ -75,7 +75,7 @@ export function MobileBottomNav() {
       >
         {/* Embossed button-like pill background */}
         <div
-          className="flex items-center justify-center rounded-full w-9 h-9 text-lg font-semibold"
+          className="flex items-center justify-center rounded-full w-9 h-9"
           style={{
             background: active
               ? 'linear-gradient(135deg, rgba(0, 229, 255, 0.25), rgba(0, 229, 255, 0.12))'
@@ -87,10 +87,15 @@ export function MobileBottomNav() {
               ? '1px solid rgba(0, 229, 255, 0.3)'
               : '1px solid rgba(255, 255, 255, 0.1)',
             transition: 'all 0.2s ease',
-            color: active ? '#00E5FF' : 'rgba(255,255,255,0.6)',
           }}
         >
-          H
+          <svg
+            className="w-5 h-5"
+            fill={active ? '#00E5FF' : 'rgba(255,255,255,0.6)'}
+            viewBox="0 0 24 24"
+          >
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </svg>
         </div>
         <span
           className="text-[9px] uppercase tracking-widest font-semibold leading-none"
