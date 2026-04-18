@@ -10,8 +10,9 @@ const CALENDLY_PARAMS = new URLSearchParams({
   hide_event_type_details: '1',
   hide_gdpr_banner: '0',
   background_color: '0d0d12',
-  text_color: 'e5e5e5',
+  text_color: 'ffffff',
   primary_color: '00e5ff',
+  secondary_color: '00e5ff',
 }).toString()
 
 export default function BookMeNow() {
@@ -156,48 +157,6 @@ export default function BookMeNow() {
             color: #0d0d12 !important;
           }
 
-          /* Calendar text contrast improvements — force all text visible */
-          .calendly-inline-widget {
-            --calendly-text-color: #e5e5e5 !important;
-            --calendly-secondary-text-color: #d4d4d8 !important;
-            --text-color-primary: #e5e5e5 !important;
-            --text-color-secondary: #d4d4d8 !important;
-            --color-text: #e5e5e5 !important;
-            --color-text-secondary: #d4d4d8 !important;
-          }
-
-          /* Calendly iframe content — force bright text */
-          .calendly-inline-widget * {
-            color: #e5e5e5 !important;
-            caret-color: #00e5ff !important;
-          }
-
-          /* Headers and headings */
-          h1, h2, h3, h4, h5, h6, [role="heading"] {
-            color: #e5e5e5 !important;
-          }
-
-          /* All buttons and interactive elements */
-          button, [role="button"], input[type="button"], input[type="submit"] {
-            color: #e5e5e5 !important;
-          }
-
-          /* Form elements */
-          label, legend, .label, span, p, div, a, li {
-            color: #e5e5e5 !important;
-          }
-
-          /* Select dropdowns and inputs */
-          select, input, textarea, [class*="select"], [class*="input"], [class*="field"] {
-            color: #e5e5e5 !important;
-            background-color: rgba(30, 30, 40, 0.8) !important;
-            border: 1px solid rgba(0, 229, 255, 0.3) !important;
-          }
-
-          /* Timezone selector and options */
-          [class*="timezone"], [class*="Timezone"], option {
-            color: #e5e5e5 !important;
-          }
         `}</style>
       </div>
     </section>
