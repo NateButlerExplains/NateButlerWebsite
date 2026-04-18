@@ -1,9 +1,12 @@
 'use client'
 
 import { motion, easeOut } from 'framer-motion'
+import { useState } from 'react'
 import styles from './mobile-special-guest.module.css'
 
 export function MobileSpecialGuest() {
+  const [isPaused, setIsPaused] = useState(false)
+
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -21,10 +24,14 @@ export function MobileSpecialGuest() {
         </p>
 
         {/* Scrolling ticker for mobile */}
-        <div className={styles.tickerContainer}>
+        <div
+          className={styles.tickerContainer}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
+        >
           <motion.div
             className={styles.tickerTrack}
-            animate={{ x: [0, -2040] }}
+            animate={{ x: isPaused ? 0 : [0, -2040] }}
             transition={{ duration: 45, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
             style={{ width: 'max-content' }}
           >

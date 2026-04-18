@@ -52,10 +52,10 @@ export function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 w-full"
       style={{
-        background: isPastFold ? 'rgba(19, 19, 24, 0.9)' : 'rgba(19, 19, 24, 0.7)',
+        background: isPastFold ? 'rgba(19, 19, 24, 0.95)' : 'rgba(10, 10, 13, 0.85)',
         backdropFilter: isPastFold ? 'blur(40px)' : 'blur(20px)',
         boxShadow: isPastFold ? '0 4px 20px rgba(0, 229, 255, 0.1)' : 'none',
-        pointerEvents: isPastFold ? 'auto' : 'none',
+        pointerEvents: 'auto',
         transition: 'all 0.35s ease',
       }}
     >
@@ -150,14 +150,13 @@ export function Navbar() {
             </button>
           </motion.div>
 
-          {/* Mobile: "More" Button with Dropdown — only rendered after fold */}
-          {isPastFold && (
-            <motion.div
-              className="md:hidden absolute right-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-            >
+          {/* Mobile: "More" Button with Dropdown — always visible on mobile */}
+          <motion.div
+            className="md:hidden absolute right-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+          >
               {/* More Button */}
               <button
                 onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -196,25 +195,23 @@ export function Navbar() {
                 </motion.div>
               )}
             </motion.div>
-          )}
-        </div>
+          </div>
 
       </div>
 
       {/* Mobile: Bottom Navigation Bar (appears after fold) */}
-      {isPastFold && (
-        <motion.div
-          className="md:hidden fixed bottom-0 left-0 right-0 z-50 w-full border-t border-[#00e5ff]/10"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-          style={{
-            background: 'rgba(19, 19, 24, 0.95)',
-            backdropFilter: 'blur(40px)',
-            boxShadow: '0 -4px 20px rgba(0, 229, 255, 0.1)',
-          }}
-        >
+      <motion.div
+        className="md:hidden fixed bottom-0 left-0 right-0 z-50 w-full border-t border-[#00e5ff]/10"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isPastFold ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+        style={{
+          background: 'rgba(19, 19, 24, 0.95)',
+          backdropFilter: 'blur(40px)',
+          boxShadow: '0 -4px 20px rgba(0, 229, 255, 0.1)',
+          pointerEvents: isPastFold ? 'auto' : 'none',
+        }}
+      >
           <div className="w-full px-6 py-3 flex items-center justify-center">
             <button
               onClick={() => {
@@ -229,7 +226,6 @@ export function Navbar() {
             </button>
           </div>
         </motion.div>
-      )}
     </nav>
   )
 }

@@ -1,8 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 export function SpecialGuestSection() {
+  const [isPaused, setIsPaused] = useState(false)
+
   return (
     <div className="hidden md:block w-full border-t border-[#00e5ff]/10 py-12">
       <div className="w-full max-w-screen-2xl mx-auto px-6 lg:px-8">
@@ -11,10 +14,15 @@ export function SpecialGuestSection() {
         </p>
 
         {/* Scrolling ticker — full width */}
-        <div className="relative" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', overflow: 'visible' }}>
+        <div
+          className="relative"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)', overflow: 'visible' }}
+        >
           <motion.div
             className="flex gap-10 items-center justify-center"
-            animate={{ x: [0, -2040] }}
+            animate={{ x: isPaused ? 0 : [0, -2040] }}
             transition={{ duration: 45, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
             style={{ width: 'max-content' }}
           >
