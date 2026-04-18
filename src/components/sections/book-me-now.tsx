@@ -10,7 +10,7 @@ const CALENDLY_PARAMS = new URLSearchParams({
   hide_event_type_details: '1',
   hide_gdpr_banner: '0',
   background_color: '0d0d12',
-  text_color: 'ffffff',
+  text_color: 'e5e5e5',
   primary_color: '00e5ff',
 }).toString()
 
@@ -154,6 +154,38 @@ export default function BookMeNow() {
           .calendly-gdpr-banner button {
             background-color: #00e5ff !important;
             color: #0d0d12 !important;
+          }
+
+          /* Calendar text contrast improvements */
+          .calendly-inline-widget {
+            --calendly-text-color: #e5e5e5 !important;
+            --calendly-secondary-text-color: #d4d4d8 !important;
+          }
+
+          /* Target calendar header and labels */
+          .calendly-inline-widget * {
+            color: inherit !important;
+          }
+
+          /* Ensure month/year text is visible */
+          [role="heading"] {
+            color: #e5e5e5 !important;
+          }
+
+          /* Day selection text */
+          button, [role="button"] {
+            color: #e5e5e5 !important;
+          }
+
+          /* Labels and input text */
+          label, .label, [class*="label"],
+          input, select, textarea {
+            color: #e5e5e5 !important;
+          }
+
+          /* Timezone and form text */
+          .select-trigger, [class*="select"], [class*="timezone"] {
+            color: #e5e5e5 !important;
           }
         `}</style>
       </div>
