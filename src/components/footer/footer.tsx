@@ -1,10 +1,10 @@
 import styles from './footer.module.css'
 
 const SOCIAL_LINKS = {
-  tiktok: 'https://tiktok.com',
-  linkedin: 'https://linkedin.com',
-  youtube: 'https://youtube.com',
-  twitch: 'https://twitch.tv',
+  tiktok: 'https://www.tiktok.com/@natebutlerexplains',
+  linkedin: 'https://www.linkedin.com/in/natebutlerexplains',
+  youtube: 'https://www.youtube.com/@natebutlerexplains',
+  twitch: 'https://www.twitch.tv/natebutlerexplains',
 }
 
 const socialIcons = [
@@ -12,8 +12,8 @@ const socialIcons = [
     name: 'TikTok',
     url: SOCIAL_LINKS.tiktok,
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v19.34a2.86 2.86 0 0 1-5.08 1.82 2.9 2.9 0 0 1 .46-4.11 2.88 2.88 0 0 1 4.51 1.64V10.58a9.047 9.047 0 0 1-5.91-.5V9.7a6.006 6.006 0 0 0 5.91 1.01V4.26a2.403 2.403 0 0 0-2.54-2.26 2.414 2.414 0 0 0-2.33 2.3v5.37A9.01 9.01 0 0 1 3.02 9.1V8.1a5.997 5.997 0 0 0 10.57-2.41V5.6a8.007 8.007 0 0 1 5.99 1.09l.01.09z" />
       </svg>
     ),
   },
