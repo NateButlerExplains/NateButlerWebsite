@@ -150,13 +150,14 @@ export function Navbar() {
             </button>
           </motion.div>
 
-          {/* Mobile: "More" Button with Dropdown — always visible on mobile */}
-          <motion.div
-            className="md:hidden absolute right-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-          >
+          {/* Mobile: "More" Button with Dropdown — only visible after fold */}
+          {isPastFold && (
+            <motion.div
+              className="md:hidden absolute right-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+            >
               {/* More Button */}
               <button
                 onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -195,6 +196,7 @@ export function Navbar() {
                 </motion.div>
               )}
             </motion.div>
+          )}
           </div>
 
       </div>
