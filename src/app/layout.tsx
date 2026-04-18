@@ -12,7 +12,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Nate Butler — Global Command Authority in GRC, AI & Cybersecurity',
+  title: 'Nate Butler — Cyber Leader',
   description: 'Strategic intelligence and executive briefings from a top-tier authority in governance, risk, compliance, and cybersecurity.',
 }
 
